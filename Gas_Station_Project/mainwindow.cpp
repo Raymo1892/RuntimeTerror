@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
     int width = ui->label_logo->width();
     int height = ui->label_logo->height();
     ui->label_logo->setPixmap(pixel.scaled(width, height, Qt::KeepAspectRatio));
+
+
 }
 
 MainWindow::~MainWindow()
@@ -44,8 +46,9 @@ void MainWindow::on_loginButton_clicked()
     if(login_flag)
     {
         hide(); //Hides the first window
-        homepage = new Homepage(this);
-        homepage->show();
+        //Calling main dashboard/homepage window with menu and toolbar
+        hWindow = new HomepageWindow(this);
+        hWindow->show();
     }
 
 

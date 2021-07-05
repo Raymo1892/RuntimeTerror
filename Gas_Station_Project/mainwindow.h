@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <registrationwindow.h>
-#include <homepage.h>
+#include <homepagewindow.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,6 +29,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     RegistrationWindow *regisWindow;
-    Homepage *homepage;
+    HomepageWindow *hWindow;
 };
 #endif // MAINWINDOW_H
