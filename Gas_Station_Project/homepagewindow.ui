@@ -64,7 +64,7 @@ padding-left: 20px;
 background-position:center left</string>
        </property>
        <property name="text">
-        <string>Home</string>
+        <string>Make Sale</string>
        </property>
        <property name="iconSize">
         <size>
@@ -112,7 +112,7 @@ background-position:center left
 </string>
        </property>
        <property name="text">
-        <string> Audit</string>
+        <string>Daily Audit</string>
        </property>
       </widget>
      </item>
@@ -143,7 +143,7 @@ background-position:center left</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_17">
+      <widget class="QPushButton" name="helpButton">
        <property name="styleSheet">
         <string notr="true">background-image:url(:/icons/resources/icons/cil-lightbulb.png);
 background-repeat: none;
@@ -227,12 +227,12 @@ background-color:rgb(0, 0, 0);
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(226, 226, 226);</string>
+     <string notr="true">background-color: grey;</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
-    <widget class="QWidget" name="home_page">
+    <widget class="QWidget" name="make_sale_page">
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
@@ -690,6 +690,39 @@ background-position:center left</string>
       </property>
       <property name="text">
        <string>Return to Home</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="settings_page">
+     <widget class="QLabel" name="settingsPageLabel">
+      <property name="geometry">
+       <rect>
+        <x>544</x>
+        <y>80</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline; color:#aa0000;&quot;&gt;Settings Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="help_page">
+     <widget class="QLabel" name="helpPageLabel">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>80</y>
+        <width>361</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline; color:#aa0000;&quot;&gt;Help Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter|Qt::AlignTop</set>
       </property>
      </widget>
     </widget>

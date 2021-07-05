@@ -47,7 +47,8 @@ void HomepageWindow::on_auditButton_clicked()
 
 void HomepageWindow::on_settingButton_clicked()
 {
-     QMessageBox::information(this, "Message", " Work in Progress!!");
+     //QMessageBox::information(this, "Message", " Work in Progress!!");
+     ui->stackedWidget->setCurrentIndex(4);
 }
 
 void HomepageWindow::on_logOutButton_clicked()
@@ -73,5 +74,11 @@ void HomepageWindow::on_returnButton_clicked()
 void HomepageWindow::on_pushButton_3_clicked()
 {
     QMessageBox::information(this, "Message", "Currently unavailable feature!!");
+}
+
+
+void HomepageWindow::on_helpButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
 }
 
