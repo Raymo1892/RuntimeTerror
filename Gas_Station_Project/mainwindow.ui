@@ -6,16 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1271</width>
-    <height>690</height>
+    <width>1250</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:White;
-color:black</string>
+   <string notr="true">background-color: rgb(61, 127, 145)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
@@ -28,8 +27,8 @@ color:black</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:white;
-background-color:black;</string>
+     <string notr="true">background-color: rgb(63, 36, 79);
+border-color: rgb(0, 0, 0);</string>
     </property>
     <property name="title">
      <string/>
@@ -43,34 +42,12 @@ background-color:black;</string>
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(0, 255, 255);</string>
+     </property>
      <property name="text">
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;LOGIN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>11</x>
-       <y>120</y>
-       <width>111</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Username&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>17</x>
-       <y>180</y>
-       <width>101</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_UserName">
@@ -120,6 +97,11 @@ color:black</string>
        <height>22</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+background-color: rgb(0, 255, 255);
+color: rgb(63, 36, 79)</string>
+     </property>
      <property name="text">
       <string>New User</string>
      </property>
@@ -137,8 +119,9 @@ color:black</string>
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:Green;
-font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
+      <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+background-color: rgb(0, 255, 255);
+color: rgb(63, 36, 79)</string>
      </property>
      <property name="text">
       <string>Login</string>
@@ -159,9 +142,48 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
        <height>21</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+background-color: rgb(0, 255, 255);
+color: rgb(63, 36, 79)</string>
+     </property>
      <property name="text">
       <string>Forgot Password ?</string>
      </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>110</y>
+       <width>101</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Username&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(0, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QLabel" name="label">
@@ -173,21 +195,29 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(63, 36, 79);
+font: 87 24pt &quot;Segoe UI Black&quot;;</string>
+    </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; font-style:italic; text-decoration: underline;&quot;&gt;Gas Station Project&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;RTG Fuel Station&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>595</y>
-      <width>241</width>
+      <x>980</x>
+      <y>620</y>
+      <width>271</width>
       <height>61</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+    </property>
     <property name="text">
-     <string>Project Created By Runtime Terror Team</string>
+     <string>Project Created By Runtime Terror Group</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_logo">
