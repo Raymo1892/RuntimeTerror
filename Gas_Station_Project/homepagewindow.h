@@ -41,6 +41,28 @@ private slots:
 
     void on_helpButton_clicked();
 
+    void on_unleadedButton_clicked();
+
+    void on_premiumButton_clicked();
+
+    void on_dieselButton_clicked();
+
+    void on_grillItemButton_clicked();
+
+    void on_candyButton_clicked();
+
+    void on_chipsButton_clicked();
+
+    void on_coffeeButton_clicked();
+
+    void on_fountainDrinkButton_clicked();
+
+    void on_bottledBevButton_clicked();
+
+    void on_inventoryButton_page_clicked();
+
+    void on_viewAuditButton_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
