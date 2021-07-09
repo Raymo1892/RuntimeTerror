@@ -1,7 +1,7 @@
 #include "homepagewindow.h"
 #include "ui_homepagewindow.h"
 #include "QMessageBox"
-
+#include <QStyleFactory>
 
 
 HomepageWindow::HomepageWindow(QWidget *parent) :
@@ -80,5 +80,71 @@ void HomepageWindow::on_pushButton_3_clicked()
 void HomepageWindow::on_helpButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+}
+
+
+void HomepageWindow::on_unleadedButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_premiumButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_dieselButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_grillItemButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_candyButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_chipsButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_coffeeButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_fountainDrinkButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_bottledBevButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_inventoryButton_page_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_viewAuditButton_clicked()
+{
+    QMessageBox::information(this, "Notice", " Please wait for feature!!");
 }
 
