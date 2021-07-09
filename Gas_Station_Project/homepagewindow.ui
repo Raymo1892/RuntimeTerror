@@ -211,7 +211,7 @@ background-color: rgba(255, 255, 255, 0);
      <string notr="true">background-color: rgb(61, 127, 145)</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="make_sale_page">
      <widget class="QLabel" name="makeSaleLabel">
@@ -234,8 +234,8 @@ font: 87 8pt &quot;Segoe UI Black&quot;;</string>
      <widget class="QLineEdit" name="totalBoxLineEdit">
       <property name="geometry">
        <rect>
-        <x>800</x>
-        <y>400</y>
+        <x>670</x>
+        <y>360</y>
         <width>261</width>
         <height>31</height>
        </rect>
@@ -250,239 +250,180 @@ color: rgb(0, 0, 0);</string>
        <string>Total:</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>170</y>
-        <width>751</width>
-        <height>311</height>
+        <x>70</x>
+        <y>200</y>
+        <width>160</width>
+        <height>231</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="1">
-        <widget class="QPushButton" name="candyButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>Candy</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="chipsButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>Chips</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="grillItemButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>Grill Item</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="premiumButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>Premium</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="dieselButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>Diesel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
+      <layout class="QVBoxLayout" name="gasVerticalLayout">
+       <item>
         <widget class="QPushButton" name="unleadedButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
          <property name="text">
           <string>Unleaded</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="coffeeButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
+       <item>
+        <widget class="QPushButton" name="premiumButton">
          <property name="text">
-          <string>Coffee</string>
+          <string>Premium</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="fountainDrinkButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
+       <item>
+        <widget class="QPushButton" name="dieselButton">
+         <property name="text">
+          <string>Diesel</string>
          </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>200</y>
+        <width>160</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="foodVerticalLayout">
+       <item>
+        <widget class="QPushButton" name="grillItemButton">
+         <property name="text">
+          <string>Grill Item</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="chipsButton">
+         <property name="text">
+          <string>Chips</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="candyButton">
+         <property name="text">
+          <string>Candy</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>200</y>
+        <width>160</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="drinksVerticalLayout">
+       <item>
+        <widget class="QPushButton" name="fountainDrinkButton">
          <property name="text">
           <string>Fountain Drink</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="2">
+       <item>
         <widget class="QPushButton" name="bottledBevButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-         </property>
          <property name="text">
           <string>Bottled Beverage</string>
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="coffeeButton">
+         <property name="text">
+          <string>Coffee</string>
+         </property>
+        </widget>
+       </item>
       </layout>
+     </widget>
+     <widget class="QTextEdit" name="cartTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>200</y>
+        <width>261</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>160</y>
+        <width>261</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#00ffff;&quot;&gt;Cart Items&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
      </widget>
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>130</y>
-        <width>751</width>
-        <height>35</height>
+        <x>70</x>
+        <y>160</y>
+        <width>501</width>
+        <height>40</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="categoriesHorizLayout">
        <item>
         <widget class="QLabel" name="gasLabel">
-         <property name="font">
-          <font>
-           <pointsize>16</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+          <string notr="true">background-color: rgba(255, 255, 255, 0);
+font: 87 8pt &quot;Segoe UI Black&quot;;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Gas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#00ffff;&quot;&gt;Gas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="foodLabel">
-         <property name="font">
-          <font>
-           <pointsize>16</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+          <string notr="true">background-color: rgba(255, 255, 255, 0);
+font: 87 8pt &quot;Segoe UI Black&quot;;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#55ffff;&quot;&gt;Food&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#00ffff;&quot;&gt;Food&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QLabel" name="drinksLabel">
-         <property name="font">
-          <font>
-           <pointsize>16</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+          <string notr="true">background-color: rgba(255, 255, 255, 0);
+font: 87 8pt &quot;Segoe UI Black&quot;;</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Drinks&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#00ffff;&quot;&gt;Drinks&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
-      <property name="geometry">
-       <rect>
-        <x>800</x>
-        <y>130</y>
-        <width>258</width>
-        <height>261</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QLabel" name="cartItemsLabel">
-         <property name="styleSheet">
-          <string notr="true">font: 87 16pt &quot;Segoe UI Black&quot;;</string>
-         </property>
-         <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; color:#00ffff;&quot;&gt;Cart Items&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTextEdit" name="cartItemsTextBox">
-         <property name="styleSheet">
-          <string notr="true">border-color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <zorder>textEdit</zorder>
-     <zorder>makeSaleLabel</zorder>
-     <zorder>gasLabel</zorder>
-     <zorder>foodLabel</zorder>
-     <zorder>drinksLabel</zorder>
-     <zorder>pushButton</zorder>
-     <zorder>pushButton_2</zorder>
-     <zorder>pushButton_3</zorder>
-     <zorder>pushButton_4</zorder>
-     <zorder>pushButton_5</zorder>
-     <zorder>pushButton_6</zorder>
-     <zorder>pushButton_8</zorder>
-     <zorder>pushButton_9</zorder>
-     <zorder>pushButton_10</zorder>
-     <zorder>label_2</zorder>
-     <zorder>textEdit</zorder>
-     <zorder>textEdit_2</zorder>
-     <zorder>cartItemsLabel</zorder>
-     <zorder>cartItemsTextBox</zorder>
-     <zorder>totalBoxLineEdit</zorder>
     </widget>
     <widget class="QWidget" name="account_page">
      <property name="styleSheet">
@@ -522,41 +463,41 @@ background-color: rgb(255, 255, 255);</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;View Inventory Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QPushButton" name="inventoryButton_page">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>240</y>
-        <width>113</width>
-        <height>141</height>
+        <x>990</x>
+        <y>0</y>
+        <width>111</width>
+        <height>26</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QPushButton" name="inventoryButton_page">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 255);
 font: 87 8pt &quot;Segoe UI Black&quot;;
 color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>View Inventory</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="returnButton_3">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
+      </property>
+      <property name="text">
+       <string>View Inventory</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="returnButton_3">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>40</y>
+        <width>111</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 255);
 font: 87 8pt &quot;Segoe UI Black&quot;;
 color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>Return to Home</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      </property>
+      <property name="text">
+       <string>Return to Home</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="audit_page">
@@ -576,41 +517,41 @@ color: rgb(63, 36, 79)</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Daily Audit Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QPushButton" name="viewAuditButton">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>220</y>
-        <width>181</width>
-        <height>161</height>
+        <x>990</x>
+        <y>0</y>
+        <width>111</width>
+        <height>26</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <widget class="QPushButton" name="viewAuditButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 255);
 font: 87 8pt &quot;Segoe UI Black&quot;;
 color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>View Audit</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="returnButton">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 255, 255);
+      </property>
+      <property name="text">
+       <string>View Audit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="returnButton">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>40</y>
+        <width>111</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 255);
 font: 87 8pt &quot;Segoe UI Black&quot;;
 color: rgb(63, 36, 79)</string>
-         </property>
-         <property name="text">
-          <string>Return to Home</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      </property>
+      <property name="text">
+       <string>Return to Home</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="settings_page">
@@ -690,17 +631,6 @@ color: rgb(63, 36, 79)</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>2</width>
-      <height>2</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2"/>
    </widget>
   </widget>
   <action name="actionopen">
