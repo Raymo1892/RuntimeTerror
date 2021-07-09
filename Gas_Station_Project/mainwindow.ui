@@ -91,10 +91,10 @@ color:black</string>
     <widget class="QPushButton" name="newUserButton">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>150</x>
        <y>310</y>
-       <width>261</width>
-       <height>22</height>
+       <width>221</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -136,9 +136,9 @@ color: rgb(63, 36, 79)</string>
     <widget class="QPushButton" name="forgotPasswordButton">
      <property name="geometry">
       <rect>
-       <x>190</x>
+       <x>150</x>
        <y>280</y>
-       <width>151</width>
+       <width>221</width>
        <height>21</height>
       </rect>
      </property>
@@ -151,7 +151,7 @@ color: rgb(63, 36, 79)</string>
       <string>Forgot Password ?</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>11</x>
