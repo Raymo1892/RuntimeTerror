@@ -63,6 +63,8 @@ private slots:
 
     void on_viewAuditButton_clicked();
 
+    void on_pushButton_ChangeEmployeePassword_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
