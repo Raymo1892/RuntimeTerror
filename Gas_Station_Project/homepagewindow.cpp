@@ -28,6 +28,7 @@ void HomepageWindow::on_homeButton_clicked()
 void HomepageWindow::on_accountButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+
 }
 
 
@@ -146,5 +147,39 @@ void HomepageWindow::on_inventoryButton_page_clicked()
 void HomepageWindow::on_viewAuditButton_clicked()
 {
     QMessageBox::information(this, "Notice", " Please wait for feature!!");
+}
+
+
+void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
+{
+    QString username = ui->lineEdit_UsernameForChangeEmpPass->text();
+    QString password = ui->lineEdit_NewPassForChangeEmpPass ->text();
+
+    bool change = false;
+
+    /*
+     if vectors are used just replace what slot the password is in with the new password...
+
+     if (username == (vector[i][0])) <----- username in data base || 0 = username, 1 = password
+     {
+        vector[i][1] = password;
+        change = true;
+        break;
+     }
+     else
+     {
+        change = false;
+     }
+
+     if (change == true)
+     {
+        QMesssageBox::information(this, "Notice", "Employee Password Updated");
+     }
+     else
+     {
+        QMesssageBox::information(this, "Notice", "Employee Does Not Exist");
+     }
+
+    */
 }
 
