@@ -65,6 +65,8 @@ private slots:
 
     void on_pushButton_ChangeEmployeePassword_clicked();
 
+    void on_clearCartButton_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
