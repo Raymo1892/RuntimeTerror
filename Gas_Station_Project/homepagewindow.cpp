@@ -2,6 +2,21 @@
 #include "ui_homepagewindow.h"
 #include "QMessageBox"
 #include <QStyleFactory>
+#include <QString>
+
+QString cartString;
+QString totalString;
+
+double cartTotal = 0.0;
+double unleadedPrice = 22.75;
+double premiumPrice = 25.75;
+double dieselPrice = 30.75;
+double grillItemPrice = 1.99;
+double chipsPrice = 1.99;
+double fountainDrinkPrice = .99;
+double coffeePrice = .99;
+double bottledBevPrice = 1.79;
+double candyPrice = .99;
 
 
 HomepageWindow::HomepageWindow(QWidget *parent) :
@@ -86,57 +101,111 @@ void HomepageWindow::on_helpButton_clicked()
 
 void HomepageWindow::on_unleadedButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nUnleaded 10 Gallons - $22.75";
+    cartTotal += unleadedPrice;
+    ui->cartDisplay->setText(cartString); // this shows the item name / price in the cart display
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString); // this shows the total cart amount in the cart display
 }
 
 
 void HomepageWindow::on_premiumButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nPremium 10 Gallons - $25.75";
+    cartTotal += premiumPrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
 
 void HomepageWindow::on_dieselButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nDiesel 10 Gallons - $30.75";
+    cartTotal += dieselPrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
 
 void HomepageWindow::on_grillItemButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nCoffee - $0.99";
+    cartTotal += grillItemPrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
 
 void HomepageWindow::on_candyButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nSingle Candy - $0.99";
+    cartTotal += candyPrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
 
 void HomepageWindow::on_chipsButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nSingle Chips - $1.99";
+    cartTotal += chipsPrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
 
 void HomepageWindow::on_coffeeButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nSingle Chips - $1.99";
+    cartTotal += coffeePrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
 
 void HomepageWindow::on_fountainDrinkButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nFountain Drink - $0.99";
+    cartTotal += fountainDrinkPrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
 
 void HomepageWindow::on_bottledBevButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    cartString += "\nBottled Beverage - $1.79";
+    cartTotal += bottledBevPrice;
+    ui->cartDisplay->setText(cartString);
+
+    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+    ui->totalBoxDisplay->setText("$" + totalString);
 }
 
+void HomepageWindow::on_clearCartButton_clicked()
+{
+    cartString = "";
+    cartTotal = 0.0;
+
+    totalString = QString::number(cartTotal);
+    ui->cartDisplay->setText(cartString);
+    ui->totalBoxDisplay->setText("$" + totalString);
+}
 
 void HomepageWindow::on_inventoryButton_page_clicked()
 {
@@ -152,10 +221,10 @@ void HomepageWindow::on_viewAuditButton_clicked()
 
 void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 {
-    QString username = ui->lineEdit_UsernameForChangeEmpPass->text();
-    QString password = ui->lineEdit_NewPassForChangeEmpPass ->text();
+    //QString username = ui->usernameLineEdit->text();
+    //QString password = ui->newPassLineEdit->text();
 
-    bool change = false;
+    //bool change = false;
 
     /*
      if vectors are used just replace what slot the password is in with the new password...
@@ -182,4 +251,7 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 
     */
 }
+
+
+
 
