@@ -17,10 +17,6 @@ public:
 
 private slots:
 
-
-
-
-
     void on_homeButton_clicked();
 
     void on_accountButton_clicked();
@@ -33,9 +29,9 @@ private slots:
 
     void on_settingButton_clicked();
 
-    void on_returnButton_3_clicked();
+    void on_returnFromInventoryButton_clicked();
 
-    void on_returnButton_clicked();
+    void on_returnFromAuditButton_clicked();
 
     void on_pushButton_3_clicked();
 
@@ -59,15 +55,11 @@ private slots:
 
     void on_bottledBevButton_clicked();
 
-    void on_inventoryButton_page_clicked();
-
     void on_viewAuditButton_clicked();
 
     void on_pushButton_ChangeEmployeePassword_clicked();
 
     void on_clearCartButton_clicked();
-
-    void on_returnToAccountHome_clicked();
 
     void on_ChangePasswordButton_clicked();
 
@@ -75,9 +67,11 @@ private slots:
 
     void on_removeUserButton_clicked();
 
-    void on_returnToAccountHome_2_clicked();
+    void on_returnAccountsButton_clicked();
 
-    void on_returnToAccountHome_3_clicked();
+    void on_returnAccountsButton1_clicked();
+
+    void on_returnAccountsButton2_clicked();
 
 private:
     Ui::HomepageWindow *ui;

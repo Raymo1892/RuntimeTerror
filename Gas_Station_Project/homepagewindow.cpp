@@ -42,29 +42,72 @@ void HomepageWindow::on_homeButton_clicked()
 
 void HomepageWindow::on_accountButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
 
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
+void HomepageWindow::on_ChangePasswordButton_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void HomepageWindow::on_addUserButton_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void HomepageWindow::on_removeUserButton_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(4);
+}
 
 void HomepageWindow::on_inventoryButton_clicked()
 {
 
-       ui->stackedWidget->setCurrentIndex(2);
+       ui->stackedWidget->setCurrentIndex(5);
 }
 
 
 
 void HomepageWindow::on_auditButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+
+    ui->stackedWidget->setCurrentIndex(6);
 }
 
 
 void HomepageWindow::on_settingButton_clicked()
 {
      //QMessageBox::information(this, "Message", " Work in Progress!!");
-     ui->stackedWidget->setCurrentIndex(4);
+     ui->stackedWidget->setCurrentIndex(7);
+}
+
+void HomepageWindow::on_helpButton_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(8);
+}
+
+
+void HomepageWindow::on_returnAccountsButton_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void HomepageWindow::on_returnAccountsButton1_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void HomepageWindow::on_returnAccountsButton2_clicked()
+{
+
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 void HomepageWindow::on_logOutButton_clicked()
@@ -73,14 +116,14 @@ void HomepageWindow::on_logOutButton_clicked()
     close();
 }
 
-void HomepageWindow::on_returnButton_3_clicked()
+void HomepageWindow::on_returnFromInventoryButton_clicked()
 {
     //This is display the home screen widget when pressed.
     ui->stackedWidget->setCurrentIndex(0);
 }
 
 
-void HomepageWindow::on_returnButton_clicked()
+void HomepageWindow::on_returnFromAuditButton_clicked()
 {
     //This is display the home screen widget when pressed.
     ui->stackedWidget->setCurrentIndex(0);
@@ -93,10 +136,6 @@ void HomepageWindow::on_pushButton_3_clicked()
 }
 
 
-void HomepageWindow::on_helpButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(5);
-}
 
 
 void HomepageWindow::on_unleadedButton_clicked()
@@ -134,7 +173,7 @@ void HomepageWindow::on_dieselButton_clicked()
 
 void HomepageWindow::on_grillItemButton_clicked()
 {
-    cartString += "\nCoffee - $0.99";
+    cartString += "\nGrill Roller Item - $1.99";
     cartTotal += grillItemPrice;
     ui->cartDisplay->setText(cartString);
 
@@ -167,7 +206,7 @@ void HomepageWindow::on_chipsButton_clicked()
 
 void HomepageWindow::on_coffeeButton_clicked()
 {
-    cartString += "\nSingle Chips - $1.99";
+    cartString += "\nCoffee - $0.99";
     cartTotal += coffeePrice;
     ui->cartDisplay->setText(cartString);
 
@@ -205,11 +244,6 @@ void HomepageWindow::on_clearCartButton_clicked()
     totalString = QString::number(cartTotal);
     ui->cartDisplay->setText(cartString);
     ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-void HomepageWindow::on_inventoryButton_page_clicked()
-{
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
 }
 
 
@@ -254,38 +288,26 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 
 
 
-void HomepageWindow::on_returnToAccountHome_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
 
 
-void HomepageWindow::on_ChangePasswordButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(2);
-}
 
 
-void HomepageWindow::on_addUserButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(3);
-}
 
 
-void HomepageWindow::on_removeUserButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(4);
-}
 
 
-void HomepageWindow::on_returnToAccountHome_2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
 
 
-void HomepageWindow::on_returnToAccountHome_3_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(1);
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
