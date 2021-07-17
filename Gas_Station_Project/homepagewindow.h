@@ -67,6 +67,18 @@ private slots:
 
     void on_clearCartButton_clicked();
 
+    void on_returnToAccountHome_clicked();
+
+    void on_ChangePasswordButton_clicked();
+
+    void on_addUserButton_clicked();
+
+    void on_removeUserButton_clicked();
+
+    void on_returnToAccountHome_2_clicked();
+
+    void on_returnToAccountHome_3_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 

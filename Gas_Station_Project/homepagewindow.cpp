@@ -254,4 +254,38 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 
 
 
+void HomepageWindow::on_returnToAccountHome_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void HomepageWindow::on_ChangePasswordButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+
+void HomepageWindow::on_addUserButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+
+void HomepageWindow::on_removeUserButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+
+void HomepageWindow::on_returnToAccountHome_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void HomepageWindow::on_returnToAccountHome_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
 
