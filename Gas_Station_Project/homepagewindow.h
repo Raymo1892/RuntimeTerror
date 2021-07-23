@@ -73,6 +73,10 @@ private slots:
 
     void on_returnAccountsButton2_clicked();
 
+    void on_saveUserButton_clicked();
+
+    void on_deleteUserButton_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 

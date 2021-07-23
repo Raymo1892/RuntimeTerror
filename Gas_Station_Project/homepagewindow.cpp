@@ -255,8 +255,11 @@ void HomepageWindow::on_viewAuditButton_clicked()
 
 void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 {
-    //QString username = ui->usernameLineEdit->text();
-    //QString password = ui->newPassLineEdit->text();
+    QString username = ui->changePass_Username_LineEdit->text();
+    QString password = ui->changePass_Password_LineEdit->text();
+
+    //Store data in the database here
+    QMessageBox::information(this, "Change Password", "You entered: \n" + username + "\n" + password + "\n");
 
     //bool change = false;
 
@@ -287,27 +290,23 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 }
 
 
+void HomepageWindow::on_saveUserButton_clicked()
+{
+    QString name = ui->addUserLineEditName->text();
+    QString username = ui->addUserLineEditUsername->text();
+    QString password = ui->addUserLineEditPassword->text();
+
+    //Store data in the database here
+    QMessageBox::information(this, "Add User", "You entered: \n" + name + "\n" + username + "\n" + password + "\n");
+}
 
 
+void HomepageWindow::on_deleteUserButton_clicked()
+{
+    QString username = ui->removeUserNameLineEdit->text();
+    QString password = ui->removeUserPassLineEdit->text();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //Store data in the database here
+    QMessageBox::information(this, "Delete User", "You entered: \n" + username + "\n" + password + "\n");
+}
 

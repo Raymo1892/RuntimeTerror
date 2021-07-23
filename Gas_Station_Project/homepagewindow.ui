@@ -159,7 +159,7 @@ background-color: rgba(255, 255, 255, 0);
 color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="make_sale_page">
      <widget class="QLabel" name="makeSaleLabel">
@@ -564,7 +564,7 @@ color: rgb(63, 36, 79);</string>
        </property>
        <layout class="QGridLayout" name="accountsGridLayout_3">
         <item row="1" column="1">
-         <widget class="QLineEdit" name="newPassLineEdit_3">
+         <widget class="QLineEdit" name="changePass_Password_LineEdit">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -593,7 +593,7 @@ color: rgb(63, 36, 79);</string>
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="usernameLineEdit_11">
+         <widget class="QLineEdit" name="changePass_Username_LineEdit">
           <property name="enabled">
            <bool>true</bool>
           </property>
@@ -625,7 +625,7 @@ color: rgb(63, 36, 79);</string>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QPushButton" name="pushButton_ChangeEmployeePassword_3">
+         <widget class="QPushButton" name="pushButton_ChangeEmployeePassword">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(0, 255, 255);
 font: 87 8pt &quot;Segoe UI Black&quot;;
