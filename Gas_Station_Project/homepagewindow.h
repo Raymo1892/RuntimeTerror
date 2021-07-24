@@ -77,6 +77,8 @@ private slots:
 
     void on_deleteUserButton_clicked();
 
+    void changeCurrentIndex(int index);
+
 private:
     Ui::HomepageWindow *ui;
 

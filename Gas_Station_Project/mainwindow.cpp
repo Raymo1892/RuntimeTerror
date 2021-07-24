@@ -31,42 +31,41 @@ void MainWindow::on_loginButton_clicked()
 //*******************************************************
 //    //Uncomment when db not connected
 
-//        //Show the login window only if DB is connected
-//        bool login_flag = false;
-//        QString username = ui->lineEdit_UserName ->text();
-//        QString password = ui->lineEdit_Password ->text();
+        //Show the login window only if DB is connected
+        bool login_flag = false;
+        QString username = ui->lineEdit_UserName ->text();
+        QString password = ui->lineEdit_Password ->text();
 
-//        if(username == "admin" && password == "admin")
-//        {
-//            QMessageBox::information(this, "Login", "Successful Login Hurray.");
-//                login_flag = true;
+        if(username == "admin" && password == "admin")
+        {
+            QMessageBox::information(this, "Login", "Successful Login Hurray.");
+                login_flag = true;
 
-//        }
-//        else
-//        {
-//            QMessageBox::warning(this, "Login", "Incorrect Username or Password. Try harder");
-//        }
+        }
+        else
+        {
+            QMessageBox::warning(this, "Login", "Incorrect Username or Password. Try harder");
+        }
 
-
-//        //display Homepage board after logging in with correct login.
-//        /* Use modal approach to not kill the first window when creating new
+        //display Homepage board after logging in with correct login.
+        // Use modal approach to not kill the first window when creating new
 //        Below used is not a modal where it does hide the first window*/
-//        if(login_flag)
-//        {
-//            hide(); //Hides the first window
-//            //Calling main dashboard/homepage window with menu and toolbar
-//            hWindow = new HomepageWindow(this);
-//            hWindow->show();
-//        }
+        if(login_flag)
+        {
+            hide(); //Hides the first window
+            //Calling main dashboard/homepage window with menu and toolbar
+            hWindow = new HomepageWindow(this);
+            hWindow->show();
+        }
 
    //***************************************************************
         //This is to uncomment after database is connected
 
-            mysql db;
-            bool login_flag = false;
+            /*mysql database;
+            //bool login_flag = false;
 
             //Chcek if connection is open
-            if(db.connectDB())
+            if(database.connectDB())
             {
                 QMessageBox::information(this, "Connection", "Database connected successfully");
 
@@ -102,13 +101,13 @@ void MainWindow::on_loginButton_clicked()
               }else
                 {
                      QMessageBox::information(this, "Connection", "Database Failed to Connected");
-                 }
+                 }*/
 
                 //display Homepage board after logging in with correct login.
                 /* Use modal approach to not kill the first window when creating new
                 Below used is not a modal where it does hide the first window*/
 
-            if(login_flag)
+            /*if(login_flag)
               {
                     hide(); //Hides the first window
                     //Calling main dashboard/homepage window with menu and toolbar
@@ -118,9 +117,9 @@ void MainWindow::on_loginButton_clicked()
             else
             {
                 QMessageBox::information(this, "Login", "Incorrect username or password, Try again");
-            }
+            }*/
 
-        db.closeDB();
+        //database.closeDB();
 //*******************************************************************
 
 

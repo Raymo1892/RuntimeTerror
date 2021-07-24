@@ -32,6 +32,15 @@ HomepageWindow::~HomepageWindow()
     delete ui;
 }
 
+//added after refactoring, just simplifies the code
+//this replaces the setCurrentIndex line in every button in the stacked widget
+//added by Jorge
+//can be removed later
+void HomepageWindow::changeCurrentIndex(int index)
+{
+    ui->stackedWidget->setCurrentIndex(index);
+}
+
 
 void HomepageWindow::on_homeButton_clicked()
 {
@@ -42,72 +51,73 @@ void HomepageWindow::on_homeButton_clicked()
 
 void HomepageWindow::on_accountButton_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(1);
+    changeCurrentIndex(1);
+    //ui->stackedWidget->setCurrentIndex(1);
 }
 
 void HomepageWindow::on_ChangePasswordButton_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(2);
+    changeCurrentIndex(2);
+    //ui->stackedWidget->setCurrentIndex(2);
 }
 
 void HomepageWindow::on_addUserButton_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(3);
+    changeCurrentIndex(3);
+    //ui->stackedWidget->setCurrentIndex(3);
 }
 
 void HomepageWindow::on_removeUserButton_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(4);
+    changeCurrentIndex(4);
+    //ui->stackedWidget->setCurrentIndex(4);
 }
 
 void HomepageWindow::on_inventoryButton_clicked()
 {
-
-       ui->stackedWidget->setCurrentIndex(5);
+    changeCurrentIndex(5);
+    //ui->stackedWidget->setCurrentIndex(5);
 }
 
 
 
 void HomepageWindow::on_auditButton_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(6);
+    changeCurrentIndex(6);
+    //ui->stackedWidget->setCurrentIndex(6);
 }
 
 
 void HomepageWindow::on_settingButton_clicked()
 {
      //QMessageBox::information(this, "Message", " Work in Progress!!");
-     ui->stackedWidget->setCurrentIndex(7);
+    changeCurrentIndex(7);
+     //ui->stackedWidget->setCurrentIndex(7);
 }
 
 void HomepageWindow::on_helpButton_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(8);
+    changeCurrentIndex(8);
+    //ui->stackedWidget->setCurrentIndex(8);
 }
 
 
 void HomepageWindow::on_returnAccountsButton_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(1);
+    changeCurrentIndex(1);
+    //ui->stackedWidget->setCurrentIndex(1);
 }
 
 void HomepageWindow::on_returnAccountsButton1_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(1);
+    changeCurrentIndex(1);
+    //ui->stackedWidget->setCurrentIndex(1);
 }
 
 void HomepageWindow::on_returnAccountsButton2_clicked()
 {
-
-    ui->stackedWidget->setCurrentIndex(1);
+    changeCurrentIndex(1);
+    //ui->stackedWidget->setCurrentIndex(1);
 }
 
 void HomepageWindow::on_logOutButton_clicked()
@@ -119,14 +129,16 @@ void HomepageWindow::on_logOutButton_clicked()
 void HomepageWindow::on_returnFromInventoryButton_clicked()
 {
     //This is display the home screen widget when pressed.
-    ui->stackedWidget->setCurrentIndex(0);
+    changeCurrentIndex(0);
+    //ui->stackedWidget->setCurrentIndex(0);
 }
 
 
 void HomepageWindow::on_returnFromAuditButton_clicked()
 {
     //This is display the home screen widget when pressed.
-    ui->stackedWidget->setCurrentIndex(0);
+    changeCurrentIndex(0);
+    //ui->stackedWidget->setCurrentIndex(0);
 }
 
 
