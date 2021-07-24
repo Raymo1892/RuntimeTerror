@@ -2,6 +2,14 @@
 #define REGISTRATIONWINDOW_H
 
 #include <QDialog>
+#include <QSql>
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QSqlQuery>
+#include <QPluginLoader>
+#include <QVariant>
+
+#include <mysql.h>
 
 namespace Ui {
 class RegistrationWindow;

@@ -23,7 +23,7 @@
       <x>100</x>
       <y>170</y>
       <width>461</width>
-      <height>351</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -92,9 +92,9 @@ color:black</string>
      <property name="geometry">
       <rect>
        <x>150</x>
-       <y>310</y>
+       <y>320</y>
        <width>221</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -139,7 +139,7 @@ color: rgb(63, 36, 79)</string>
        <x>150</x>
        <y>280</y>
        <width>221</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">

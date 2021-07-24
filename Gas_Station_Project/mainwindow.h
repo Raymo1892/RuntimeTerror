@@ -4,6 +4,14 @@
 #include <QMainWindow>
 #include <registrationwindow.h>
 #include <homepagewindow.h>
+#include <QSql>
+#include <QSqlDatabase>
+#include <QDebug>
+#include <QSqlQuery>
+#include <QPluginLoader>
+#include <QVariant>
+
+#include <mysql.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
