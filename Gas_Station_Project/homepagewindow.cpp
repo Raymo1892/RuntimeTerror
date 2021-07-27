@@ -52,31 +52,30 @@ void HomepageWindow::on_homeButton_clicked()
 void HomepageWindow::on_accountButton_clicked()
 {
     changeCurrentIndex(1);
-    //ui->stackedWidget->setCurrentIndex(1);
+
 }
 
 void HomepageWindow::on_ChangePasswordButton_clicked()
 {
     changeCurrentIndex(2);
-    //ui->stackedWidget->setCurrentIndex(2);
+
 }
 
 void HomepageWindow::on_addUserButton_clicked()
 {
     changeCurrentIndex(3);
-    //ui->stackedWidget->setCurrentIndex(3);
 }
 
 void HomepageWindow::on_removeUserButton_clicked()
 {
     changeCurrentIndex(4);
-    //ui->stackedWidget->setCurrentIndex(4);
+
 }
 
 void HomepageWindow::on_inventoryButton_clicked()
 {
     changeCurrentIndex(5);
-    //ui->stackedWidget->setCurrentIndex(5);
+
 }
 
 
@@ -84,40 +83,40 @@ void HomepageWindow::on_inventoryButton_clicked()
 void HomepageWindow::on_auditButton_clicked()
 {
     changeCurrentIndex(6);
-    //ui->stackedWidget->setCurrentIndex(6);
+
 }
 
 
 void HomepageWindow::on_settingButton_clicked()
 {
-     //QMessageBox::information(this, "Message", " Work in Progress!!");
+    QMessageBox::information(this, "Message", " Work in Progress!!");
     changeCurrentIndex(7);
-     //ui->stackedWidget->setCurrentIndex(7);
+
 }
 
 void HomepageWindow::on_helpButton_clicked()
 {
     changeCurrentIndex(8);
-    //ui->stackedWidget->setCurrentIndex(8);
+
 }
 
 
 void HomepageWindow::on_returnAccountsButton_clicked()
 {
     changeCurrentIndex(1);
-    //ui->stackedWidget->setCurrentIndex(1);
+
 }
 
 void HomepageWindow::on_returnAccountsButton1_clicked()
 {
     changeCurrentIndex(1);
-    //ui->stackedWidget->setCurrentIndex(1);
+
 }
 
 void HomepageWindow::on_returnAccountsButton2_clicked()
 {
     changeCurrentIndex(1);
-    //ui->stackedWidget->setCurrentIndex(1);
+
 }
 
 void HomepageWindow::on_logOutButton_clicked()
@@ -130,7 +129,7 @@ void HomepageWindow::on_returnFromInventoryButton_clicked()
 {
     //This is display the home screen widget when pressed.
     changeCurrentIndex(0);
-    //ui->stackedWidget->setCurrentIndex(0);
+
 }
 
 
@@ -138,7 +137,7 @@ void HomepageWindow::on_returnFromAuditButton_clicked()
 {
     //This is display the home screen widget when pressed.
     changeCurrentIndex(0);
-    //ui->stackedWidget->setCurrentIndex(0);
+
 }
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.2, 2021-07-24T03:43:11. -->
+<!-- Written by QtCreator 4.15.2, 2021-07-26T23:36:14. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -294,8 +294,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/College/summerSem3444/Project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/College/summerSem3444/Project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Gas_Station_Project2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

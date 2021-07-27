@@ -20,6 +20,15 @@ void RegistrationWindow::on_cancelButton_clicked()
     hide();
 }
 
+void RegistrationWindow::clear_text_field()
+{
+    //clearing the text field after successful insertion
+    ui ->lineEdit_UserName->clear();
+    ui ->lineEdit_Password ->clear();
+    ui ->lineEdit_FirstName ->clear();
+    ui ->lineEdit_LastName ->clear();
+    ui ->lineEdit_Email ->clear();
+}
 
 void RegistrationWindow::on_registerPushButton_clicked()
 {
@@ -39,7 +48,7 @@ void RegistrationWindow::on_registerPushButton_clicked()
 
         //Write query to database
         QSqlQuery qry;
-        qry.prepare("INSERT INTO employee (username, password, firstname, lastname, email)"
+        qry.prepare("INSERT INTO Employee (username, password, firstname, lastname, email)"
                     "VAlUES (:username, :password, :firstname, :lastname, :email)");
         //binding variable with vaues column
         qry.bindValue(":username", userName);
@@ -52,13 +61,7 @@ void RegistrationWindow::on_registerPushButton_clicked()
         {
             QMessageBox::information(this, "Inserted", "Data Inserted Successfully");
 
-            //clearing the text field after successful insertion
-            ui ->lineEdit_UserName->clear();
-            ui ->lineEdit_Password ->clear();
-            ui ->lineEdit_FirstName ->clear();
-            ui ->lineEdit_LastName ->clear();
-            ui ->lineEdit_Email ->clear();
-
+            clear_text_field();
         }
         else
         {

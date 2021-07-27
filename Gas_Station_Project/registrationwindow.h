@@ -27,6 +27,7 @@ private slots:
     void on_cancelButton_clicked();
 
     void on_registerPushButton_clicked();
+    void clear_text_field();
 
 private:
     Ui::RegistrationWindow *ui;
