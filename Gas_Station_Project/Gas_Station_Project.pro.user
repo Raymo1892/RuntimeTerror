@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< Updated upstream
-<!-- Written by QtCreator 4.15.2, 2021-07-26T23:36:14. -->
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.15.1, 2021-07-24T13:58:10. -->
-=======
-<!-- Written by QtCreator 4.15.2, 2021-07-26T23:36:14. -->
->>>>>>> 86d40a511c92776b52fc8c3c5300cd9ca7e59bf6
-=======
-<!-- Written by QtCreator 4.15.2, 2021-07-26T23:36:14. -->
->>>>>>> 86d40a511c92776b52fc8c3c5300cd9ca7e59bf6
-=======
-<!-- Written by QtCreator 4.15.1, 2021-07-16T23:31:01. -->
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+<!-- Written by QtCreator 4.15.1, 2021-07-27T21:40:39. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -308,31 +292,8 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-<<<<<<< Updated upstream
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Gas_Station_Project2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
-=======
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/jorgeguzman/Documents/GitHub/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/Users/jorgeguzman/Documents/GitHub/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Gas_Station_Project2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
->>>>>>> 86d40a511c92776b52fc8c3c5300cd9ca7e59bf6
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Gas_Station_Project2</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/College/summerSem3444/project/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
->>>>>>> 86d40a511c92776b52fc8c3c5300cd9ca7e59bf6
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/jorgeguzman/Documents/GitHub/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/Users/jorgeguzman/Documents/GitHub/RuntimeTerror/Gas_Station_Project/Gas_Station_Project.pro</value>
->>>>>>> Stashed changes
->>>>>>> Stashed changes
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
