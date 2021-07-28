@@ -56,3 +56,7 @@ QString Items::getCategory()
 {
     return category;
 }
+void Items::addItem()
+{
+
+}

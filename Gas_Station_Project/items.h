@@ -19,6 +19,7 @@ public:
     bool getStock();
     void setCategory(QString tempCategory);
     QString getCategory();
+    void addItem();
 
 private:
     int id;
