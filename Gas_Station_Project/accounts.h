@@ -21,6 +21,7 @@ class accounts
         int getPrivilege() const;
         void setSales(int sale);
         int getSales() const;
+        //this is cool?
 
     private:
         string username;
