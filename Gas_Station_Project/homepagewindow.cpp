@@ -303,12 +303,15 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 
 void HomepageWindow::on_saveUserButton_clicked()
 {
-    QString name = ui->addUserLineEditName->text();
+    QString firstname = ui->addUserLineEditFirstName->text();
+    QString lastname = ui->addUserLineEditLastName->text();
     QString username = ui->addUserLineEditUsername->text();
     QString password = ui->addUserLineEditPassword->text();
+    QString privilege = ui->addUserLineEditPrivilege->text();
 
     //Store data in the database here
-    QMessageBox::information(this, "Add User", "You entered: \n" + name + "\n" + username + "\n" + password + "\n");
+    QMessageBox::information(this, "Add User", "You entered: \n" + firstname + "\n" + lastname + "\n" + username + "\n" + password + "\n"
+                            + privilege + "\n");
 }
 
 
@@ -325,6 +328,11 @@ void HomepageWindow::on_deleteUserButton_clicked()
 void HomepageWindow::on_Tableview_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
+}
+
+void HomepageWindow::addToShoppingCart()
+{
+
 }
 
 

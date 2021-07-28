@@ -81,6 +81,8 @@ private slots:
 
     void on_Tableview_clicked();
 
+    void addToShoppingCart();
+
 private:
     Ui::HomepageWindow *ui;
 
