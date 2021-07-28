@@ -79,6 +79,8 @@ private slots:
 
     void changeCurrentIndex(int index);
 
+    void on_Tableview_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
