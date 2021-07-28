@@ -1042,7 +1042,7 @@ color: rgb(63, 36, 79)</string>
        <string notr="true">background-color: rgb(61, 127, 145);</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QLabel" name="label">

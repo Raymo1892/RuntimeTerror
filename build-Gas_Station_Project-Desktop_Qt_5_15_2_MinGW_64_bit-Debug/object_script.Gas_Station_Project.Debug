@@ -1,0 +1,10 @@
+debug/accounts.o
+debug/homepagewindow.o
+debug/main.o
+debug/mainwindow.o
+debug/mysql.o
+debug/registrationwindow.o
+debug/qrc_resources.o
+debug/moc_homepagewindow.o
+debug/moc_mainwindow.o
+debug/moc_registrationwindow.o
