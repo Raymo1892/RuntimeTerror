@@ -8,7 +8,7 @@ class accounts
 {
     public:
         accounts();
-        accounts(string user, string pass, string first, string lastN, int priv, int sale);
+        accounts(string user, string pass, string first, string last, int priv, int sale);
         void setUsername(string user);
         string getUsername() const;
         void setPassword(string pass);
@@ -21,7 +21,6 @@ class accounts
         int getPrivilege() const;
         void setSales(int sale);
         int getSales() const;
-        //this is cool?
 
     private:
         string username;
