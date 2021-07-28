@@ -321,3 +321,10 @@ void HomepageWindow::on_deleteUserButton_clicked()
     QMessageBox::information(this, "Delete User", "You entered: \n" + username + "\n" + password + "\n");
 }
 
+
+void HomepageWindow::on_Tableview_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+

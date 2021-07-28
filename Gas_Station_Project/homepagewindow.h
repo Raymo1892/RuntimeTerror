@@ -79,6 +79,10 @@ private slots:
 
     void changeCurrentIndex(int index);
 
+    void on_InventoryQty_clicked();
+
+    void on_Tableview_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
