@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     homepagewindow.cpp \
+    items.cpp \
     main.cpp \
     mainwindow.cpp \
     mysql.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     homepagewindow.h \
+    items.h \
     mainwindow.h \
     mysql.h \
     registrationwindow.h
