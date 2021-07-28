@@ -21,7 +21,7 @@ public:
     QString getCategory();
     void addItem();
 
-private:
+public:
     int id;
     QString name;
     double price;

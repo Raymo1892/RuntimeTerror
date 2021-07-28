@@ -3,20 +3,24 @@
 #include "QMessageBox"
 #include <QStyleFactory>
 #include <QString>
+#include <items.h>
+#include <accounts.h>
+#include <QVector>
 
 QString cartString;
 QString totalString;
-
 double cartTotal = 0.0;
-double unleadedPrice = 22.75;
-double premiumPrice = 25.75;
-double dieselPrice = 30.75;
-double grillItemPrice = 1.99;
-double chipsPrice = 1.99;
-double fountainDrinkPrice = .99;
-double coffeePrice = .99;
-double bottledBevPrice = 1.79;
-double candyPrice = .99;
+QVector<Items> itemsVector;
+Items coffee(1, "Coffee", .99, true, "drinks");
+Items bottledBev(2, "Bottled Beverage", 1.79, true, "drinks");
+Items fountainDrink(3, "Fountain Drink", .99, true, "drinks");
+Items chips(4, "Chips", 1.99, true, "food");
+Items candy(5, "Candy", .99, true, "food");
+Items grillItem(6, "Grill Item", 1.99, true, "food");
+Items unleaded(7, "Unleaded Gas (Gallons)", 2.79, true, "gas");
+Items premium(8, "Premium Gas (Gallons)", 3.09, true, "gas");
+Items diesel(9, "Diesel Fuel (Gallons)", 3.29, true, "gas");
+
 
 
 HomepageWindow::HomepageWindow(QWidget *parent) :
@@ -25,6 +29,15 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+    itemsVector.push_back(coffee);
+    itemsVector.push_back(bottledBev);
+    itemsVector.push_back(fountainDrink);
+    itemsVector.push_back(chips);
+    itemsVector.push_back(candy);
+    itemsVector.push_back(grillItem);
+    itemsVector.push_back(unleaded);
+    itemsVector.push_back(premium);
+    itemsVector.push_back(diesel);
 }
 
 HomepageWindow::~HomepageWindow()
@@ -147,106 +160,6 @@ void HomepageWindow::on_pushButton_3_clicked()
 }
 
 
-
-
-void HomepageWindow::on_unleadedButton_clicked()
-{
-    cartString += "\nUnleaded 10 Gallons - $22.75";
-    cartTotal += unleadedPrice;
-    ui->cartDisplay->setText(cartString); // this shows the item name / price in the cart display
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString); // this shows the total cart amount in the cart display
-}
-
-
-void HomepageWindow::on_premiumButton_clicked()
-{
-    cartString += "\nPremium 10 Gallons - $25.75";
-    cartTotal += premiumPrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-
-void HomepageWindow::on_dieselButton_clicked()
-{
-    cartString += "\nDiesel 10 Gallons - $30.75";
-    cartTotal += dieselPrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-
-void HomepageWindow::on_grillItemButton_clicked()
-{
-    cartString += "\nGrill Roller Item - $1.99";
-    cartTotal += grillItemPrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-
-void HomepageWindow::on_candyButton_clicked()
-{
-    cartString += "\nSingle Candy - $0.99";
-    cartTotal += candyPrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-
-void HomepageWindow::on_chipsButton_clicked()
-{
-    cartString += "\nSingle Chips - $1.99";
-    cartTotal += chipsPrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-
-void HomepageWindow::on_coffeeButton_clicked()
-{
-    cartString += "\nCoffee - $0.99";
-    cartTotal += coffeePrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-
-void HomepageWindow::on_fountainDrinkButton_clicked()
-{
-    cartString += "\nFountain Drink - $0.99";
-    cartTotal += fountainDrinkPrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
-
-void HomepageWindow::on_bottledBevButton_clicked()
-{
-    cartString += "\nBottled Beverage - $1.79";
-    cartTotal += bottledBevPrice;
-    ui->cartDisplay->setText(cartString);
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-}
-
 void HomepageWindow::on_clearCartButton_clicked()
 {
     cartString = "";
@@ -330,9 +243,31 @@ void HomepageWindow::on_Tableview_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void HomepageWindow::addToShoppingCart()
+
+void HomepageWindow::on_addToCartButton_clicked()
 {
+    QString itemID = ui->makeSaleItemIDLineEdit->text();
+    QString quantity = ui->makeSaleQuantityLineEdit->text();
+
+    //QMessageBox::information(this, "Add to Cart", "You entered: \n" + itemID + "\n" + quantity + "\n");
+
+
+
+
+    for(int i = 0; i < itemsVector.size(); i++)
+    {
+        if(itemsVector[i].id == itemID.toInt())
+        {
+            double itemTotal = quantity.toInt() * itemsVector[i].price;
+            ui->cartDisplay->setText(ui->cartDisplay->text() + "\n" + quantity + "X " + itemsVector[i].name + " - " + QString::number(itemTotal));
+            cartTotal += itemTotal;
+
+            totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+            ui->totalBoxDisplay->setText("$" + totalString);
+        }
+    }
+
+
 
 }
-
 
