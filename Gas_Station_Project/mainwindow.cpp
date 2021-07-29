@@ -32,7 +32,7 @@ void MainWindow::on_loginButton_clicked()
            bool login_flag = false;
 
             //Chcek if connection is open
-            if(database.connectDB())
+            /*if(database.connectDB())
             {
                 QMessageBox::information(this, "Connection", "Database connected successfully");
 
@@ -74,7 +74,7 @@ void MainWindow::on_loginButton_clicked()
                 /* Use modal approach to not kill the first window when creating new
                 Below used is not a modal where it does hide the first window*/
 
-            if(login_flag)
+            /*if(login_flag)
               {
                     hide(); //Hides the first window
                     //Calling main dashboard/homepage window with menu and toolbar
@@ -84,9 +84,17 @@ void MainWindow::on_loginButton_clicked()
             else
             {
                 QMessageBox::information(this, "Login", "Incorrect username or password, Try again");
-            }
+            }*/
 
-        database.closeDB();
+        //database.closeDB();
+
+           login_flag = true;
+           if (login_flag)
+           {
+               hide();
+               hWindow = new HomepageWindow(this);
+               hWindow->show();
+           }
 
 
 }

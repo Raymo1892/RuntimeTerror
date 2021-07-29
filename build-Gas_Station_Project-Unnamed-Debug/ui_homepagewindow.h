@@ -15,15 +15,13 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
-#include <QtWidgets/QScrollBar>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -45,105 +43,92 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *make_sale_page;
     QLabel *makeSaleLabel;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *gasVerticalLayout;
-    QPushButton *unleadedButton;
-    QPushButton *premiumButton;
-    QPushButton *dieselButton;
-    QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *foodVerticalLayout;
-    QPushButton *grillItemButton;
-    QPushButton *chipsButton;
-    QPushButton *candyButton;
-    QWidget *verticalLayoutWidget_3;
-    QVBoxLayout *drinksVerticalLayout;
-    QPushButton *fountainDrinkButton;
-    QPushButton *bottledBevButton;
-    QPushButton *coffeeButton;
     QLabel *cartItemsLabel;
-    QWidget *layoutWidget;
-    QHBoxLayout *categoriesHorizLayout;
-    QLabel *gasLabel;
-    QLabel *foodLabel;
-    QLabel *drinksLabel;
     QWidget *layoutWidget_2;
     QVBoxLayout *verticalLayout_3;
     QLabel *cartDisplay;
     QLineEdit *totalBoxDisplay;
     QPushButton *clearCartButton;
+    QGroupBox *groupBox;
+    QWidget *gridLayoutWidget_4;
+    QGridLayout *gridLayout;
+    QLabel *itemIDLabel;
+    QLineEdit *makeSaleItemIDLineEdit;
+    QLineEdit *makeSaleQuantityLineEdit;
+    QLabel *quantityLabel;
+    QPushButton *addToCartButton;
+    QLabel *itemMenuLabel;
     QWidget *account_Homepage;
     QPushButton *ChangePasswordButton;
     QPushButton *addUserButton;
     QPushButton *removeUserButton;
     QWidget *changeUserPasswordPage;
-    QGroupBox *groupBox_2;
+    QGroupBox *changePassGroupBox;
     QWidget *gridLayoutWidget_3;
     QGridLayout *accountsGridLayout_3;
+    QLineEdit *changePass_Password_LineEdit;
     QLabel *newPassLabel_3;
-    QLineEdit *usernameLineEdit_11;
+    QLineEdit *changePass_Username_LineEdit;
     QLabel *usernameLabel_3;
-    QLineEdit *newPassLineEdit_3;
-    QPushButton *pushButton_ChangeEmployeePassword_3;
-    QPushButton *returnToAccountHome;
+    QPushButton *pushButton_ChangeEmployeePassword;
+    QPushButton *returnAccountsButton;
     QLabel *changePasswordLabel;
     QWidget *addUserPage;
     QLabel *addUserLabel_2;
-    QPushButton *returnToAccountHome_2;
+    QGroupBox *addUserGroupBox;
+    QWidget *gridLayoutWidget_2;
+    QGridLayout *addUserGridLayout;
+    QLabel *addUserLabelName;
+    QLineEdit *addUserLineEditFirstName;
+    QLabel *addUserLabelPassword;
+    QPushButton *saveUserButton;
+    QLabel *addUserLabelUsername;
+    QPushButton *returnAccountsButton1;
+    QLineEdit *addUserLineEditLastName;
+    QLineEdit *addUserLineEditUsername;
+    QLabel *lastNameLabel;
+    QLineEdit *addUserLineEditPassword;
+    QLineEdit *addUserLineEditPrivilege;
+    QLabel *privilegeLabel;
     QWidget *deleteUserPage;
     QLabel *RemoveUserLabel_2;
-    QPushButton *returnToAccountHome_3;
-    QGroupBox *groupBox;
-    QLabel *addUserLabel_3;
-    QLineEdit *lineEdit;
-    QPushButton *removerUserButton;
+    QGroupBox *removeUserGroupBox;
+    QWidget *gridLayoutWidget;
+    QGridLayout *removeUserGridLayout;
+    QLineEdit *removeUserPassLineEdit;
+    QLineEdit *removeUserNameLineEdit;
+    QLabel *removeUserPassLabel;
+    QLabel *removeUserNameLabel;
+    QPushButton *returnAccountsButton2;
+    QPushButton *deleteUserButton;
     QWidget *Inventory_page;
     QLabel *inventoryPageLabel;
-    QPushButton *inventoryButton_page;
-    QPushButton *returnButton_3;
-    QPushButton *pushButton_3;
-    QGroupBox *AvailableStocks;
-    QLabel *cartDisplay_2;
-    QLineEdit *usernameLineEdit_4;
-    QLabel *Search;
-    QPushButton *Refresh_2;
-    QGroupBox *groupBox_3;
-    QGroupBox *groupBox_4;
-    QPushButton *Add;
-    QPushButton *Update;
-    QLabel *Product;
-    QLabel *TransactionType;
-    QLineEdit *usernameLineEdit_7;
-    QLineEdit *usernameLineEdit_6;
-    QLabel *Date;
-    QLineEdit *usernameLineEdit_5;
-    QLabel *Date_2;
-    QLabel *Date_3;
-    QLineEdit *usernameLineEdit_9;
-    QLineEdit *usernameLineEdit_8;
-    QGroupBox *ShowTransaction;
-    QRadioButton *Allradiobutton;
-    QRadioButton *PurchaseRadiobutton;
-    QRadioButton *SaleRadioButton;
-    QListView *listView;
-    QScrollBar *verticalScrollBar;
-    QPushButton *Extract;
-    QLabel *S;
-    QGroupBox *groupBox_6;
-    QLineEdit *usernameLineEdit_3;
-    QLineEdit *usernameLineEdit_2;
-    QLabel *Startdate;
-    QLabel *Enddate;
-    QPushButton *Refresh;
-    QPushButton *Purchase;
-    QPushButton *InventoryAmt;
-    QPushButton *InventoryQty;
-    QPushButton *Profit;
-    QPushButton *Sale;
-    QPushButton *Extract_2;
+    QPushButton *returnFromInventoryButton;
+    QPushButton *AddItem;
+    QPushButton *Tableview;
+    QPushButton *UpdateInventory;
+    QPushButton *RemoveItem;
+    QStackedWidget *stackedWidget_2;
+    QWidget *page;
+    QLabel *label;
+    QLabel *ItemID;
+    QLineEdit *lineEdit;
+    QLabel *Itemname;
+    QLineEdit *lineEdit_2;
+    QLabel *Itemprice;
+    QLineEdit *lineEdit_3;
+    QLabel *Description;
+    QLineEdit *lineEdit_4;
+    QLabel *Quantity;
+    QLineEdit *lineEdit_5;
+    QPushButton *Save;
+    QWidget *page_2;
+    QTableWidget *tableWidget;
+    QPushButton *pushButton_5;
     QWidget *audit_page;
     QLabel *auditPageLabel;
     QPushButton *viewAuditButton;
-    QPushButton *returnButton;
+    QPushButton *returnFromAuditButton;
     QWidget *settings_page;
     QLabel *settingsPageLabel;
     QWidget *help_page;
@@ -228,128 +213,11 @@ public:
         makeSaleLabel->setGeometry(QRect(0, -10, 261, 81));
         makeSaleLabel->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
-        verticalLayoutWidget = new QWidget(make_sale_page);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(70, 200, 160, 231));
-        gasVerticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        gasVerticalLayout->setObjectName(QString::fromUtf8("gasVerticalLayout"));
-        gasVerticalLayout->setContentsMargins(0, 0, 0, 0);
-        unleadedButton = new QPushButton(verticalLayoutWidget);
-        unleadedButton->setObjectName(QString::fromUtf8("unleadedButton"));
-        unleadedButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        gasVerticalLayout->addWidget(unleadedButton);
-
-        premiumButton = new QPushButton(verticalLayoutWidget);
-        premiumButton->setObjectName(QString::fromUtf8("premiumButton"));
-        premiumButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        gasVerticalLayout->addWidget(premiumButton);
-
-        dieselButton = new QPushButton(verticalLayoutWidget);
-        dieselButton->setObjectName(QString::fromUtf8("dieselButton"));
-        dieselButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        gasVerticalLayout->addWidget(dieselButton);
-
-        verticalLayoutWidget_2 = new QWidget(make_sale_page);
-        verticalLayoutWidget_2->setObjectName(QString::fromUtf8("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(240, 200, 160, 231));
-        foodVerticalLayout = new QVBoxLayout(verticalLayoutWidget_2);
-        foodVerticalLayout->setObjectName(QString::fromUtf8("foodVerticalLayout"));
-        foodVerticalLayout->setContentsMargins(0, 0, 0, 0);
-        grillItemButton = new QPushButton(verticalLayoutWidget_2);
-        grillItemButton->setObjectName(QString::fromUtf8("grillItemButton"));
-        grillItemButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        foodVerticalLayout->addWidget(grillItemButton);
-
-        chipsButton = new QPushButton(verticalLayoutWidget_2);
-        chipsButton->setObjectName(QString::fromUtf8("chipsButton"));
-        chipsButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        foodVerticalLayout->addWidget(chipsButton);
-
-        candyButton = new QPushButton(verticalLayoutWidget_2);
-        candyButton->setObjectName(QString::fromUtf8("candyButton"));
-        candyButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        foodVerticalLayout->addWidget(candyButton);
-
-        verticalLayoutWidget_3 = new QWidget(make_sale_page);
-        verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(410, 200, 160, 231));
-        drinksVerticalLayout = new QVBoxLayout(verticalLayoutWidget_3);
-        drinksVerticalLayout->setObjectName(QString::fromUtf8("drinksVerticalLayout"));
-        drinksVerticalLayout->setContentsMargins(0, 0, 0, 0);
-        fountainDrinkButton = new QPushButton(verticalLayoutWidget_3);
-        fountainDrinkButton->setObjectName(QString::fromUtf8("fountainDrinkButton"));
-        fountainDrinkButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        drinksVerticalLayout->addWidget(fountainDrinkButton);
-
-        bottledBevButton = new QPushButton(verticalLayoutWidget_3);
-        bottledBevButton->setObjectName(QString::fromUtf8("bottledBevButton"));
-        bottledBevButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        drinksVerticalLayout->addWidget(bottledBevButton);
-
-        coffeeButton = new QPushButton(verticalLayoutWidget_3);
-        coffeeButton->setObjectName(QString::fromUtf8("coffeeButton"));
-        coffeeButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79);"));
-
-        drinksVerticalLayout->addWidget(coffeeButton);
-
         cartItemsLabel = new QLabel(make_sale_page);
         cartItemsLabel->setObjectName(QString::fromUtf8("cartItemsLabel"));
         cartItemsLabel->setGeometry(QRect(670, 160, 271, 31));
         cartItemsLabel->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
-        layoutWidget = new QWidget(make_sale_page);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(70, 160, 501, 40));
-        categoriesHorizLayout = new QHBoxLayout(layoutWidget);
-        categoriesHorizLayout->setObjectName(QString::fromUtf8("categoriesHorizLayout"));
-        categoriesHorizLayout->setContentsMargins(0, 0, 0, 0);
-        gasLabel = new QLabel(layoutWidget);
-        gasLabel->setObjectName(QString::fromUtf8("gasLabel"));
-        gasLabel->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
-"font: 87 8pt \"Segoe UI Black\";"));
-
-        categoriesHorizLayout->addWidget(gasLabel);
-
-        foodLabel = new QLabel(layoutWidget);
-        foodLabel->setObjectName(QString::fromUtf8("foodLabel"));
-        foodLabel->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
-"font: 87 8pt \"Segoe UI Black\";"));
-
-        categoriesHorizLayout->addWidget(foodLabel);
-
-        drinksLabel = new QLabel(layoutWidget);
-        drinksLabel->setObjectName(QString::fromUtf8("drinksLabel"));
-        drinksLabel->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0);\n"
-"font: 87 8pt \"Segoe UI Black\";"));
-
-        categoriesHorizLayout->addWidget(drinksLabel);
-
         layoutWidget_2 = new QWidget(make_sale_page);
         layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
         layoutWidget_2->setGeometry(QRect(670, 200, 271, 231));
@@ -381,6 +249,53 @@ public:
 
         verticalLayout_3->addWidget(clearCartButton);
 
+        groupBox = new QGroupBox(make_sale_page);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setGeometry(QRect(80, 180, 231, 261));
+        groupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
+        gridLayoutWidget_4 = new QWidget(groupBox);
+        gridLayoutWidget_4->setObjectName(QString::fromUtf8("gridLayoutWidget_4"));
+        gridLayoutWidget_4->setGeometry(QRect(20, 20, 191, 221));
+        gridLayout = new QGridLayout(gridLayoutWidget_4);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        itemIDLabel = new QLabel(gridLayoutWidget_4);
+        itemIDLabel->setObjectName(QString::fromUtf8("itemIDLabel"));
+        itemIDLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        gridLayout->addWidget(itemIDLabel, 0, 0, 1, 1);
+
+        makeSaleItemIDLineEdit = new QLineEdit(gridLayoutWidget_4);
+        makeSaleItemIDLineEdit->setObjectName(QString::fromUtf8("makeSaleItemIDLineEdit"));
+        makeSaleItemIDLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        gridLayout->addWidget(makeSaleItemIDLineEdit, 0, 1, 1, 1);
+
+        makeSaleQuantityLineEdit = new QLineEdit(gridLayoutWidget_4);
+        makeSaleQuantityLineEdit->setObjectName(QString::fromUtf8("makeSaleQuantityLineEdit"));
+        makeSaleQuantityLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        gridLayout->addWidget(makeSaleQuantityLineEdit, 1, 1, 1, 1);
+
+        quantityLabel = new QLabel(gridLayoutWidget_4);
+        quantityLabel->setObjectName(QString::fromUtf8("quantityLabel"));
+        quantityLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        gridLayout->addWidget(quantityLabel, 1, 0, 1, 1);
+
+        addToCartButton = new QPushButton(gridLayoutWidget_4);
+        addToCartButton->setObjectName(QString::fromUtf8("addToCartButton"));
+        addToCartButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";\n"
+"color: rgb(63, 36, 79);"));
+
+        gridLayout->addWidget(addToCartButton, 2, 0, 1, 2);
+
+        itemMenuLabel = new QLabel(make_sale_page);
+        itemMenuLabel->setObjectName(QString::fromUtf8("itemMenuLabel"));
+        itemMenuLabel->setGeometry(QRect(350, 180, 181, 261));
+        itemMenuLabel->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);\n"
+"font: 87 8pt \"Segoe UI Black\";"));
         stackedWidget->addWidget(make_sale_page);
         account_Homepage = new QWidget();
         account_Homepage->setObjectName(QString::fromUtf8("account_Homepage"));
@@ -388,52 +303,58 @@ public:
         ChangePasswordButton = new QPushButton(account_Homepage);
         ChangePasswordButton->setObjectName(QString::fromUtf8("ChangePasswordButton"));
         ChangePasswordButton->setEnabled(true);
-        ChangePasswordButton->setGeometry(QRect(420, 70, 291, 91));
+        ChangePasswordButton->setGeometry(QRect(420, 70, 311, 91));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Segoe UI Black"));
-        font1.setPointSize(20);
+        font1.setPointSize(16);
         font1.setBold(false);
         font1.setItalic(false);
         font1.setWeight(10);
         ChangePasswordButton->setFont(font1);
         ChangePasswordButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 20pt \"Segoe UI Black\";\n"
+"font: 87 16pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79);"));
         addUserButton = new QPushButton(account_Homepage);
         addUserButton->setObjectName(QString::fromUtf8("addUserButton"));
         addUserButton->setEnabled(true);
-        addUserButton->setGeometry(QRect(420, 230, 291, 91));
+        addUserButton->setGeometry(QRect(420, 230, 311, 91));
         addUserButton->setFont(font1);
         addUserButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 20pt \"Segoe UI Black\";\n"
+"font: 87 16pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79);"));
         removeUserButton = new QPushButton(account_Homepage);
         removeUserButton->setObjectName(QString::fromUtf8("removeUserButton"));
         removeUserButton->setEnabled(true);
-        removeUserButton->setGeometry(QRect(420, 390, 291, 91));
+        removeUserButton->setGeometry(QRect(420, 390, 311, 91));
         removeUserButton->setFont(font1);
         removeUserButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 20pt \"Segoe UI Black\";\n"
+"font: 87 16pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79);"));
         stackedWidget->addWidget(account_Homepage);
         changeUserPasswordPage = new QWidget();
         changeUserPasswordPage->setObjectName(QString::fromUtf8("changeUserPasswordPage"));
-        groupBox_2 = new QGroupBox(changeUserPasswordPage);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setEnabled(true);
-        groupBox_2->setGeometry(QRect(390, 120, 351, 231));
-        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(groupBox_2->sizePolicy().hasHeightForWidth());
-        groupBox_2->setSizePolicy(sizePolicy);
-        groupBox_2->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
-        gridLayoutWidget_3 = new QWidget(groupBox_2);
+        changePassGroupBox = new QGroupBox(changeUserPasswordPage);
+        changePassGroupBox->setObjectName(QString::fromUtf8("changePassGroupBox"));
+        changePassGroupBox->setEnabled(true);
+        changePassGroupBox->setGeometry(QRect(330, 120, 431, 271));
+        changePassGroupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
+        gridLayoutWidget_3 = new QWidget(changePassGroupBox);
         gridLayoutWidget_3->setObjectName(QString::fromUtf8("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(-1, -1, 351, 231));
+        gridLayoutWidget_3->setGeometry(QRect(30, 20, 371, 231));
         accountsGridLayout_3 = new QGridLayout(gridLayoutWidget_3);
         accountsGridLayout_3->setObjectName(QString::fromUtf8("accountsGridLayout_3"));
         accountsGridLayout_3->setContentsMargins(0, 0, 0, 0);
+        changePass_Password_LineEdit = new QLineEdit(gridLayoutWidget_3);
+        changePass_Password_LineEdit->setObjectName(QString::fromUtf8("changePass_Password_LineEdit"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(changePass_Password_LineEdit->sizePolicy().hasHeightForWidth());
+        changePass_Password_LineEdit->setSizePolicy(sizePolicy);
+        changePass_Password_LineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        accountsGridLayout_3->addWidget(changePass_Password_LineEdit, 1, 1, 1, 1);
+
         newPassLabel_3 = new QLabel(gridLayoutWidget_3);
         newPassLabel_3->setObjectName(QString::fromUtf8("newPassLabel_3"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -445,14 +366,14 @@ public:
 
         accountsGridLayout_3->addWidget(newPassLabel_3, 1, 0, 1, 1);
 
-        usernameLineEdit_11 = new QLineEdit(gridLayoutWidget_3);
-        usernameLineEdit_11->setObjectName(QString::fromUtf8("usernameLineEdit_11"));
-        usernameLineEdit_11->setEnabled(true);
-        sizePolicy1.setHeightForWidth(usernameLineEdit_11->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_11->setSizePolicy(sizePolicy1);
-        usernameLineEdit_11->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        changePass_Username_LineEdit = new QLineEdit(gridLayoutWidget_3);
+        changePass_Username_LineEdit->setObjectName(QString::fromUtf8("changePass_Username_LineEdit"));
+        changePass_Username_LineEdit->setEnabled(true);
+        sizePolicy.setHeightForWidth(changePass_Username_LineEdit->sizePolicy().hasHeightForWidth());
+        changePass_Username_LineEdit->setSizePolicy(sizePolicy);
+        changePass_Username_LineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        accountsGridLayout_3->addWidget(usernameLineEdit_11, 0, 1, 1, 1);
+        accountsGridLayout_3->addWidget(changePass_Username_LineEdit, 0, 1, 1, 1);
 
         usernameLabel_3 = new QLabel(gridLayoutWidget_3);
         usernameLabel_3->setObjectName(QString::fromUtf8("usernameLabel_3"));
@@ -462,31 +383,25 @@ public:
 
         accountsGridLayout_3->addWidget(usernameLabel_3, 0, 0, 1, 1);
 
-        newPassLineEdit_3 = new QLineEdit(gridLayoutWidget_3);
-        newPassLineEdit_3->setObjectName(QString::fromUtf8("newPassLineEdit_3"));
-        sizePolicy1.setHeightForWidth(newPassLineEdit_3->sizePolicy().hasHeightForWidth());
-        newPassLineEdit_3->setSizePolicy(sizePolicy1);
-        newPassLineEdit_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-
-        accountsGridLayout_3->addWidget(newPassLineEdit_3, 1, 1, 1, 1);
-
-        pushButton_ChangeEmployeePassword_3 = new QPushButton(gridLayoutWidget_3);
-        pushButton_ChangeEmployeePassword_3->setObjectName(QString::fromUtf8("pushButton_ChangeEmployeePassword_3"));
-        pushButton_ChangeEmployeePassword_3->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        pushButton_ChangeEmployeePassword = new QPushButton(gridLayoutWidget_3);
+        pushButton_ChangeEmployeePassword->setObjectName(QString::fromUtf8("pushButton_ChangeEmployeePassword"));
+        pushButton_ChangeEmployeePassword->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79);"));
 
-        accountsGridLayout_3->addWidget(pushButton_ChangeEmployeePassword_3, 2, 0, 1, 2);
+        accountsGridLayout_3->addWidget(pushButton_ChangeEmployeePassword, 2, 1, 1, 1);
 
-        returnToAccountHome = new QPushButton(changeUserPasswordPage);
-        returnToAccountHome->setObjectName(QString::fromUtf8("returnToAccountHome"));
-        returnToAccountHome->setGeometry(QRect(500, 420, 141, 18));
-        returnToAccountHome->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        returnAccountsButton = new QPushButton(gridLayoutWidget_3);
+        returnAccountsButton->setObjectName(QString::fromUtf8("returnAccountsButton"));
+        returnAccountsButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79);"));
+
+        accountsGridLayout_3->addWidget(returnAccountsButton, 3, 1, 1, 1);
+
         changePasswordLabel = new QLabel(changeUserPasswordPage);
         changePasswordLabel->setObjectName(QString::fromUtf8("changePasswordLabel"));
-        changePasswordLabel->setGeometry(QRect(0, 0, 270, 50));
+        changePasswordLabel->setGeometry(QRect(0, 0, 371, 50));
         changePasswordLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
         stackedWidget->addWidget(changeUserPasswordPage);
         addUserPage = new QWidget();
@@ -495,12 +410,92 @@ public:
         addUserLabel_2->setObjectName(QString::fromUtf8("addUserLabel_2"));
         addUserLabel_2->setGeometry(QRect(0, 0, 270, 50));
         addUserLabel_2->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        returnToAccountHome_2 = new QPushButton(addUserPage);
-        returnToAccountHome_2->setObjectName(QString::fromUtf8("returnToAccountHome_2"));
-        returnToAccountHome_2->setGeometry(QRect(490, 370, 141, 18));
-        returnToAccountHome_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        addUserGroupBox = new QGroupBox(addUserPage);
+        addUserGroupBox->setObjectName(QString::fromUtf8("addUserGroupBox"));
+        addUserGroupBox->setGeometry(QRect(330, 120, 431, 271));
+        addUserGroupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
+        gridLayoutWidget_2 = new QWidget(addUserGroupBox);
+        gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
+        gridLayoutWidget_2->setGeometry(QRect(39, 29, 361, 216));
+        addUserGridLayout = new QGridLayout(gridLayoutWidget_2);
+        addUserGridLayout->setObjectName(QString::fromUtf8("addUserGridLayout"));
+        addUserGridLayout->setContentsMargins(0, 0, 0, 0);
+        addUserLabelName = new QLabel(gridLayoutWidget_2);
+        addUserLabelName->setObjectName(QString::fromUtf8("addUserLabelName"));
+        addUserLabelName->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        addUserGridLayout->addWidget(addUserLabelName, 0, 0, 1, 1);
+
+        addUserLineEditFirstName = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditFirstName->setObjectName(QString::fromUtf8("addUserLineEditFirstName"));
+        addUserLineEditFirstName->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        addUserGridLayout->addWidget(addUserLineEditFirstName, 0, 1, 1, 1);
+
+        addUserLabelPassword = new QLabel(gridLayoutWidget_2);
+        addUserLabelPassword->setObjectName(QString::fromUtf8("addUserLabelPassword"));
+        addUserLabelPassword->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        addUserGridLayout->addWidget(addUserLabelPassword, 3, 0, 1, 1);
+
+        saveUserButton = new QPushButton(gridLayoutWidget_2);
+        saveUserButton->setObjectName(QString::fromUtf8("saveUserButton"));
+        saveUserButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79);"));
+
+        addUserGridLayout->addWidget(saveUserButton, 5, 1, 1, 1);
+
+        addUserLabelUsername = new QLabel(gridLayoutWidget_2);
+        addUserLabelUsername->setObjectName(QString::fromUtf8("addUserLabelUsername"));
+        addUserLabelUsername->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        addUserGridLayout->addWidget(addUserLabelUsername, 2, 0, 1, 1);
+
+        returnAccountsButton1 = new QPushButton(gridLayoutWidget_2);
+        returnAccountsButton1->setObjectName(QString::fromUtf8("returnAccountsButton1"));
+        returnAccountsButton1->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";\n"
+"color: rgb(63, 36, 79);"));
+
+        addUserGridLayout->addWidget(returnAccountsButton1, 6, 1, 1, 1);
+
+        addUserLineEditLastName = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditLastName->setObjectName(QString::fromUtf8("addUserLineEditLastName"));
+        addUserLineEditLastName->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        addUserGridLayout->addWidget(addUserLineEditLastName, 1, 1, 1, 1);
+
+        addUserLineEditUsername = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditUsername->setObjectName(QString::fromUtf8("addUserLineEditUsername"));
+        addUserLineEditUsername->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        addUserGridLayout->addWidget(addUserLineEditUsername, 2, 1, 1, 1);
+
+        lastNameLabel = new QLabel(gridLayoutWidget_2);
+        lastNameLabel->setObjectName(QString::fromUtf8("lastNameLabel"));
+        lastNameLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        addUserGridLayout->addWidget(lastNameLabel, 1, 0, 1, 1);
+
+        addUserLineEditPassword = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditPassword->setObjectName(QString::fromUtf8("addUserLineEditPassword"));
+        addUserLineEditPassword->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        addUserGridLayout->addWidget(addUserLineEditPassword, 3, 1, 1, 1);
+
+        addUserLineEditPrivilege = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditPrivilege->setObjectName(QString::fromUtf8("addUserLineEditPrivilege"));
+        addUserLineEditPrivilege->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        addUserGridLayout->addWidget(addUserLineEditPrivilege, 4, 1, 1, 1);
+
+        privilegeLabel = new QLabel(gridLayoutWidget_2);
+        privilegeLabel->setObjectName(QString::fromUtf8("privilegeLabel"));
+        privilegeLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        addUserGridLayout->addWidget(privilegeLabel, 4, 0, 1, 1);
+
         stackedWidget->addWidget(addUserPage);
         deleteUserPage = new QWidget();
         deleteUserPage->setObjectName(QString::fromUtf8("deleteUserPage"));
@@ -508,308 +503,191 @@ public:
         RemoveUserLabel_2->setObjectName(QString::fromUtf8("RemoveUserLabel_2"));
         RemoveUserLabel_2->setGeometry(QRect(0, 0, 270, 50));
         RemoveUserLabel_2->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        returnToAccountHome_3 = new QPushButton(deleteUserPage);
-        returnToAccountHome_3->setObjectName(QString::fromUtf8("returnToAccountHome_3"));
-        returnToAccountHome_3->setGeometry(QRect(490, 370, 141, 18));
-        returnToAccountHome_3->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        removeUserGroupBox = new QGroupBox(deleteUserPage);
+        removeUserGroupBox->setObjectName(QString::fromUtf8("removeUserGroupBox"));
+        removeUserGroupBox->setGeometry(QRect(330, 120, 431, 271));
+        removeUserGroupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
+        gridLayoutWidget = new QWidget(removeUserGroupBox);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(30, 20, 361, 221));
+        removeUserGridLayout = new QGridLayout(gridLayoutWidget);
+        removeUserGridLayout->setObjectName(QString::fromUtf8("removeUserGridLayout"));
+        removeUserGridLayout->setContentsMargins(0, 0, 0, 0);
+        removeUserPassLineEdit = new QLineEdit(gridLayoutWidget);
+        removeUserPassLineEdit->setObjectName(QString::fromUtf8("removeUserPassLineEdit"));
+        removeUserPassLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        removeUserGridLayout->addWidget(removeUserPassLineEdit, 1, 1, 1, 1);
+
+        removeUserNameLineEdit = new QLineEdit(gridLayoutWidget);
+        removeUserNameLineEdit->setObjectName(QString::fromUtf8("removeUserNameLineEdit"));
+        removeUserNameLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        removeUserGridLayout->addWidget(removeUserNameLineEdit, 0, 1, 1, 1);
+
+        removeUserPassLabel = new QLabel(gridLayoutWidget);
+        removeUserPassLabel->setObjectName(QString::fromUtf8("removeUserPassLabel"));
+        removeUserPassLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        removeUserGridLayout->addWidget(removeUserPassLabel, 1, 0, 1, 1);
+
+        removeUserNameLabel = new QLabel(gridLayoutWidget);
+        removeUserNameLabel->setObjectName(QString::fromUtf8("removeUserNameLabel"));
+        removeUserNameLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        removeUserGridLayout->addWidget(removeUserNameLabel, 0, 0, 1, 1);
+
+        returnAccountsButton2 = new QPushButton(gridLayoutWidget);
+        returnAccountsButton2->setObjectName(QString::fromUtf8("returnAccountsButton2"));
+        returnAccountsButton2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79);"));
-        groupBox = new QGroupBox(deleteUserPage);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(390, 100, 341, 191));
-        groupBox->setCheckable(false);
-        addUserLabel_3 = new QLabel(groupBox);
-        addUserLabel_3->setObjectName(QString::fromUtf8("addUserLabel_3"));
-        addUserLabel_3->setGeometry(QRect(-10, 0, 361, 201));
-        addUserLabel_3->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        lineEdit = new QLineEdit(groupBox);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(50, 90, 241, 51));
-        QPalette palette;
-        QBrush brush(QColor(0, 0, 0, 255));
-        brush.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
-        QBrush brush1(QColor(255, 255, 255, 255));
-        brush1.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
-        palette.setBrush(QPalette::Active, QPalette::Text, brush);
-        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Active, QPalette::Base, brush1);
-        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
-        QBrush brush2(QColor(0, 0, 0, 128));
-        brush2.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush2);
-#endif
-        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
-        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
-        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
-        QBrush brush3(QColor(0, 0, 0, 128));
-        brush3.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush3);
-#endif
-        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Text, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
-        QBrush brush4(QColor(0, 0, 0, 128));
-        brush4.setStyle(Qt::NoBrush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush4);
-#endif
-        lineEdit->setPalette(palette);
-        lineEdit->setStyleSheet(QString::fromUtf8("background-color:white;\n"
-"font: 18pt \".AppleSystemUIFont\";"));
-        removerUserButton = new QPushButton(groupBox);
-        removerUserButton->setObjectName(QString::fromUtf8("removerUserButton"));
-        removerUserButton->setGeometry(QRect(100, 160, 141, 18));
-        removerUserButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"color: rgb(63, 36, 79)"));
+
+        removeUserGridLayout->addWidget(returnAccountsButton2, 3, 1, 1, 1);
+
+        deleteUserButton = new QPushButton(gridLayoutWidget);
+        deleteUserButton->setObjectName(QString::fromUtf8("deleteUserButton"));
+        deleteUserButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79);"));
+"color: rgb(63, 36, 79)"));
+
+        removeUserGridLayout->addWidget(deleteUserButton, 2, 1, 1, 1);
+
         stackedWidget->addWidget(deleteUserPage);
+        removeUserGroupBox->raise();
+        RemoveUserLabel_2->raise();
         Inventory_page = new QWidget();
         Inventory_page->setObjectName(QString::fromUtf8("Inventory_page"));
         inventoryPageLabel = new QLabel(Inventory_page);
         inventoryPageLabel->setObjectName(QString::fromUtf8("inventoryPageLabel"));
         inventoryPageLabel->setGeometry(QRect(0, 0, 341, 50));
         inventoryPageLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        inventoryButton_page = new QPushButton(Inventory_page);
-        inventoryButton_page->setObjectName(QString::fromUtf8("inventoryButton_page"));
-        inventoryButton_page->setGeometry(QRect(990, 0, 111, 26));
-        inventoryButton_page->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        returnFromInventoryButton = new QPushButton(Inventory_page);
+        returnFromInventoryButton->setObjectName(QString::fromUtf8("returnFromInventoryButton"));
+        returnFromInventoryButton->setGeometry(QRect(990, 40, 111, 26));
+        returnFromInventoryButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        returnButton_3 = new QPushButton(Inventory_page);
-        returnButton_3->setObjectName(QString::fromUtf8("returnButton_3"));
-        returnButton_3->setGeometry(QRect(990, 40, 111, 26));
-        returnButton_3->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        AddItem = new QPushButton(Inventory_page);
+        AddItem->setObjectName(QString::fromUtf8("AddItem"));
+        AddItem->setGeometry(QRect(10, 70, 131, 55));
+        AddItem->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        pushButton_3 = new QPushButton(Inventory_page);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(880, 10, 75, 51));
-        AvailableStocks = new QGroupBox(Inventory_page);
-        AvailableStocks->setObjectName(QString::fromUtf8("AvailableStocks"));
-        AvailableStocks->setGeometry(QRect(20, 220, 341, 321));
-        cartDisplay_2 = new QLabel(AvailableStocks);
-        cartDisplay_2->setObjectName(QString::fromUtf8("cartDisplay_2"));
-        cartDisplay_2->setGeometry(QRect(10, 60, 321, 251));
-        cartDisplay_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        cartDisplay_2->setAlignment(Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing);
-        usernameLineEdit_4 = new QLineEdit(AvailableStocks);
-        usernameLineEdit_4->setObjectName(QString::fromUtf8("usernameLineEdit_4"));
-        usernameLineEdit_4->setEnabled(true);
-        usernameLineEdit_4->setGeometry(QRect(50, 20, 111, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_4->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_4->setSizePolicy(sizePolicy1);
-        usernameLineEdit_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        Search = new QLabel(AvailableStocks);
-        Search->setObjectName(QString::fromUtf8("Search"));
-        Search->setGeometry(QRect(10, 20, 41, 16));
-        sizePolicy1.setHeightForWidth(Search->sizePolicy().hasHeightForWidth());
-        Search->setSizePolicy(sizePolicy1);
-        Search->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        Refresh_2 = new QPushButton(AvailableStocks);
-        Refresh_2->setObjectName(QString::fromUtf8("Refresh_2"));
-        Refresh_2->setGeometry(QRect(160, 20, 91, 26));
-        Refresh_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        AddItem->setIconSize(QSize(20, 20));
+        Tableview = new QPushButton(Inventory_page);
+        Tableview->setObjectName(QString::fromUtf8("Tableview"));
+        Tableview->setGeometry(QRect(460, 70, 131, 55));
+        Tableview->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        groupBox_3 = new QGroupBox(Inventory_page);
-        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(379, 220, 701, 321));
-        groupBox_4 = new QGroupBox(groupBox_3);
-        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setGeometry(QRect(20, 20, 671, 91));
-        Add = new QPushButton(groupBox_4);
-        Add->setObjectName(QString::fromUtf8("Add"));
-        Add->setGeometry(QRect(430, 60, 111, 26));
-        Add->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        Tableview->setIconSize(QSize(20, 20));
+        UpdateInventory = new QPushButton(Inventory_page);
+        UpdateInventory->setObjectName(QString::fromUtf8("UpdateInventory"));
+        UpdateInventory->setGeometry(QRect(310, 70, 131, 55));
+        UpdateInventory->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        Update = new QPushButton(groupBox_4);
-        Update->setObjectName(QString::fromUtf8("Update"));
-        Update->setGeometry(QRect(540, 60, 111, 26));
-        Update->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        UpdateInventory->setIconSize(QSize(20, 20));
+        RemoveItem = new QPushButton(Inventory_page);
+        RemoveItem->setObjectName(QString::fromUtf8("RemoveItem"));
+        RemoveItem->setGeometry(QRect(160, 70, 131, 55));
+        RemoveItem->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        Product = new QLabel(groupBox_4);
-        Product->setObjectName(QString::fromUtf8("Product"));
-        Product->setGeometry(QRect(10, 30, 60, 13));
-        sizePolicy1.setHeightForWidth(Product->sizePolicy().hasHeightForWidth());
-        Product->setSizePolicy(sizePolicy1);
-        Product->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        TransactionType = new QLabel(groupBox_4);
-        TransactionType->setObjectName(QString::fromUtf8("TransactionType"));
-        TransactionType->setGeometry(QRect(10, 60, 91, 16));
-        sizePolicy1.setHeightForWidth(TransactionType->sizePolicy().hasHeightForWidth());
-        TransactionType->setSizePolicy(sizePolicy1);
-        TransactionType->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        usernameLineEdit_7 = new QLineEdit(groupBox_4);
-        usernameLineEdit_7->setObjectName(QString::fromUtf8("usernameLineEdit_7"));
-        usernameLineEdit_7->setEnabled(true);
-        usernameLineEdit_7->setGeometry(QRect(270, 30, 133, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_7->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_7->setSizePolicy(sizePolicy1);
-        usernameLineEdit_7->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        usernameLineEdit_6 = new QLineEdit(groupBox_4);
-        usernameLineEdit_6->setObjectName(QString::fromUtf8("usernameLineEdit_6"));
-        usernameLineEdit_6->setEnabled(true);
-        usernameLineEdit_6->setGeometry(QRect(270, 60, 133, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_6->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_6->setSizePolicy(sizePolicy1);
-        usernameLineEdit_6->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        Date = new QLabel(groupBox_4);
-        Date->setObjectName(QString::fromUtf8("Date"));
-        Date->setGeometry(QRect(430, 30, 60, 13));
-        sizePolicy1.setHeightForWidth(Date->sizePolicy().hasHeightForWidth());
-        Date->setSizePolicy(sizePolicy1);
-        Date->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        usernameLineEdit_5 = new QLineEdit(groupBox_4);
-        usernameLineEdit_5->setObjectName(QString::fromUtf8("usernameLineEdit_5"));
-        usernameLineEdit_5->setEnabled(true);
-        usernameLineEdit_5->setGeometry(QRect(460, 30, 133, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_5->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_5->setSizePolicy(sizePolicy1);
-        usernameLineEdit_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        Date_2 = new QLabel(groupBox_4);
-        Date_2->setObjectName(QString::fromUtf8("Date_2"));
-        Date_2->setGeometry(QRect(240, 30, 31, 16));
-        sizePolicy1.setHeightForWidth(Date_2->sizePolicy().hasHeightForWidth());
-        Date_2->setSizePolicy(sizePolicy1);
-        Date_2->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        Date_3 = new QLabel(groupBox_4);
-        Date_3->setObjectName(QString::fromUtf8("Date_3"));
-        Date_3->setGeometry(QRect(240, 60, 31, 16));
-        sizePolicy1.setHeightForWidth(Date_3->sizePolicy().hasHeightForWidth());
-        Date_3->setSizePolicy(sizePolicy1);
-        Date_3->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        usernameLineEdit_9 = new QLineEdit(groupBox_4);
-        usernameLineEdit_9->setObjectName(QString::fromUtf8("usernameLineEdit_9"));
-        usernameLineEdit_9->setEnabled(true);
-        usernameLineEdit_9->setGeometry(QRect(82, 30, 151, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_9->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_9->setSizePolicy(sizePolicy1);
-        usernameLineEdit_9->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        usernameLineEdit_8 = new QLineEdit(groupBox_4);
-        usernameLineEdit_8->setObjectName(QString::fromUtf8("usernameLineEdit_8"));
-        usernameLineEdit_8->setEnabled(true);
-        usernameLineEdit_8->setGeometry(QRect(110, 60, 121, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_8->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_8->setSizePolicy(sizePolicy1);
-        usernameLineEdit_8->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        ShowTransaction = new QGroupBox(groupBox_3);
-        ShowTransaction->setObjectName(QString::fromUtf8("ShowTransaction"));
-        ShowTransaction->setGeometry(QRect(20, 120, 281, 41));
-        Allradiobutton = new QRadioButton(ShowTransaction);
-        Allradiobutton->setObjectName(QString::fromUtf8("Allradiobutton"));
-        Allradiobutton->setGeometry(QRect(10, 20, 82, 17));
-        PurchaseRadiobutton = new QRadioButton(ShowTransaction);
-        PurchaseRadiobutton->setObjectName(QString::fromUtf8("PurchaseRadiobutton"));
-        PurchaseRadiobutton->setGeometry(QRect(110, 20, 82, 17));
-        SaleRadioButton = new QRadioButton(ShowTransaction);
-        SaleRadioButton->setObjectName(QString::fromUtf8("SaleRadioButton"));
-        SaleRadioButton->setGeometry(QRect(210, 20, 61, 17));
-        listView = new QListView(groupBox_3);
-        listView->setObjectName(QString::fromUtf8("listView"));
-        listView->setGeometry(QRect(20, 170, 661, 131));
-        verticalScrollBar = new QScrollBar(groupBox_3);
-        verticalScrollBar->setObjectName(QString::fromUtf8("verticalScrollBar"));
-        verticalScrollBar->setGeometry(QRect(660, 180, 20, 111));
-        verticalScrollBar->setOrientation(Qt::Vertical);
-        Extract = new QPushButton(groupBox_3);
-        Extract->setObjectName(QString::fromUtf8("Extract"));
-        Extract->setGeometry(QRect(310, 130, 111, 26));
-        Extract->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-        S = new QLabel(groupBox_3);
-        S->setObjectName(QString::fromUtf8("S"));
-        S->setGeometry(QRect(30, 180, 621, 121));
-        S->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        S->setAlignment(Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing);
-        groupBox_6 = new QGroupBox(Inventory_page);
-        groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
-        groupBox_6->setGeometry(QRect(20, 40, 631, 80));
-        usernameLineEdit_3 = new QLineEdit(groupBox_6);
-        usernameLineEdit_3->setObjectName(QString::fromUtf8("usernameLineEdit_3"));
-        usernameLineEdit_3->setEnabled(true);
-        usernameLineEdit_3->setGeometry(QRect(310, 30, 133, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_3->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_3->setSizePolicy(sizePolicy1);
-        usernameLineEdit_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        usernameLineEdit_2 = new QLineEdit(groupBox_6);
-        usernameLineEdit_2->setObjectName(QString::fromUtf8("usernameLineEdit_2"));
-        usernameLineEdit_2->setEnabled(true);
-        usernameLineEdit_2->setGeometry(QRect(70, 30, 133, 20));
-        sizePolicy1.setHeightForWidth(usernameLineEdit_2->sizePolicy().hasHeightForWidth());
-        usernameLineEdit_2->setSizePolicy(sizePolicy1);
-        usernameLineEdit_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        Startdate = new QLabel(groupBox_6);
-        Startdate->setObjectName(QString::fromUtf8("Startdate"));
-        Startdate->setGeometry(QRect(10, 30, 60, 13));
-        sizePolicy1.setHeightForWidth(Startdate->sizePolicy().hasHeightForWidth());
-        Startdate->setSizePolicy(sizePolicy1);
-        Startdate->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        Enddate = new QLabel(groupBox_6);
-        Enddate->setObjectName(QString::fromUtf8("Enddate"));
-        Enddate->setGeometry(QRect(250, 30, 60, 13));
-        sizePolicy1.setHeightForWidth(Enddate->sizePolicy().hasHeightForWidth());
-        Enddate->setSizePolicy(sizePolicy1);
-        Enddate->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-        Refresh = new QPushButton(groupBox_6);
-        Refresh->setObjectName(QString::fromUtf8("Refresh"));
-        Refresh->setGeometry(QRect(490, 30, 111, 26));
-        Refresh->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-        Purchase = new QPushButton(Inventory_page);
-        Purchase->setObjectName(QString::fromUtf8("Purchase"));
-        Purchase->setGeometry(QRect(20, 140, 131, 55));
-        Purchase->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-        Purchase->setIconSize(QSize(20, 20));
-        InventoryAmt = new QPushButton(Inventory_page);
-        InventoryAmt->setObjectName(QString::fromUtf8("InventoryAmt"));
-        InventoryAmt->setGeometry(QRect(700, 140, 131, 55));
-        InventoryAmt->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-        InventoryAmt->setIconSize(QSize(20, 20));
-        InventoryQty = new QPushButton(Inventory_page);
-        InventoryQty->setObjectName(QString::fromUtf8("InventoryQty"));
-        InventoryQty->setGeometry(QRect(530, 140, 131, 55));
-        InventoryQty->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-        InventoryQty->setIconSize(QSize(20, 20));
-        Profit = new QPushButton(Inventory_page);
-        Profit->setObjectName(QString::fromUtf8("Profit"));
-        Profit->setGeometry(QRect(360, 140, 131, 55));
-        Profit->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-        Profit->setIconSize(QSize(20, 20));
-        Sale = new QPushButton(Inventory_page);
-        Sale->setObjectName(QString::fromUtf8("Sale"));
-        Sale->setGeometry(QRect(190, 140, 131, 55));
-        Sale->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-        Sale->setIconSize(QSize(20, 20));
-        Extract_2 = new QPushButton(Inventory_page);
-        Extract_2->setObjectName(QString::fromUtf8("Extract_2"));
-        Extract_2->setGeometry(QRect(270, 240, 81, 26));
-        Extract_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
+        RemoveItem->setIconSize(QSize(20, 20));
+        stackedWidget_2 = new QStackedWidget(Inventory_page);
+        stackedWidget_2->setObjectName(QString::fromUtf8("stackedWidget_2"));
+        stackedWidget_2->setGeometry(QRect(0, 130, 1011, 411));
+        stackedWidget_2->setStyleSheet(QString::fromUtf8("background-color: rgb(61, 127, 145);"));
+        page = new QWidget();
+        page->setObjectName(QString::fromUtf8("page"));
+        label = new QLabel(page);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(10, 10, 521, 16));
+        ItemID = new QLabel(page);
+        ItemID->setObjectName(QString::fromUtf8("ItemID"));
+        ItemID->setGeometry(QRect(10, 80, 41, 16));
+        lineEdit = new QLineEdit(page);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(70, 80, 113, 20));
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 255, 255)"));
+        Itemname = new QLabel(page);
+        Itemname->setObjectName(QString::fromUtf8("Itemname"));
+        Itemname->setGeometry(QRect(10, 130, 51, 16));
+        lineEdit_2 = new QLineEdit(page);
+        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        lineEdit_2->setGeometry(QRect(70, 130, 113, 20));
+        lineEdit_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        Itemprice = new QLabel(page);
+        Itemprice->setObjectName(QString::fromUtf8("Itemprice"));
+        Itemprice->setGeometry(QRect(10, 180, 47, 13));
+        lineEdit_3 = new QLineEdit(page);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        lineEdit_3->setGeometry(QRect(70, 180, 113, 20));
+        lineEdit_3->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        Description = new QLabel(page);
+        Description->setObjectName(QString::fromUtf8("Description"));
+        Description->setGeometry(QRect(10, 230, 61, 16));
+        lineEdit_4 = new QLineEdit(page);
+        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        lineEdit_4->setGeometry(QRect(70, 230, 113, 20));
+        lineEdit_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        Quantity = new QLabel(page);
+        Quantity->setObjectName(QString::fromUtf8("Quantity"));
+        Quantity->setGeometry(QRect(10, 280, 47, 13));
+        lineEdit_5 = new QLineEdit(page);
+        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        lineEdit_5->setGeometry(QRect(70, 280, 113, 20));
+        lineEdit_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        Save = new QPushButton(page);
+        Save->setObjectName(QString::fromUtf8("Save"));
+        Save->setGeometry(QRect(410, 250, 75, 51));
+        stackedWidget_2->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QString::fromUtf8("page_2"));
+        tableWidget = new QTableWidget(page_2);
+        if (tableWidget->columnCount() < 5)
+            tableWidget->setColumnCount(5);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        if (tableWidget->rowCount() < 10)
+            tableWidget->setRowCount(10);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(0, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(1, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(2, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(3, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(4, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(5, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(6, __qtablewidgetitem11);
+        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(7, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(8, __qtablewidgetitem13);
+        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
+        tableWidget->setVerticalHeaderItem(9, __qtablewidgetitem14);
+        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setGeometry(QRect(20, 20, 531, 341));
+        tableWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        pushButton_5 = new QPushButton(page_2);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(630, 280, 75, 51));
+        stackedWidget_2->addWidget(page_2);
         stackedWidget->addWidget(Inventory_page);
         audit_page = new QWidget();
         audit_page->setObjectName(QString::fromUtf8("audit_page"));
@@ -823,10 +701,10 @@ public:
         viewAuditButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        returnButton = new QPushButton(audit_page);
-        returnButton->setObjectName(QString::fromUtf8("returnButton"));
-        returnButton->setGeometry(QRect(990, 40, 111, 26));
-        returnButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        returnFromAuditButton = new QPushButton(audit_page);
+        returnFromAuditButton->setObjectName(QString::fromUtf8("returnFromAuditButton"));
+        returnFromAuditButton->setGeometry(QRect(990, 40, 111, 26));
+        returnFromAuditButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
         stackedWidget->addWidget(audit_page);
@@ -878,7 +756,7 @@ public:
         accountButton->setObjectName(QString::fromUtf8("accountButton"));
         accountButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
+"color: rgb(63, 36, 79);"));
 
         verticalLayout->addWidget(accountButton);
 
@@ -927,7 +805,8 @@ public:
 
         retranslateUi(HomepageWindow);
 
-        stackedWidget->setCurrentIndex(4);
+        stackedWidget->setCurrentIndex(3);
+        stackedWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(HomepageWindow);
@@ -941,75 +820,89 @@ public:
         actionsave_as->setText(QCoreApplication::translate("HomepageWindow", "save as", nullptr));
         rtgLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:28pt; color:#00ffff;\">Welcome to RTG Fuel</span></p></body></html>", nullptr));
         makeSaleLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Make Sale Page</span></p></body></html>", nullptr));
-        unleadedButton->setText(QCoreApplication::translate("HomepageWindow", "Unleaded", nullptr));
-        premiumButton->setText(QCoreApplication::translate("HomepageWindow", "Premium", nullptr));
-        dieselButton->setText(QCoreApplication::translate("HomepageWindow", "Diesel", nullptr));
-        grillItemButton->setText(QCoreApplication::translate("HomepageWindow", "Grill Item", nullptr));
-        chipsButton->setText(QCoreApplication::translate("HomepageWindow", "Chips", nullptr));
-        candyButton->setText(QCoreApplication::translate("HomepageWindow", "Candy", nullptr));
-        fountainDrinkButton->setText(QCoreApplication::translate("HomepageWindow", "Fountain Drink", nullptr));
-        bottledBevButton->setText(QCoreApplication::translate("HomepageWindow", "Bottled Beverage", nullptr));
-        coffeeButton->setText(QCoreApplication::translate("HomepageWindow", "Coffee", nullptr));
         cartItemsLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:16pt; color:#00ffff;\">Cart Items</span></p></body></html>", nullptr));
-        gasLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#00ffff;\">Gas</span></p></body></html>", nullptr));
-        foodLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#00ffff;\">Food</span></p></body></html>", nullptr));
-        drinksLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#00ffff;\">Drinks</span></p></body></html>", nullptr));
         cartDisplay->setText(QString());
         totalBoxDisplay->setText(QCoreApplication::translate("HomepageWindow", "$0.00", nullptr));
         clearCartButton->setText(QCoreApplication::translate("HomepageWindow", "Clear Cart", nullptr));
+        groupBox->setTitle(QString());
+        itemIDLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Item ID</span></p></body></html>", nullptr));
+        quantityLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Quantity</span></p></body></html>", nullptr));
+        addToCartButton->setText(QCoreApplication::translate("HomepageWindow", "Add To Cart", nullptr));
+        itemMenuLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Item Menu:</span></p><p><span style=\" color:#00ffff;\">1. Coffee ($.99)</span></p><p><span style=\" color:#00ffff;\">2. Bottle Beverage ($1.79)</span></p><p><span style=\" color:#00ffff;\">3. Fountain Drink ($.99)</span></p><p><span style=\" color:#00ffff;\">4. Chips ($1.99)</span></p><p><span style=\" color:#00ffff;\">5. Candy ($.99)</span></p><p><span style=\" color:#00ffff;\">6. Grill Item ($1.99)</span></p><p><span style=\" color:#00ffff;\">7. Unleaded ($2.79/gal)</span></p><p><span style=\" color:#00ffff;\">8. Premium ($3.09/gal)</span></p><p><span style=\" color:#00ffff;\">9. Diesel ($3.29/gal)</span></p></body></html>", nullptr));
         ChangePasswordButton->setText(QCoreApplication::translate("HomepageWindow", "Change User Password", nullptr));
         addUserButton->setText(QCoreApplication::translate("HomepageWindow", "Add User", nullptr));
         removeUserButton->setText(QCoreApplication::translate("HomepageWindow", "Remove User", nullptr));
-        groupBox_2->setTitle(QString());
+        changePassGroupBox->setTitle(QString());
         newPassLabel_3->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">New Password:</span></p></body></html>", nullptr));
         usernameLabel_3->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Username: </span></p></body></html>", nullptr));
-        pushButton_ChangeEmployeePassword_3->setText(QCoreApplication::translate("HomepageWindow", "Change Employee Password", nullptr));
-        returnToAccountHome->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
+        pushButton_ChangeEmployeePassword->setText(QCoreApplication::translate("HomepageWindow", "Change Employee Password", nullptr));
+        returnAccountsButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
         changePasswordLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Change User Password</span></p></body></html>", nullptr));
         addUserLabel_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Add User</span></p></body></html>", nullptr));
-        returnToAccountHome_2->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
+        addUserGroupBox->setTitle(QString());
+        addUserLabelName->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">First Name</span></p></body></html>", nullptr));
+        addUserLabelPassword->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Password</span></p></body></html>", nullptr));
+        saveUserButton->setText(QCoreApplication::translate("HomepageWindow", "Save User", nullptr));
+        addUserLabelUsername->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Username</span></p></body></html>", nullptr));
+        returnAccountsButton1->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
+        lastNameLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Last Name</span></p></body></html>", nullptr));
+        privilegeLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Privilege</span></p></body></html>", nullptr));
         RemoveUserLabel_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Remove User</span></p></body></html>", nullptr));
-        returnToAccountHome_3->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
-        groupBox->setTitle(QString());
-        addUserLabel_3->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; color:#00ffff;\">Please enter the username of the user </span></p><p align=\"center\"><span style=\" font-size:18pt; color:#00ffff;\">you would like to remove below.</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>", nullptr));
-        lineEdit->setText(QString());
-        removerUserButton->setText(QCoreApplication::translate("HomepageWindow", "Remove User", nullptr));
+        removeUserGroupBox->setTitle(QString());
+        removeUserPassLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Password</span></p></body></html>", nullptr));
+        removeUserNameLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Username</span></p></body></html>", nullptr));
+        returnAccountsButton2->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
+        deleteUserButton->setText(QCoreApplication::translate("HomepageWindow", "Delete User Account", nullptr));
         inventoryPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">View Inventory Page</span></p></body></html>", nullptr));
-        inventoryButton_page->setText(QCoreApplication::translate("HomepageWindow", "View Inventory", nullptr));
-        returnButton_3->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("HomepageWindow", "SAVE", nullptr));
-        AvailableStocks->setTitle(QCoreApplication::translate("HomepageWindow", "Available Stocks", nullptr));
-        cartDisplay_2->setText(QString());
-        Search->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Search</span></p></body></html>", nullptr));
-        Refresh_2->setText(QCoreApplication::translate("HomepageWindow", "Refresh", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("HomepageWindow", "Sale/Purchase Transactions", nullptr));
-        groupBox_4->setTitle(QCoreApplication::translate("HomepageWindow", "Add/ Update", nullptr));
-        Add->setText(QCoreApplication::translate("HomepageWindow", "Add", nullptr));
-        Update->setText(QCoreApplication::translate("HomepageWindow", "Update", nullptr));
-        Product->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Product</span></p></body></html>", nullptr));
-        TransactionType->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Transaction Type</span></p></body></html>", nullptr));
-        Date->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Date</span></p></body></html>", nullptr));
-        Date_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Qty.</span></p></body></html>", nullptr));
-        Date_3->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Rate</span></p></body></html>", nullptr));
-        ShowTransaction->setTitle(QCoreApplication::translate("HomepageWindow", "Show Transactions", nullptr));
-        Allradiobutton->setText(QCoreApplication::translate("HomepageWindow", "All", nullptr));
-        PurchaseRadiobutton->setText(QCoreApplication::translate("HomepageWindow", "Purchase", nullptr));
-        SaleRadioButton->setText(QCoreApplication::translate("HomepageWindow", "Sale", nullptr));
-        Extract->setText(QCoreApplication::translate("HomepageWindow", " Extract", nullptr));
-        S->setText(QString());
-        groupBox_6->setTitle(QCoreApplication::translate("HomepageWindow", "Date Range", nullptr));
-        Startdate->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Start Date</span></p></body></html>", nullptr));
-        Enddate->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">End date</span></p></body></html>", nullptr));
-        Refresh->setText(QCoreApplication::translate("HomepageWindow", "Refresh", nullptr));
-        Purchase->setText(QCoreApplication::translate("HomepageWindow", "Purchase", nullptr));
-        InventoryAmt->setText(QCoreApplication::translate("HomepageWindow", "Inventory Amt.", nullptr));
-        InventoryQty->setText(QCoreApplication::translate("HomepageWindow", "Inventory Qty.", nullptr));
-        Profit->setText(QCoreApplication::translate("HomepageWindow", "Profit", nullptr));
-        Sale->setText(QCoreApplication::translate("HomepageWindow", "Sale", nullptr));
-        Extract_2->setText(QCoreApplication::translate("HomepageWindow", "Extract", nullptr));
+        returnFromInventoryButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
+        AddItem->setText(QCoreApplication::translate("HomepageWindow", "Add Item", nullptr));
+        Tableview->setText(QCoreApplication::translate("HomepageWindow", "Table View", nullptr));
+        UpdateInventory->setText(QCoreApplication::translate("HomepageWindow", "Update Inventory", nullptr));
+        RemoveItem->setText(QCoreApplication::translate("HomepageWindow", "Remove Item", nullptr));
+#if QT_CONFIG(tooltip)
+        stackedWidget_2->setToolTip(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+        label->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">ATTENTION:</span><span style=\" font-size:10pt; font-weight:600; font-style:italic; color:#ffffff;\">Only enter the Individual Item ID you want to make changes to. </span></p></body></html>", nullptr));
+        ItemID->setText(QCoreApplication::translate("HomepageWindow", "Item ID.", nullptr));
+        Itemname->setText(QCoreApplication::translate("HomepageWindow", "Item Name", nullptr));
+        Itemprice->setText(QCoreApplication::translate("HomepageWindow", "Item Price", nullptr));
+        Description->setText(QCoreApplication::translate("HomepageWindow", "Description", nullptr));
+        Quantity->setText(QCoreApplication::translate("HomepageWindow", "Quantity", nullptr));
+        Save->setText(QCoreApplication::translate("HomepageWindow", "SAVE", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("HomepageWindow", "Item No.", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("HomepageWindow", "Item Name", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("HomepageWindow", "Item Price", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("HomepageWindow", "Description", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("HomepageWindow", "Quantity", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->verticalHeaderItem(0);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("HomepageWindow", "1", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->verticalHeaderItem(1);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("HomepageWindow", "2", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->verticalHeaderItem(2);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("HomepageWindow", "3", nullptr));
+        QTableWidgetItem *___qtablewidgetitem8 = tableWidget->verticalHeaderItem(3);
+        ___qtablewidgetitem8->setText(QCoreApplication::translate("HomepageWindow", "4", nullptr));
+        QTableWidgetItem *___qtablewidgetitem9 = tableWidget->verticalHeaderItem(4);
+        ___qtablewidgetitem9->setText(QCoreApplication::translate("HomepageWindow", "5", nullptr));
+        QTableWidgetItem *___qtablewidgetitem10 = tableWidget->verticalHeaderItem(5);
+        ___qtablewidgetitem10->setText(QCoreApplication::translate("HomepageWindow", "6", nullptr));
+        QTableWidgetItem *___qtablewidgetitem11 = tableWidget->verticalHeaderItem(6);
+        ___qtablewidgetitem11->setText(QCoreApplication::translate("HomepageWindow", "7", nullptr));
+        QTableWidgetItem *___qtablewidgetitem12 = tableWidget->verticalHeaderItem(7);
+        ___qtablewidgetitem12->setText(QCoreApplication::translate("HomepageWindow", "8", nullptr));
+        QTableWidgetItem *___qtablewidgetitem13 = tableWidget->verticalHeaderItem(8);
+        ___qtablewidgetitem13->setText(QCoreApplication::translate("HomepageWindow", "9", nullptr));
+        QTableWidgetItem *___qtablewidgetitem14 = tableWidget->verticalHeaderItem(9);
+        ___qtablewidgetitem14->setText(QCoreApplication::translate("HomepageWindow", "11", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("HomepageWindow", "SAVE", nullptr));
         auditPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Daily Audit Page</span></p></body></html>", nullptr));
         viewAuditButton->setText(QCoreApplication::translate("HomepageWindow", "View Audit", nullptr));
-        returnButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
+        returnFromAuditButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
         settingsPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Settings Page</span></p></body></html>", nullptr));
         helpPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Help Page</span></p></body></html>", nullptr));
         homeButton->setText(QCoreApplication::translate("HomepageWindow", "Make Sale", nullptr));

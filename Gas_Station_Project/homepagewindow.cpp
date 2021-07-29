@@ -74,6 +74,7 @@ void HomepageWindow::on_ChangePasswordButton_clicked()
 
 }
 
+//ADD USER
 void HomepageWindow::on_addUserButton_clicked()
 {
     changeCurrentIndex(3);
@@ -213,18 +214,26 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
     */
 }
 
-
+//to add a user
 void HomepageWindow::on_saveUserButton_clicked()
 {
-    QString firstname = ui->addUserLineEditFirstName->text();
-    QString lastname = ui->addUserLineEditLastName->text();
-    QString username = ui->addUserLineEditUsername->text();
-    QString password = ui->addUserLineEditPassword->text();
-    QString privilege = ui->addUserLineEditPrivilege->text();
+    string firstname = ui->addUserLineEditFirstName->text().toStdString();
+    string lastname = ui->addUserLineEditLastName->text().toStdString();
+    string username = ui->addUserLineEditUsername->text().toStdString();
+    string password = ui->addUserLineEditPassword->text().toStdString();
+    int privilege = ui->addUserLineEditPrivilege->text().toInt();
+    //sales defaults to zero because the new account has not made sales yet
+
+    //create new accounts object and populate it with the variables above
+    accounts *temp = new accounts(username, password, firstname, lastname, privilege, 0);
+    QMessageBox::information(this, "Coming Soon!", "The add user functionality is coming soon.\nCheck back later when Michael connects this to the database!");
 
     //Store data in the database here
-    QMessageBox::information(this, "Add User", "You entered: \n" + firstname + "\n" + lastname + "\n" + username + "\n" + password + "\n"
-                            + privilege + "\n");
+
+    //delete this?
+    //QMessageBox::information(this, "Add User", "You entered: \n" + firstname + "\n" + lastname + "\n" + username + "\n" + password + "\n" + privilege + "\n");
+
+    delete(temp);
 }
 
 
