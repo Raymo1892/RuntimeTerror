@@ -280,3 +280,63 @@ void HomepageWindow::on_addToCartButton_clicked()
 
 }
 
+
+void HomepageWindow::on_makeSaleHelpButton_clicked()
+{
+    ui->helpScreen->setWordWrap(true);
+    ui->helpScreen->setText("1. Enter item ID from menu into item ID box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "2. Enter quantity for item into quanity box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "3. Click Add to Cart button\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "4. Click Submit Sale button if satisfied or Clear Cart if not\n");
+
+}
+
+
+void HomepageWindow::on_changePasswordHelpButton_clicked()
+{
+    ui->helpScreen->setWordWrap(true);
+    ui->helpScreen->setText("1. Enter username of account you wish to change (Management Privilege Required)\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "2. Enter the new password for the account\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "3. Click Change Employee Password button to save changes\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "4. Click Return to Accounts Home button to return\n");
+}
+
+
+void HomepageWindow::on_addUserHelpButton_clicked()
+{
+    ui->helpScreen->setWordWrap(true);
+    ui->helpScreen->setText("1. Enter first name into first name box (Management Privilege Required)\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "2. Enter last name into last name box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "3. Enter username into username box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "4. Enter password into password box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "5. Enter privilege into privilege box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "6. Click Save User button to save account\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "7. Click Return to Accounts Home button to return\n");
+}
+
+
+void HomepageWindow::on_removeUserHelpButton_clicked()
+{
+    ui->helpScreen->setWordWrap(true);
+    ui->helpScreen->setText("1. Enter username into username box (Management Privilege Required)\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "2. Enter password into password box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "3. Click Delete User Account button to remove account\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "4. Click Return to Accounts Home button to return\n");
+}
+
+
+void HomepageWindow::on_inventoryHelpButton_clicked()
+{
+    ui->helpScreen->setWordWrap(true);
+    ui->helpScreen->setText("1. Inventory -- Work in Progress!\n");
+
+}
+
+
+void HomepageWindow::on_auditHelpButton_clicked()
+{
+    ui->helpScreen->setWordWrap(true);
+    ui->helpScreen->setText("1. Audit -- Work in Progress!\n");
+
+}
+

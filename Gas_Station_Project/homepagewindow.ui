@@ -159,7 +159,7 @@ background-color: rgba(255, 255, 255, 0);
 color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>8</number>
     </property>
     <widget class="QWidget" name="make_sale_page">
      <widget class="QLabel" name="makeSaleLabel">
@@ -837,7 +837,7 @@ color: rgb(63, 36, 79)</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>341</width>
+        <width>181</width>
         <height>50</height>
        </rect>
       </property>
@@ -845,7 +845,7 @@ color: rgb(63, 36, 79)</string>
        <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;View Inventory Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Inventory&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="returnFromInventoryButton">
@@ -1249,7 +1249,7 @@ color: rgb(63, 36, 79)</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>281</width>
+        <width>101</width>
         <height>50</height>
        </rect>
       </property>
@@ -1257,7 +1257,7 @@ color: rgb(63, 36, 79)</string>
        <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Daily Audit Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Audit&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="viewAuditButton">
@@ -1311,7 +1311,7 @@ color: rgb(63, 36, 79)</string>
        <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Settings Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Settings&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
@@ -1329,11 +1329,131 @@ color: rgb(63, 36, 79)</string>
        <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Help Page&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; color:#00ffff;&quot;&gt;Help&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
       </property>
+     </widget>
+     <widget class="QLabel" name="helpScreen">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>170</y>
+        <width>391</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="helpPageGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>170</y>
+        <width>451</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(63, 36, 79);</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QWidget" name="gridLayoutWidget_5">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>40</y>
+         <width>371</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="helpPageGrid">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="makeSaleHelpButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+          </property>
+          <property name="text">
+           <string>Make Sale</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="changePasswordHelpButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+          </property>
+          <property name="text">
+           <string>Change Employee Password</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="addUserHelpButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+          </property>
+          <property name="text">
+           <string>Add User</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="removeUserHelpButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+          </property>
+          <property name="text">
+           <string>Remove User</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="inventoryHelpButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+          </property>
+          <property name="text">
+           <string>Inventory</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="auditHelpButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+          </property>
+          <property name="text">
+           <string>Audit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </widget>
    </widget>

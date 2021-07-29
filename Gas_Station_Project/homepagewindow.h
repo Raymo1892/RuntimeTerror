@@ -65,6 +65,18 @@ private slots:
 
     void on_addToCartButton_clicked();
 
+    void on_makeSaleHelpButton_clicked();
+
+    void on_changePasswordHelpButton_clicked();
+
+    void on_addUserHelpButton_clicked();
+
+    void on_removeUserHelpButton_clicked();
+
+    void on_inventoryHelpButton_clicked();
+
+    void on_auditHelpButton_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
