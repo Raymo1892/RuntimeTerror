@@ -96,7 +96,7 @@ void HomepageWindow::on_inventoryButton_clicked()
 
 void HomepageWindow::on_auditButton_clicked()
 {
-    changeCurrentIndex(6);
+    changeCurrentIndex(7);
 
 }
 
@@ -104,13 +104,13 @@ void HomepageWindow::on_auditButton_clicked()
 void HomepageWindow::on_settingButton_clicked()
 {
     QMessageBox::information(this, "Message", " Work in Progress!!");
-    changeCurrentIndex(7);
+    changeCurrentIndex(8);
 
 }
 
 void HomepageWindow::on_helpButton_clicked()
 {
-    changeCurrentIndex(8);
+    changeCurrentIndex(9);
 
 }
 
@@ -249,7 +249,12 @@ void HomepageWindow::on_deleteUserButton_clicked()
 
 void HomepageWindow::on_Tableview_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void HomepageWindow::on_Tableview_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
 }
 
 

@@ -77,6 +77,8 @@ private slots:
 
     void on_auditHelpButton_clicked();
 
+    void on_Tableview_2_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
