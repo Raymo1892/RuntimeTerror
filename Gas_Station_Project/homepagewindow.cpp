@@ -174,7 +174,8 @@ void HomepageWindow::on_clearCartButton_clicked()
 
 void HomepageWindow::on_viewAuditButton_clicked()
 {
-    QMessageBox::information(this, "Notice", " Please wait for feature!!");
+    ui->viewAuditScreen->setText("Insert Audit information here...");
+
 }
 
 
@@ -186,32 +187,6 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
     //Store data in the database here
     QMessageBox::information(this, "Change Password", "You entered: \n" + username + "\n" + password + "\n");
 
-    //bool change = false;
-
-    /*
-     if vectors are used just replace what slot the password is in with the new password...
-
-     if (username == (vector[i][0])) <----- username in data base || 0 = username, 1 = password
-     {
-        vector[i][1] = password;
-        change = true;
-        break;
-     }
-     else
-     {
-        change = false;
-     }
-
-     if (change == true)
-     {
-        QMesssageBox::information(this, "Notice", "Employee Password Updated");
-     }
-     else
-     {
-        QMesssageBox::information(this, "Notice", "Employee Does Not Exist");
-     }
-
-    */
 }
 
 //to add a user
@@ -449,5 +424,15 @@ void HomepageWindow::on_updateInventoryButton_clicked()
     {
         QMessageBox::information(this, "Update Item", "No matching Item ID found. Please try again.");
     }
+}
+
+
+void HomepageWindow::on_clearFieldsButtonInventory_clicked()
+{
+    ui->inventoryIDLineEdit->clear();
+    ui->inventoryNameLineEdit->clear();
+    ui->inventoryPriceLineEdit->clear();
+    ui->inventoryQuantityLineEdit->clear();
+    ui->inventoryCategoryLineEdit->clear();
 }
 

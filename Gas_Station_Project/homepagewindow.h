@@ -87,6 +87,8 @@ private slots:
 
     void on_updateInventoryButton_clicked();
 
+    void on_clearFieldsButtonInventory_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 

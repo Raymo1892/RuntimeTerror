@@ -968,10 +968,10 @@ color: rgb(63, 36, 79)</string>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>20</x>
         <y>150</y>
-        <width>521</width>
-        <height>16</height>
+        <width>711</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="text">
@@ -1003,6 +1003,23 @@ color: rgb(63, 36, 79)</string>
         </rect>
        </property>
        <layout class="QGridLayout" name="inventoryGrid">
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="inventoryQuantityLineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="inventoryQuantityLabel">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Quantity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0">
          <widget class="QLabel" name="ItemIDLabel">
           <property name="styleSheet">
@@ -1013,25 +1030,15 @@ color: rgb(63, 36, 79)</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="inventoryNameLineEdit">
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="inventoryIDLineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="inventoryPriceLabel">
-          <property name="styleSheet">
-           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Price&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="inventoryIDLineEdit">
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="inventoryNameLineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
           </property>
@@ -1047,13 +1054,13 @@ color: rgb(63, 36, 79)</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="inventoryNameLabel">
+        <item row="2" column="0">
+         <widget class="QLabel" name="inventoryPriceLabel">
           <property name="styleSheet">
            <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Price&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -1071,20 +1078,25 @@ color: rgb(63, 36, 79)</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="1">
-         <widget class="QLineEdit" name="inventoryQuantityLineEdit">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="inventoryQuantityLabel">
+        <item row="1" column="0">
+         <widget class="QLabel" name="inventoryNameLabel">
           <property name="styleSheet">
            <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
           </property>
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Quantity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QPushButton" name="clearFieldsButtonInventory">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79);</string>
+          </property>
+          <property name="text">
+           <string>Clear Fields</string>
           </property>
          </widget>
         </item>
@@ -1364,6 +1376,42 @@ color: rgb(63, 36, 79)</string>
       <property name="text">
        <string>Return to Home</string>
       </property>
+     </widget>
+     <widget class="QGroupBox" name="viewAuditGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>130</y>
+        <width>591</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(63, 36, 79);</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="viewAuditScreen">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>40</y>
+         <width>511</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="settings_page">
