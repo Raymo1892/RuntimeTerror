@@ -224,7 +224,7 @@ void HomepageWindow::on_deleteUserButton_clicked()
 
 void HomepageWindow::on_Tableview_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(6);
+    ui->stackedWidget->setCurrentIndex(5);
 }
 
 void HomepageWindow::on_Tableview_2_clicked()
@@ -434,5 +434,17 @@ void HomepageWindow::on_clearFieldsButtonInventory_clicked()
     ui->inventoryPriceLineEdit->clear();
     ui->inventoryQuantityLineEdit->clear();
     ui->inventoryCategoryLineEdit->clear();
+}
+
+
+void HomepageWindow::on_tableViewButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+
+void HomepageWindow::on_returnFromInventoryButton_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
