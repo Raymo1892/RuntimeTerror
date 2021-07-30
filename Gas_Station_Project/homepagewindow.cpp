@@ -11,15 +11,15 @@ QString cartString;
 QString totalString;
 double cartTotal = 0.0;
 QVector<Items> itemsVector;
-Items coffee(1, "Coffee", .99, true, "drinks");
-Items bottledBev(2, "Bottled Beverage", 1.79, true, "drinks");
-Items fountainDrink(3, "Fountain Drink", .99, true, "drinks");
-Items chips(4, "Chips", 1.99, true, "food");
-Items candy(5, "Candy", .99, true, "food");
-Items grillItem(6, "Grill Item", 1.99, true, "food");
-Items unleaded(7, "Unleaded Gas (Gallons)", 2.79, true, "gas");
-Items premium(8, "Premium Gas (Gallons)", 3.09, true, "gas");
-Items diesel(9, "Diesel Fuel (Gallons)", 3.29, true, "gas");
+Items coffee(1, "Coffee", .99, true, "drinks", 100);
+Items bottledBev(2, "Bottled Beverage", 1.79, true, "drinks", 100);
+Items fountainDrink(3, "Fountain Drink", .99, true, "drinks", 100);
+Items chips(4, "Chips", 1.99, true, "food", 100);
+Items candy(5, "Candy", .99, true, "food", 100);
+Items grillItem(6, "Grill Item", 1.99, true, "food", 100);
+Items unleaded(7, "Unleaded Gas (Gallons)", 2.79, true, "gas", 10000);
+Items premium(8, "Premium Gas (Gallons)", 3.09, true, "gas", 10000);
+Items diesel(9, "Diesel Fuel (Gallons)", 3.29, true, "gas", 10000);
 
 
 
@@ -349,5 +349,105 @@ void HomepageWindow::on_auditHelpButton_clicked()
 void HomepageWindow::on_AddItem_clicked()
 {
 
+}
+
+
+void HomepageWindow::on_addItemButtonInventory_clicked()
+{
+    QString itemID = ui->inventoryIDLineEdit->text();
+    QString itemName = ui->inventoryNameLineEdit->text();
+    QString price = ui->inventoryPriceLineEdit->text();
+    QString category = ui->inventoryCategoryLineEdit->text();
+    QString quantity = ui->inventoryQuantityLineEdit->text();
+
+    bool itemMatchFound = false;
+
+
+    for(int i = 0; i < itemsVector.size(); i++)
+    {
+        if(itemsVector[i].id == itemID.toInt())
+        {
+           QMessageBox::information(this, "Add Item", "Item already found in database, please try again.");
+           itemMatchFound = true;
+           break;
+        }
+    }
+
+    if(itemMatchFound != true)
+    {
+        Items tempObj(itemID.toInt(), itemName, price.toDouble(), true, category, quantity.toInt());
+        itemsVector.push_back(tempObj);
+        QMessageBox::information(this, "Add Item", "Item successfully added.");
+    }
+}
+
+
+void HomepageWindow::on_removeItemButton_clicked()
+{
+    QString itemID = ui->inventoryIDLineEdit->text();
+    QString itemName = ui->inventoryNameLineEdit->text();
+    QString price = ui->inventoryPriceLineEdit->text();
+    QString category = ui->inventoryCategoryLineEdit->text();
+    QString quantity = ui->inventoryQuantityLineEdit->text();
+
+    bool itemMatchFound = false;
+
+
+    for(int i = 0; i < itemsVector.size(); i++)
+    {
+        if(itemsVector[i].id == itemID.toInt())
+        {
+           itemMatchFound = true;
+           itemsVector.remove(i);
+           QMessageBox::information(this, "Remove Item", "Item successfully deleted.");
+           break;
+        }
+    }
+
+    if(itemMatchFound != true)
+    {
+
+        QMessageBox::information(this, "Remove Item", "No matching Item ID found. Please try again.");
+
+    }
+}
+
+
+void HomepageWindow::on_updateInventoryButton_clicked()
+{
+    QString itemID = ui->inventoryIDLineEdit->text();
+    QString itemName = ui->inventoryNameLineEdit->text();
+    QString price = ui->inventoryPriceLineEdit->text();
+    QString category = ui->inventoryCategoryLineEdit->text();
+    QString quantity = ui->inventoryQuantityLineEdit->text();
+
+    bool itemMatchFound = false;
+
+
+    for(int i = 0; i < itemsVector.size(); i++)
+    {
+        if(itemsVector[i].id == itemID.toInt())
+        {
+           itemMatchFound = true;
+           itemsVector.remove(i);
+
+
+        }
+        if(itemMatchFound == true)
+        {
+            itemsVector[i].id = itemID.toInt();
+            itemsVector[i].name = itemName;
+            itemsVector[i].price = price.toDouble();
+            itemsVector[i].category = category;
+            itemsVector[i].quantity = quantity.toInt();
+            QMessageBox::information(this, "Update Item", "Item successfully updated.");
+            break;
+        }
+    }
+
+    if(itemMatchFound != true)
+    {
+        QMessageBox::information(this, "Update Item", "No matching Item ID found. Please try again.");
+    }
 }
 

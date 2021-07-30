@@ -339,6 +339,9 @@ font: 87 8pt &quot;Segoe UI Black&quot;;</string>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Item Menu:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;1. Coffee ($.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;2. Bottle Beverage ($1.79)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;3. Fountain Drink ($.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;4. Chips ($1.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;5. Candy ($.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;6. Grill Item ($1.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;7. Unleaded ($2.79/gal)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;8. Premium ($3.09/gal)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;9. Diesel ($3.29/gal)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="account_Homepage">
@@ -866,7 +869,7 @@ color: rgb(63, 36, 79)</string>
        <string>Return to Home</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="AddItem">
+     <widget class="QPushButton" name="addItemButtonInventory">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -890,7 +893,7 @@ color: rgb(63, 36, 79)</string>
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="Tableview">
+     <widget class="QPushButton" name="tableViewButton">
       <property name="geometry">
        <rect>
         <x>460</x>
@@ -914,7 +917,7 @@ color: rgb(63, 36, 79)</string>
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="UpdateInventory">
+     <widget class="QPushButton" name="updateInventoryButton">
       <property name="geometry">
        <rect>
         <x>310</x>
@@ -938,7 +941,7 @@ color: rgb(63, 36, 79)</string>
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="RemoveItem">
+     <widget class="QPushButton" name="removeItemButton">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -975,118 +978,118 @@ color: rgb(63, 36, 79)</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;ATTENTION:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Only enter the Individual Item ID you want to make changes to. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QGroupBox" name="inventoryGroupBox">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>190</y>
-        <width>351</width>
-        <height>281</height>
+        <x>50</x>
+        <y>210</y>
+        <width>431</width>
+        <height>301</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout">
-           <item>
-            <widget class="QLabel" name="ItemID">
-             <property name="text">
-              <string>Item ID</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_ItemID">
-             <property name="styleSheet">
-              <string notr="true">background-color:rgb(255, 255, 255)</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="Itemname">
-             <property name="text">
-              <string>Item Name</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_ItemName">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255)</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QLabel" name="Itemprice">
-             <property name="text">
-              <string>Item Price</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_ItemPrice">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255)</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QLabel" name="Description">
-             <property name="text">
-              <string>Description</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_ItemDescription">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255)</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_5">
-           <item>
-            <widget class="QLabel" name="Quantity">
-             <property name="text">
-              <string>Quantity</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_ItemQuantity">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255)</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QPushButton" name="Save">
-         <property name="text">
-          <string>SAVE</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(63, 36, 79);</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QWidget" name="gridLayoutWidget_6">
+       <property name="geometry">
+        <rect>
+         <x>29</x>
+         <y>29</y>
+         <width>371</width>
+         <height>241</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="inventoryGrid">
+        <item row="0" column="0">
+         <widget class="QLabel" name="ItemIDLabel">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Item ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="inventoryNameLineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="inventoryPriceLabel">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Price&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="inventoryIDLineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="categoryInventoryLabel">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Category&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="inventoryNameLabel">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="inventoryPriceLineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="inventoryCategoryLineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="inventoryQuantityLineEdit">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="inventoryQuantityLabel">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Quantity&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">

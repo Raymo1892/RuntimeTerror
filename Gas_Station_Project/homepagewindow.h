@@ -81,6 +81,12 @@ private slots:
 
     void on_AddItem_clicked();
 
+    void on_addItemButtonInventory_clicked();
+
+    void on_removeItemButton_clicked();
+
+    void on_updateInventoryButton_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 
