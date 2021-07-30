@@ -361,9 +361,9 @@ void HomepageWindow::on_addItemButtonInventory_clicked()
     QString quantity = ui->inventoryQuantityLineEdit->text();
 
     bool itemMatchFound = false;
+    int i = 0;
 
-
-    for(int i = 0; i < itemsVector.size(); i++)
+    for(i = 0; i < itemsVector.size(); i++)
     {
         if(itemsVector[i].id == itemID.toInt())
         {
@@ -429,7 +429,7 @@ void HomepageWindow::on_updateInventoryButton_clicked()
         if(itemsVector[i].id == itemID.toInt())
         {
            itemMatchFound = true;
-           itemsVector.remove(i);
+
 
 
         }
