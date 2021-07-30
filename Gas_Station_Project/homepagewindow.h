@@ -79,6 +79,8 @@ private slots:
 
     void on_Tableview_2_clicked();
 
+    void on_AddItem_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 

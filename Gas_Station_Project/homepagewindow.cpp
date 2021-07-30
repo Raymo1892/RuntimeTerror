@@ -345,3 +345,9 @@ void HomepageWindow::on_auditHelpButton_clicked()
 
 }
 
+
+void HomepageWindow::on_AddItem_clicked()
+{
+
+}
+

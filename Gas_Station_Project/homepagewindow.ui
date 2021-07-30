@@ -159,7 +159,7 @@ background-color: rgba(255, 255, 255, 0);
 color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="make_sale_page">
      <widget class="QLabel" name="makeSaleLabel">
@@ -975,7 +975,7 @@ color: rgb(63, 36, 79)</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;ATTENTION:&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Only enter the Individual Item ID you want to make changes to. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -997,7 +997,7 @@ color: rgb(63, 36, 79)</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit">
+            <widget class="QLineEdit" name="lineEdit_ItemID">
              <property name="styleSheet">
               <string notr="true">background-color:rgb(255, 255, 255)</string>
              </property>
@@ -1015,7 +1015,7 @@ color: rgb(63, 36, 79)</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_2">
+            <widget class="QLineEdit" name="lineEdit_ItemName">
              <property name="styleSheet">
               <string notr="true">background-color: rgb(255, 255, 255)</string>
              </property>
@@ -1033,7 +1033,7 @@ color: rgb(63, 36, 79)</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_3">
+            <widget class="QLineEdit" name="lineEdit_ItemPrice">
              <property name="styleSheet">
               <string notr="true">background-color: rgb(255, 255, 255)</string>
              </property>
@@ -1051,7 +1051,7 @@ color: rgb(63, 36, 79)</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_4">
+            <widget class="QLineEdit" name="lineEdit_ItemDescription">
              <property name="styleSheet">
               <string notr="true">background-color: rgb(255, 255, 255)</string>
              </property>
@@ -1069,7 +1069,7 @@ color: rgb(63, 36, 79)</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_5">
+            <widget class="QLineEdit" name="lineEdit_ItemQuantity">
              <property name="styleSheet">
               <string notr="true">background-color: rgb(255, 255, 255)</string>
              </property>
