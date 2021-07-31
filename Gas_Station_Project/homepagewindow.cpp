@@ -16,8 +16,9 @@ QString totalString;
 double cartTotal = 0.0;
 mysql db;
 QVector<Items> cart;
+QVector<int> quantityLeft;
 Items *addToCart;
-Items *inventoryList;
+//Items *inventoryList;
 using namespace std;
 
 
@@ -50,7 +51,6 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
                 itemname = qry.value(1).toString();
                 itemprice = qry.value(2).toDouble()/100;
                 ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + "<br><span style=\" color:#00ffff;\">" + itemid + ". ");
-                //ui->itemMenuLabel->setText(ui->itemMenuLabel->text()  + itemid + ". ");
                 ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + itemname + " ($" + QString::number(itemprice) + ")" );
 
             }
@@ -232,6 +232,7 @@ void HomepageWindow::on_clearCartButton_clicked()
     totalString = QString::number(cartTotal);
     ui->cartDisplay->setText(cartString);
     ui->totalBoxDisplay->setText("$" + totalString);
+    cart.clear();
 }
 
 
@@ -590,7 +591,8 @@ void HomepageWindow::on_updateInventoryButton_clicked()
     if(db.connectDB())
     {
         QSqlQuery qry;
-        qry.prepare("UPDATE INVENTORY SET itemname = :itemname, price = :price, instock = :instock, quantity = :quantity, category = :category WHERE itemid = :itemid");
+        qry.prepare("UPDATE INVENTORY SET itemname = :itemname, price = :price, instock = :instock, "
+                    "quantity = :quantity, category = :category WHERE itemid = :itemid");
         //binding variable with values column
         qry.bindValue(":itemid", itemID.toInt());
         qry.bindValue(":itemname", itemName);
@@ -641,7 +643,57 @@ void HomepageWindow::on_returnFromInventoryButton_2_clicked()
 
 void HomepageWindow::on_submitSaleButton_clicked()
 {
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        for(int i = 0; i < cart.size(); i++)
+        {
+            qry.prepare("SELECT * FROM INVENTORY WHERE itemid = :itemid");
+            qry.bindValue(":itemid", cart[i].getID());
+            if(!qry.exec()){
+                QMessageBox::warning(this, "Error", "Query failed");
+            }
+            else
+            {
+                while(qry.next())
+                {
+                    quantityLeft.push_back(qry.value(4).toInt() - cart[i].getQuantity());
 
+                }
+
+            }
+
+        }
+        for(int i = 0; i < cart.size(); i++)
+        {
+
+            qry.prepare("UPDATE INVENTORY SET quantity = :quantity WHERE itemid = :itemid");
+            qry.bindValue(":itemid", cart[i].getID());
+            qry.bindValue(":quantity", quantityLeft[i]);
+            if(!qry.exec()){
+                QMessageBox::warning(this, "Error", "Update failed");
+            }
+            else
+            {
+                QMessageBox::information(this, "Success", QString::number(quantityLeft[i]) + " " + cart[i].getName() + " remaining");
+
+            }
+
+        }
+    }
+    else
+    {
+       QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+    db.closeDB();
+    cartString = "";
+    cartTotal = 0.0;
+
+    totalString = QString::number(cartTotal);
+    ui->cartDisplay->setText(cartString);
+    ui->totalBoxDisplay->setText("$" + totalString);
+    cart.clear();
+    quantityLeft.clear();
 }
 
 
