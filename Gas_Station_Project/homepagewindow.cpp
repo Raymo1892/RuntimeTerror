@@ -15,7 +15,8 @@ QString cartString;
 QString totalString;
 double cartTotal = 0.0;
 mysql db;
-
+QVector<Items> cart;
+Items *addToCart;
 using namespace std;
 
 
@@ -298,9 +299,7 @@ void HomepageWindow::on_addToCartButton_clicked()
 {
     QString itemID = ui->makeSaleItemIDLineEdit->text();
     QString quantity = ui->makeSaleQuantityLineEdit->text();
-    double itemPrice = 0;
-    QString itemName = "";
-
+    addToCart = new Items;
 
     if(db.connectDB())
     {
@@ -317,11 +316,30 @@ void HomepageWindow::on_addToCartButton_clicked()
         }
         else
         {
-            while(qry.next())
+
+            while(qry.next() && qry.value(3).toBool())
             {
-                itemName = qry.value(1).toString();
-                itemPrice = qry.value(2).toDouble() / 100;
+                //creating item to add to cart
+                addToCart->setID(qry.value(0).toInt());
+                addToCart->setName(qry.value(1).toString());
+                addToCart->setPrice(qry.value(2).toDouble() / 100);
+                addToCart->setStock(qry.value(3).toBool());
+                addToCart->setQuantity(quantity.toInt());
+                addToCart->setCategory(qry.value(5).toString());
+
+                //printing item information to cart display
+                double itemTotal = quantity.toDouble() * addToCart->getPrice();
+                ui->cartDisplay->setText(ui->cartDisplay->text() + "\n" + quantity + "x " + addToCart->getName() + " - " + QString::number(itemTotal));
+                cartTotal += itemTotal;
+
+                totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+                ui->totalBoxDisplay->setText("$" + totalString);
             }
+            if(!(addToCart->getStock()))
+            {
+                QMessageBox::information(this, "Cannot add to cart", "Item not in stock");
+            }
+            cart.push_back(*addToCart);
 
         }
     }
@@ -330,14 +348,6 @@ void HomepageWindow::on_addToCartButton_clicked()
         QMessageBox::information(this, "Not Connected", "Database is not Connected");
     }
     db.closeDB();
-
-    double itemTotal = quantity.toDouble() * itemPrice;
-    ui->cartDisplay->setText(ui->cartDisplay->text() + "\n" + quantity + "X " + itemName + " - " + QString::number(itemTotal));
-    cartTotal += itemTotal;
-
-    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-    ui->totalBoxDisplay->setText("$" + totalString);
-
 
 }
 

@@ -36,7 +36,7 @@ void RegistrationWindow::on_registerPushButton_clicked()
     //Chcek if connection is open
     if(db.connectDB())
     {
-        QMessageBox::information(this, "Connection", "Database Connection Established");
+        //QMessageBox::information(this, "Connection", "Database Connection Established");
 
         //storing text field values into the variable
         QString userName = ui ->lineEdit_UserName ->text();

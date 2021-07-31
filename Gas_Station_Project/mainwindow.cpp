@@ -42,7 +42,7 @@ void MainWindow::on_loginButton_clicked()
             //Chcek if connection is open
             if(database.connectDB())
             {
-                QMessageBox::information(this, "Connection", "Database connected successfully");
+                //QMessageBox::information(this, "Connection", "Database connected successfully");
 
 
                 //Show the homepage window only if DB is connected
