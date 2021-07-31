@@ -302,62 +302,64 @@ void HomepageWindow::on_addToCartButton_clicked()
     addToCart = new Items;
     int stock = 0;
     addToCart->setQuantity(quantity.toInt());
-
-    if(db.connectDB())
+    while(quantity.toInt() >= 0)
     {
-        QSqlQuery qry;
-        //Read from database
-        qry.prepare(QString("SELECT * FROM INVENTORY WHERE itemid = :itemid"));
-        //binding variable with values column
-        qry.bindValue(":itemid", itemID);
-
-        if(!qry.exec())
+        if(db.connectDB())
         {
-            QMessageBox::warning(this, "Failed", "Query Failed to Execute ");
+            QSqlQuery qry;
+            //Read from database
+            qry.prepare(QString("SELECT * FROM INVENTORY WHERE itemid = :itemid"));
+            //binding variable with values column
+            qry.bindValue(":itemid", itemID);
 
-        }
-        else
-        {
-            while(qry.next())
+            if(!qry.exec())
             {
-                addToCart->setStock(qry.value(3).toBool());
-                stock = qry.value(4).toInt();
-                if(qry.value(3).toBool() && qry.value(4).toInt() >= quantity.toInt())
-                {
-                    //creating item to add to cart
-                    addToCart->setID(qry.value(0).toInt());
-                    addToCart->setName(qry.value(1).toString());
-                    addToCart->setPrice(qry.value(2).toDouble() / 100);
-                    addToCart->setCategory(qry.value(5).toString());
+                QMessageBox::warning(this, "Failed", "Query Failed to Execute ");
 
-                    //add item to cart
-                    cart.push_back(*addToCart);
-
-                    //printing item information to cart display
-                    double itemTotal = quantity.toDouble() * addToCart->getPrice();
-                    ui->cartDisplay->setText(ui->cartDisplay->text() + "\n" + quantity + "x " + addToCart->getName() + " - $" + QString::number(itemTotal));
-                    cartTotal += itemTotal;
-
-                    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-                    ui->totalBoxDisplay->setText("$" + totalString);
-                }
-                if(!(addToCart->getStock()))
+            }
+            else
+            {
+                while(qry.next())
                 {
-                    QMessageBox::information(this, "Cannot add to cart", "Item not in stock");
-                    break;
-                }
-                if(quantity.toInt() > stock)
-                {
-                    QMessageBox::information(this, "Cannot add to cart", "Insufficient quantity in stock");
+                    addToCart->setStock(qry.value(3).toBool());
+                    stock = qry.value(4).toInt();
+                    if(qry.value(3).toBool() && qry.value(4).toInt() >= quantity.toInt())
+                    {
+                        //creating item to add to cart
+                        addToCart->setID(qry.value(0).toInt());
+                        addToCart->setName(qry.value(1).toString());
+                        addToCart->setPrice(qry.value(2).toDouble() / 100);
+                        addToCart->setCategory(qry.value(5).toString());
+
+                        //add item to cart
+                        cart.push_back(*addToCart);
+
+                        //printing item information to cart display
+                        double itemTotal = quantity.toDouble() * addToCart->getPrice();
+                        ui->cartDisplay->setText(ui->cartDisplay->text() + "\n" + quantity + "x " + addToCart->getName() + " - $" + QString::number(itemTotal));
+                        cartTotal += itemTotal;
+
+                        totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+                        ui->totalBoxDisplay->setText("$" + totalString);
+                    }
+                    if(!(addToCart->getStock()))
+                    {
+                        QMessageBox::information(this, "Cannot add to cart", "Item not in stock");
+                        break;
+                    }
+                    if(quantity.toInt() > stock)
+                    {
+                        QMessageBox::information(this, "Cannot add to cart", "Insufficient quantity in stock");
+                    }
                 }
             }
         }
+        else
+        {
+            QMessageBox::information(this, "Not Connected", "Database is not Connected");
+        }
+        db.closeDB();
     }
-    else
-    {
-        QMessageBox::information(this, "Not Connected", "Database is not Connected");
-    }
-    db.closeDB();
 
 }
 
