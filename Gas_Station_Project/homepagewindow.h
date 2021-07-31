@@ -100,6 +100,8 @@ private slots:
 
     void on_returnFromInventoryButton_2_clicked();
 
+    void on_submitSaleButton_clicked();
+
 private:
     Ui::HomepageWindow *ui;
 

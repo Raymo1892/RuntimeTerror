@@ -49,6 +49,7 @@ public:
     QLabel *cartDisplay;
     QLineEdit *totalBoxDisplay;
     QPushButton *clearCartButton;
+    QPushButton *submitSaleButton;
     QGroupBox *groupBox;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout;
@@ -266,6 +267,14 @@ public:
 
         verticalLayout_3->addWidget(clearCartButton);
 
+        submitSaleButton = new QPushButton(layoutWidget_2);
+        submitSaleButton->setObjectName(QString::fromUtf8("submitSaleButton"));
+        submitSaleButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";\n"
+"color: rgb(63, 36, 79);"));
+
+        verticalLayout_3->addWidget(submitSaleButton);
+
         groupBox = new QGroupBox(make_sale_page);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(80, 180, 231, 261));
@@ -310,7 +319,7 @@ public:
 
         itemMenuLabel = new QLabel(make_sale_page);
         itemMenuLabel->setObjectName(QString::fromUtf8("itemMenuLabel"));
-        itemMenuLabel->setGeometry(QRect(350, 180, 181, 261));
+        itemMenuLabel->setGeometry(QRect(350, 0, 181, 581));
         itemMenuLabel->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
         itemMenuLabel->setAlignment(Qt::AlignCenter);
@@ -698,8 +707,8 @@ public:
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));
         tableWidget_2 = new QTableWidget(page_3);
-        if (tableWidget_2->columnCount() < 5)
-            tableWidget_2->setColumnCount(5);
+        if (tableWidget_2->columnCount() < 4)
+            tableWidget_2->setColumnCount(4);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tableWidget_2->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -708,30 +717,32 @@ public:
         tableWidget_2->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         tableWidget_2->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        if (tableWidget_2->rowCount() < 11)
+            tableWidget_2->setRowCount(11);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(4, __qtablewidgetitem4);
-        if (tableWidget_2->rowCount() < 10)
-            tableWidget_2->setRowCount(10);
+        tableWidget_2->setVerticalHeaderItem(0, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(0, __qtablewidgetitem5);
+        tableWidget_2->setVerticalHeaderItem(1, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(1, __qtablewidgetitem6);
+        tableWidget_2->setVerticalHeaderItem(2, __qtablewidgetitem6);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(2, __qtablewidgetitem7);
+        tableWidget_2->setVerticalHeaderItem(3, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(3, __qtablewidgetitem8);
+        tableWidget_2->setVerticalHeaderItem(4, __qtablewidgetitem8);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(4, __qtablewidgetitem9);
+        tableWidget_2->setVerticalHeaderItem(5, __qtablewidgetitem9);
         QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(5, __qtablewidgetitem10);
+        tableWidget_2->setVerticalHeaderItem(6, __qtablewidgetitem10);
         QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(6, __qtablewidgetitem11);
+        tableWidget_2->setVerticalHeaderItem(7, __qtablewidgetitem11);
         QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(7, __qtablewidgetitem12);
+        tableWidget_2->setVerticalHeaderItem(8, __qtablewidgetitem12);
         QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(8, __qtablewidgetitem13);
+        tableWidget_2->setVerticalHeaderItem(9, __qtablewidgetitem13);
         QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(9, __qtablewidgetitem14);
+        tableWidget_2->setVerticalHeaderItem(10, __qtablewidgetitem14);
+        QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
+        tableWidget_2->setItem(0, 0, __qtablewidgetitem15);
         tableWidget_2->setObjectName(QString::fromUtf8("tableWidget_2"));
         tableWidget_2->setGeometry(QRect(50, 170, 531, 331));
         tableWidget_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
@@ -964,7 +975,7 @@ public:
 
         retranslateUi(HomepageWindow);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(HomepageWindow);
@@ -982,6 +993,7 @@ public:
         cartDisplay->setText(QString());
         totalBoxDisplay->setText(QCoreApplication::translate("HomepageWindow", "$0.00", nullptr));
         clearCartButton->setText(QCoreApplication::translate("HomepageWindow", "Clear Cart", nullptr));
+        submitSaleButton->setText(QCoreApplication::translate("HomepageWindow", "Submit Sale", nullptr));
         groupBox->setTitle(QString());
         itemIDLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Item ID</span></p></body></html>", nullptr));
         quantityLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Quantity</span></p></body></html>", nullptr));
@@ -1026,35 +1038,40 @@ public:
         inventoryNameLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Name</span></p></body></html>", nullptr));
         clearFieldsButtonInventory->setText(QCoreApplication::translate("HomepageWindow", "Clear Fields", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget_2->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("HomepageWindow", "Item No.", nullptr));
+        ___qtablewidgetitem->setText(QCoreApplication::translate("HomepageWindow", "Item Name", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget_2->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("HomepageWindow", "Item Name", nullptr));
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("HomepageWindow", "Item Price", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = tableWidget_2->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("HomepageWindow", "Item Price", nullptr));
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("HomepageWindow", "Description", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget_2->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("HomepageWindow", "Description", nullptr));
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget_2->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("HomepageWindow", "Quantity", nullptr));
-        QTableWidgetItem *___qtablewidgetitem5 = tableWidget_2->verticalHeaderItem(0);
-        ___qtablewidgetitem5->setText(QCoreApplication::translate("HomepageWindow", "1", nullptr));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget_2->verticalHeaderItem(1);
-        ___qtablewidgetitem6->setText(QCoreApplication::translate("HomepageWindow", "2", nullptr));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget_2->verticalHeaderItem(2);
-        ___qtablewidgetitem7->setText(QCoreApplication::translate("HomepageWindow", "3", nullptr));
-        QTableWidgetItem *___qtablewidgetitem8 = tableWidget_2->verticalHeaderItem(3);
-        ___qtablewidgetitem8->setText(QCoreApplication::translate("HomepageWindow", "4", nullptr));
-        QTableWidgetItem *___qtablewidgetitem9 = tableWidget_2->verticalHeaderItem(4);
-        ___qtablewidgetitem9->setText(QCoreApplication::translate("HomepageWindow", "5", nullptr));
-        QTableWidgetItem *___qtablewidgetitem10 = tableWidget_2->verticalHeaderItem(5);
-        ___qtablewidgetitem10->setText(QCoreApplication::translate("HomepageWindow", "6", nullptr));
-        QTableWidgetItem *___qtablewidgetitem11 = tableWidget_2->verticalHeaderItem(6);
-        ___qtablewidgetitem11->setText(QCoreApplication::translate("HomepageWindow", "7", nullptr));
-        QTableWidgetItem *___qtablewidgetitem12 = tableWidget_2->verticalHeaderItem(7);
-        ___qtablewidgetitem12->setText(QCoreApplication::translate("HomepageWindow", "8", nullptr));
-        QTableWidgetItem *___qtablewidgetitem13 = tableWidget_2->verticalHeaderItem(8);
-        ___qtablewidgetitem13->setText(QCoreApplication::translate("HomepageWindow", "9", nullptr));
-        QTableWidgetItem *___qtablewidgetitem14 = tableWidget_2->verticalHeaderItem(9);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("HomepageWindow", "Quantity", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget_2->verticalHeaderItem(0);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("HomepageWindow", "1", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget_2->verticalHeaderItem(1);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("HomepageWindow", "2", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidget_2->verticalHeaderItem(2);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("HomepageWindow", "3", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidget_2->verticalHeaderItem(3);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("HomepageWindow", "4", nullptr));
+        QTableWidgetItem *___qtablewidgetitem8 = tableWidget_2->verticalHeaderItem(4);
+        ___qtablewidgetitem8->setText(QCoreApplication::translate("HomepageWindow", "5", nullptr));
+        QTableWidgetItem *___qtablewidgetitem9 = tableWidget_2->verticalHeaderItem(5);
+        ___qtablewidgetitem9->setText(QCoreApplication::translate("HomepageWindow", "6", nullptr));
+        QTableWidgetItem *___qtablewidgetitem10 = tableWidget_2->verticalHeaderItem(6);
+        ___qtablewidgetitem10->setText(QCoreApplication::translate("HomepageWindow", "7", nullptr));
+        QTableWidgetItem *___qtablewidgetitem11 = tableWidget_2->verticalHeaderItem(7);
+        ___qtablewidgetitem11->setText(QCoreApplication::translate("HomepageWindow", "8", nullptr));
+        QTableWidgetItem *___qtablewidgetitem12 = tableWidget_2->verticalHeaderItem(8);
+        ___qtablewidgetitem12->setText(QCoreApplication::translate("HomepageWindow", "9", nullptr));
+        QTableWidgetItem *___qtablewidgetitem13 = tableWidget_2->verticalHeaderItem(9);
+        ___qtablewidgetitem13->setText(QCoreApplication::translate("HomepageWindow", "10", nullptr));
+        QTableWidgetItem *___qtablewidgetitem14 = tableWidget_2->verticalHeaderItem(10);
         ___qtablewidgetitem14->setText(QCoreApplication::translate("HomepageWindow", "11", nullptr));
+
+        const bool __sortingEnabled = tableWidget_2->isSortingEnabled();
+        tableWidget_2->setSortingEnabled(false);
+        tableWidget_2->setSortingEnabled(__sortingEnabled);
+
         inventoryPageLabel_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Inventory</span></p></body></html>", nullptr));
         AddItem_2->setText(QCoreApplication::translate("HomepageWindow", "Add Item", nullptr));
         Tableview_2->setText(QCoreApplication::translate("HomepageWindow", "Inventory View", nullptr));

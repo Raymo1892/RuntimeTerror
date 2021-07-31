@@ -42,3 +42,5 @@ QSqlDatabase mysql::getDB()
 {
     return db;
 }
+
+

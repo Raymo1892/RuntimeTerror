@@ -302,7 +302,7 @@ void HomepageWindow::on_addToCartButton_clicked()
     addToCart = new Items;
     int stock = 0;
     addToCart->setQuantity(quantity.toInt());
-    while(quantity.toInt() >= 0)
+    if(quantity.toInt() >= 0)
     {
         if(db.connectDB())
         {
@@ -462,6 +462,9 @@ void HomepageWindow::on_addItemButtonInventory_clicked()
             else
             {
                 QMessageBox::information(this, "Add Item", "Item added to Inventory");
+                // This is the line that I added to dynamically update the menu
+                // just need to make it work with the items that are already in the database
+                ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + "\n" + itemID + "." + " " + itemName + " (" + price + ")");
 
             }
         }
@@ -469,6 +472,8 @@ void HomepageWindow::on_addItemButtonInventory_clicked()
         {
             QMessageBox::information(this, "Not Connected", "Database is not Connected");
         }
+
+
 
         db.closeDB();
 }
@@ -561,5 +566,11 @@ void HomepageWindow::on_tableViewButton_clicked()
 void HomepageWindow::on_returnFromInventoryButton_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+
+void HomepageWindow::on_submitSaleButton_clicked()
+{
+
 }
 
