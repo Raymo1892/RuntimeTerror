@@ -17,6 +17,7 @@ double cartTotal = 0.0;
 mysql db;
 QVector<Items> cart;
 Items *addToCart;
+Items *inventoryList;
 using namespace std;
 
 
@@ -26,6 +27,41 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
+
+    // Update the inventory list for the make sale page
+    QString itemid;
+    QString itemname;
+    double itemprice;
+    ui->itemMenuLabel->setText("<html><head/><body><p><span style=\" color:#00ffff;\">Item Menu:</p><p></p></body></html> ");
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        //Read from database
+        qry.prepare(QString("SELECT * FROM INVENTORY"));
+        if(!qry.exec())
+        {
+            QMessageBox::warning(this, "Failed", "Query Failed to Execute ");
+        }
+        else
+        {
+            while(qry.next())
+            {
+                itemid = qry.value(0).toString();
+                itemname = qry.value(1).toString();
+                itemprice = qry.value(2).toDouble()/100;
+                ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + "<br><span style=\" color:#00ffff;\">" + itemid + ". ");
+                //ui->itemMenuLabel->setText(ui->itemMenuLabel->text()  + itemid + ". ");
+                ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + itemname + " ($" + QString::number(itemprice) + ")" );
+
+            }
+        }
+    }
+    else
+    {
+        QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+    db.closeDB();
+
 
 }
 
@@ -43,10 +79,42 @@ void HomepageWindow::changeCurrentIndex(int index)
     ui->stackedWidget->setCurrentIndex(index);
 }
 
-
+//This is display the home screen widget when pressed.
 void HomepageWindow::on_homeButton_clicked()
 {
-    //This is display the home screen widget when pressed.
+    // Update the inventory list for the make sale page
+    QString itemid;
+    QString itemname;
+    double itemprice;
+    ui->itemMenuLabel->setText("<html><head/><body><p><span style=\" color:#00ffff;\">Item Menu:</p><p></p></body></html> ");
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        //Read from database
+        qry.prepare(QString("SELECT * FROM INVENTORY"));
+        if(!qry.exec())
+        {
+            QMessageBox::warning(this, "Failed", "Query Failed to Execute ");
+        }
+        else
+        {
+            while(qry.next())
+            {
+                itemid = qry.value(0).toString();
+                itemname = qry.value(1).toString();
+                itemprice = qry.value(2).toDouble()/100;
+                ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + "<br><span style=\" color:#00ffff;\">" + itemid + ". ");
+                //ui->itemMenuLabel->setText(ui->itemMenuLabel->text()  + itemid + ". ");
+                ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + itemname + " ($" + QString::number(itemprice) + ")" );
+
+            }
+        }
+    }
+    else
+    {
+        QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+    db.closeDB();
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -66,6 +134,7 @@ void HomepageWindow::on_ChangePasswordButton_clicked()
 //ADD USER
 void HomepageWindow::on_addUserButton_clicked()
 {
+
     changeCurrentIndex(3);
 }
 
@@ -77,6 +146,7 @@ void HomepageWindow::on_removeUserButton_clicked()
 
 void HomepageWindow::on_inventoryButton_clicked()
 {
+
     changeCurrentIndex(5);
 
 }
@@ -358,9 +428,9 @@ void HomepageWindow::on_addToCartButton_clicked()
         {
             QMessageBox::information(this, "Not Connected", "Database is not Connected");
         }
-        db.closeDB();
-    }
 
+    }
+    db.closeDB();
 }
 
 
@@ -573,4 +643,6 @@ void HomepageWindow::on_submitSaleButton_clicked()
 {
 
 }
+
+
 

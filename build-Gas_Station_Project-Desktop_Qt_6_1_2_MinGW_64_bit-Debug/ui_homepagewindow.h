@@ -49,6 +49,7 @@ public:
     QLabel *cartDisplay;
     QLineEdit *totalBoxDisplay;
     QPushButton *clearCartButton;
+    QPushButton *submitSaleButton;
     QGroupBox *groupBox;
     QWidget *gridLayoutWidget_4;
     QGridLayout *gridLayout;
@@ -266,6 +267,14 @@ public:
 
         verticalLayout_3->addWidget(clearCartButton);
 
+        submitSaleButton = new QPushButton(layoutWidget_2);
+        submitSaleButton->setObjectName(QString::fromUtf8("submitSaleButton"));
+        submitSaleButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";\n"
+"color: rgb(63, 36, 79);"));
+
+        verticalLayout_3->addWidget(submitSaleButton);
+
         groupBox = new QGroupBox(make_sale_page);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(80, 180, 231, 261));
@@ -310,7 +319,7 @@ public:
 
         itemMenuLabel = new QLabel(make_sale_page);
         itemMenuLabel->setObjectName(QString::fromUtf8("itemMenuLabel"));
-        itemMenuLabel->setGeometry(QRect(350, 180, 181, 261));
+        itemMenuLabel->setGeometry(QRect(350, 0, 201, 581));
         itemMenuLabel->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
         itemMenuLabel->setAlignment(Qt::AlignCenter);
@@ -966,7 +975,7 @@ public:
 
         retranslateUi(HomepageWindow);
 
-        stackedWidget->setCurrentIndex(6);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(HomepageWindow);
@@ -984,11 +993,12 @@ public:
         cartDisplay->setText(QString());
         totalBoxDisplay->setText(QCoreApplication::translate("HomepageWindow", "$0.00", nullptr));
         clearCartButton->setText(QCoreApplication::translate("HomepageWindow", "Clear Cart", nullptr));
+        submitSaleButton->setText(QCoreApplication::translate("HomepageWindow", "Submit Sale", nullptr));
         groupBox->setTitle(QString());
         itemIDLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Item ID</span></p></body></html>", nullptr));
         quantityLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Quantity</span></p></body></html>", nullptr));
         addToCartButton->setText(QCoreApplication::translate("HomepageWindow", "Add To Cart", nullptr));
-        itemMenuLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Item Menu:</span></p><p><span style=\" color:#00ffff;\">1. Coffee ($.99)</span></p><p><span style=\" color:#00ffff;\">2. Bottle Beverage ($1.79)</span></p><p><span style=\" color:#00ffff;\">3. Fountain Drink ($.99)</span></p><p><span style=\" color:#00ffff;\">4. Chips ($1.99)</span></p><p><span style=\" color:#00ffff;\">5. Candy ($.99)</span></p><p><span style=\" color:#00ffff;\">6. Grill Item ($1.99)</span></p><p><span style=\" color:#00ffff;\">7. Unleaded ($2.79/gal)</span></p><p><span style=\" color:#00ffff;\">8. Premium ($3.09/gal)</span></p><p><span style=\" color:#00ffff;\">9. Diesel ($3.29/gal)</span></p></body></html>", nullptr));
+        itemMenuLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Item Menu:</span></p><p><br/></p></body></html>", nullptr));
         ChangePasswordButton->setText(QCoreApplication::translate("HomepageWindow", "Change User Password", nullptr));
         addUserButton->setText(QCoreApplication::translate("HomepageWindow", "Add User", nullptr));
         removeUserButton->setText(QCoreApplication::translate("HomepageWindow", "Remove User", nullptr));

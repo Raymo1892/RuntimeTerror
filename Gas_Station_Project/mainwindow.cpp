@@ -96,15 +96,6 @@ void MainWindow::on_loginButton_clicked()
             }
           database.closeDB();
 
-         /* login_flag = true;
-           if (login_flag)
-           {
-               hide();
-               hWindow = new HomepageWindow(this);
-               hWindow->show();
-           }*/
-
-
 }
 
 

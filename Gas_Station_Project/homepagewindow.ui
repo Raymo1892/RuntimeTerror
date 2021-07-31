@@ -340,7 +340,7 @@ color: rgb(63, 36, 79);</string>
        <rect>
         <x>350</x>
         <y>0</y>
-        <width>181</width>
+        <width>201</width>
         <height>581</height>
        </rect>
       </property>
@@ -349,7 +349,7 @@ color: rgb(63, 36, 79);</string>
 font: 87 8pt &quot;Segoe UI Black&quot;;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Item Menu:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;1. Coffee ($.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;2. Bottle Beverage ($1.79)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;3. Fountain Drink ($.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;4. Chips ($1.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;5. Candy ($.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;6. Grill Item ($1.99)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;7. Unleaded ($2.79/gal)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;8. Premium ($3.09/gal)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;9. Diesel ($3.29/gal)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Item Menu:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
