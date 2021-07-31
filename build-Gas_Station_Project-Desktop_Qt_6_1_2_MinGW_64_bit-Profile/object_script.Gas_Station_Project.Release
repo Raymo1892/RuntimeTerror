@@ -1,0 +1,12 @@
+release/accounts.o
+release/accountsstorage.o
+release/homepagewindow.o
+release/items.o
+release/main.o
+release/mainwindow.o
+release/mysql.o
+release/registrationwindow.o
+release/qrc_resources.o
+release/moc_homepagewindow.o
+release/moc_mainwindow.o
+release/moc_registrationwindow.o

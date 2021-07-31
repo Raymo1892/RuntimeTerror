@@ -1,4 +1,5 @@
 debug/accounts.o
+debug/accountsstorage.o
 debug/homepagewindow.o
 debug/items.o
 debug/main.o

@@ -36,11 +36,11 @@ void MainWindow::on_loginButton_clicked()
            bool login_flag = false;
 
            //load stored accounts
-           accounts.loadAccounts();
+           //accounts.loadAccounts();
 
             //uncomment this to use the database
             //Chcek if connection is open
-            /*if(database.connectDB())
+            if(database.connectDB())
             {
                 QMessageBox::information(this, "Connection", "Database connected successfully");
 
@@ -50,7 +50,7 @@ void MainWindow::on_loginButton_clicked()
                 QString password = ui->lineEdit_Password ->text();
 
                 QSqlQuery query;
-                query.prepare(QString("SELECT * FROM Employee WHERE username = :username AND password = :password"));
+                query.prepare(QString("SELECT * FROM USERS WHERE username = :username AND password = :password"));
 
                 query.bindValue(":username", username);
                 query.bindValue(":password", password);
@@ -63,8 +63,8 @@ void MainWindow::on_loginButton_clicked()
                 {
                     while(query.next())
                     {
-                        QString usernameFromDB = query.value(1).toString();
-                        QString passwordFromDB = query.value(2).toString();
+                        QString usernameFromDB = query.value(0).toString();
+                        QString passwordFromDB = query.value(1).toString();
 
                         if(usernameFromDB == username && passwordFromDB == password)
                         {
@@ -82,7 +82,7 @@ void MainWindow::on_loginButton_clicked()
                 //Use modal approach to not kill the first window when creating new
                 //Below used is not a modal where it does hide the first window*/
 
-            /*if(login_flag)
+            if(login_flag)
               {
                     hide(); //Hides the first window
                     //Calling main dashboard/homepage window with menu and toolbar
@@ -92,17 +92,16 @@ void MainWindow::on_loginButton_clicked()
             else
             {
                 QMessageBox::information(this, "Login", "Incorrect username or password, Try again");
-            }*/
+            }
+          database.closeDB();
 
-        //database.closeDB();
-
-          login_flag = true;
+         /* login_flag = true;
            if (login_flag)
            {
                hide();
                hWindow = new HomepageWindow(this);
                hWindow->show();
-           }
+           }*/
 
 
 }

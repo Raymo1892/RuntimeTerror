@@ -90,7 +90,7 @@ public:
         lineEdit_Email->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         emailLabel = new QLabel(groupBox);
         emailLabel->setObjectName(QString::fromUtf8("emailLabel"));
-        emailLabel->setGeometry(QRect(30, 380, 101, 41));
+        emailLabel->setGeometry(QRect(30, 380, 111, 41));
         emailLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";\n"
 "background-color: rgb(63, 36, 79);\n"
 "color: rgb(0, 255, 255);"));
@@ -133,7 +133,7 @@ public:
         registrationLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:400;\">Registration</span></p></body></html>", nullptr));
         usernameLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Username</span></p></body></html>", nullptr));
         passwordLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Password</span></p></body></html>", nullptr));
-        emailLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Email</span></p></body></html>", nullptr));
+        emailLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Access (0 - 1)</span></p></body></html>", nullptr));
         lastNameLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Last Name</span></p></body></html>", nullptr));
         firstNameLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">First Name</span></p></body></html>", nullptr));
         registerPushButton->setText(QCoreApplication::translate("RegistrationWindow", "Register", nullptr));

@@ -1,4 +1,5 @@
 release/accounts.o
+release/accountsstorage.o
 release/homepagewindow.o
 release/items.o
 release/main.o

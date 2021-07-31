@@ -165,7 +165,7 @@ color: rgb(0, 255, 255);</string>
      <rect>
       <x>30</x>
       <y>380</y>
-      <width>101</width>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -175,7 +175,7 @@ background-color: rgb(63, 36, 79);
 color: rgb(0, 255, 255);</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Email&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Access (0 - 1)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="lastNameLabel">

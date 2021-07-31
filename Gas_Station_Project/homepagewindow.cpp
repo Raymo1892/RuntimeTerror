@@ -9,20 +9,29 @@
 #include <items.h>
 #include <accounts.h>
 #include <QVector>
+#include <mysql.h>
 
 QString cartString;
 QString totalString;
 double cartTotal = 0.0;
+mysql db;
+int idFromDB;
+QString nameFromDB;
+double priceFromDB;
+bool inStockFromDB;
+QString categoryFromDB;
+int idNumber;
+
 QVector<Items> itemsVector;
-Items coffee(1, "Coffee", .99, true, "drinks", 100);
-Items bottledBev(2, "Bottled Beverage", 1.79, true, "drinks", 100);
-Items fountainDrink(3, "Fountain Drink", .99, true, "drinks", 100);
-Items chips(4, "Chips", 1.99, true, "food", 100);
-Items candy(5, "Candy", .99, true, "food", 100);
-Items grillItem(6, "Grill Item", 1.99, true, "food", 100);
-Items unleaded(7, "Unleaded Gas (Gallons)", 2.79, true, "gas", 10000);
-Items premium(8, "Premium Gas (Gallons)", 3.09, true, "gas", 10000);
-Items diesel(9, "Diesel Fuel (Gallons)", 3.29, true, "gas", 10000);
+Items item1(0, "", 0, false, "", 0);
+Items item2(0, "", 0, false, "", 0);
+Items item3(0, "", 0, false, "", 0);
+Items item4(0, "", 0, false, "", 0);
+Items item5(0, "", 0, false, "", 0);
+Items item6(0, "", 0, false, "", 0);
+Items item7(0, "", 0, false, "", 0);
+Items item8(0, "", 0, false, "", 0);
+Items item9(0, "", 0, false, "", 0);
 
 using namespace std;
 
@@ -31,17 +40,120 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::HomepageWindow)
 {
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        //Read from database
+        for(idNumber = 1; idNumber < 10; idNumber++){
+            qry.prepare(QString("SELECT * FROM INVENTORY WHERE itemid = :idNumber"));
+            //qry.prepare(QString("SELECT * FROM USERS WHERE username = :username AND password = :password"));
+            //binding variable with values column
+            qry.bindValue(":idNumber", idNumber);
+
+            if(!qry.exec())
+            {
+                QMessageBox::warning(this, "Failed", "Query Failed to Execute ");
+
+            }
+            else
+            {
+                QMessageBox::information(this, "Query", qry.lastQuery());
+                while(qry.next())
+                {
+                      idFromDB = qry.value(0).toInt();
+                      nameFromDB = qry.value(1).toString();
+                      priceFromDB = qry.value(2).toDouble();
+                      inStockFromDB = qry.value(3).toBool();
+                      categoryFromDB = qry.value(4).toString();
+                }
+
+            }
+            switch(idNumber){
+                        case 1:
+                            item1.setID(idFromDB);
+                            item1.setName(nameFromDB);
+                            item1.setPrice(priceFromDB / 100);
+                            item1.setStock(inStockFromDB);
+                            item1.setCategory(categoryFromDB);
+                            break;
+                        case 2:
+                            item2.setID(idFromDB);
+                            item2.setName(nameFromDB);
+                            item2.setPrice(priceFromDB / 100);
+                            item2.setStock(inStockFromDB);
+                            item2.setCategory(categoryFromDB);
+                            break;
+                        case 3:
+                            item3.setID(idFromDB);
+                            item3.setName(nameFromDB);
+                            item3.setPrice(priceFromDB / 100);
+                            item3.setStock(inStockFromDB);
+                            item3.setCategory(categoryFromDB);
+                            break;
+                        case 4:
+                            item4.setID(idFromDB);
+                            item4.setName(nameFromDB);
+                            item4.setPrice(priceFromDB / 100);
+                            item4.setStock(inStockFromDB);
+                            item4.setCategory(categoryFromDB);
+                            break;
+                        case 5:
+                            item5.setID(idFromDB);
+                            item5.setName(nameFromDB);
+                            item5.setPrice(priceFromDB / 100);
+                            item5.setStock(inStockFromDB);
+                            item5.setCategory(categoryFromDB);
+                            break;
+                        case 6:
+                            item6.setID(idFromDB);
+                            item6.setName(nameFromDB);
+                            item6.setPrice(priceFromDB / 100);
+                            item6.setStock(inStockFromDB);
+                            item6.setCategory(categoryFromDB);
+                            break;
+                        case 7:
+                            item7.setID(idFromDB);
+                            item7.setName(nameFromDB);
+                            item7.setPrice(priceFromDB / 100);
+                            item7.setStock(inStockFromDB);
+                            item7.setCategory(categoryFromDB);
+                            break;
+                        case 8:
+                            item8.setID(idFromDB);
+                            item8.setName(nameFromDB);
+                            item8.setPrice(priceFromDB / 100);
+                            item8.setStock(inStockFromDB);
+                            item8.setCategory(categoryFromDB);
+                            break;
+                        case 9:
+                            item9.setID(idFromDB);
+                            item9.setName(nameFromDB);
+                            item9.setPrice(priceFromDB / 100);
+                            item9.setStock(inStockFromDB);
+                            item9.setCategory(categoryFromDB);
+                            break;
+            }
+
+        }
+
+    }
+        else
+        {
+            QMessageBox::information(this, "Not Connected", "Database is not Connected");
+        }
+        db.closeDB();
+
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
-    itemsVector.push_back(coffee);
-    itemsVector.push_back(bottledBev);
-    itemsVector.push_back(fountainDrink);
-    itemsVector.push_back(chips);
-    itemsVector.push_back(candy);
-    itemsVector.push_back(grillItem);
-    itemsVector.push_back(unleaded);
-    itemsVector.push_back(premium);
-    itemsVector.push_back(diesel);
+    itemsVector.push_back(item1);
+    itemsVector.push_back(item2);
+    itemsVector.push_back(item3);
+    itemsVector.push_back(item4);
+    itemsVector.push_back(item5);
+    itemsVector.push_back(item6);
+    itemsVector.push_back(item7);
+    itemsVector.push_back(item8);
+    itemsVector.push_back(item9);
 }
 
 HomepageWindow::~HomepageWindow()
@@ -139,9 +251,9 @@ void HomepageWindow::on_returnAccountsButton2_clicked()
 
 void HomepageWindow::on_logOutButton_clicked()
 {
-    //program terminating, store the accounts
+    /*//program terminating, store the accounts
     accounts.storeAccounts();
-    accounts.cleanup();
+    accounts.cleanup();*/
 
     QMessageBox::information(this, "Message", " Logging out....");
     close();
@@ -206,14 +318,14 @@ void HomepageWindow::on_saveUserButton_clicked()
     string password = ui->addUserLineEditPassword->text().toStdString();
     int privilege = ui->addUserLineEditPrivilege->text().toInt();
     //sales defaults to zero because the new account has not made sales yet
-
+    /*
     //check if username exists
     if (accounts.usernameExists((username)) == false)
     {
         //add user
         accounts.addAccount(username, password, firstname, lastname, privilege);
     }
-    else
+    else*/
         QMessageBox::information(this, "Unable to add account", "An account with that username already exists.\n Please try a different username.");
 
     //else, tell user what's going in with a qmessagebox

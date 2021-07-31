@@ -44,18 +44,19 @@ void RegistrationWindow::on_registerPushButton_clicked()
         QString passWord = ui ->lineEdit_Password ->text();
         QString firstName = ui ->lineEdit_FirstName ->text();
         QString lastName = ui ->lineEdit_LastName ->text();
-        QString email = ui ->lineEdit_Email ->text();
+        QString privilege = ui ->lineEdit_Email ->text();
 
         //Write query to database
         QSqlQuery qry;
-        qry.prepare("INSERT INTO Employee (username, password, firstname, lastname, email)"
-                    "VAlUES (:username, :password, :firstname, :lastname, :email)");
-        //binding variable with vaues column
+        qry.prepare("INSERT INTO USERS (username, password, firstname, lastname, privilege, sales)"
+                    "VAlUES (:username, :password, :firstname, :lastname, :privilege, :sales)");
+        //binding variable with values column
         qry.bindValue(":username", userName);
         qry.bindValue(":password", passWord);
         qry.bindValue(":firstname", firstName);
         qry.bindValue(":lastname", lastName);
-        qry.bindValue(":email", email);
+        qry.bindValue(":privilege", privilege.toInt());
+        qry.bindValue(":sales", 0);
 
         if(qry.exec())
         {
