@@ -70,6 +70,7 @@ void MainWindow::on_loginButton_clicked()
                         {
                             QMessageBox::information(this, "Login", "Successful Login.");
                                 login_flag = true;
+                                user = usernameFromDB;
                         }
                      }
                  }

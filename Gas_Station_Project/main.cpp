@@ -9,6 +9,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    static QString user;
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
