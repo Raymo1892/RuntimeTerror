@@ -15,7 +15,6 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -105,30 +104,25 @@ public:
     QWidget *Inventory_page;
     QLabel *inventoryPageLabel;
     QPushButton *returnFromInventoryButton;
-    QPushButton *AddItem;
-    QPushButton *Tableview;
-    QPushButton *UpdateInventory;
-    QPushButton *RemoveItem;
+    QPushButton *addItemButtonInventory;
+    QPushButton *tableViewButton;
+    QPushButton *updateInventoryButton;
+    QPushButton *removeItemButton;
     QLabel *label;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_4;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout;
-    QLabel *ItemID;
-    QLineEdit *lineEdit_ItemID;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *Itemname;
-    QLineEdit *lineEdit_ItemName;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *Itemprice;
-    QLineEdit *lineEdit_ItemPrice;
-    QHBoxLayout *horizontalLayout_4;
-    QLabel *Description;
-    QLineEdit *lineEdit_ItemDescription;
-    QHBoxLayout *horizontalLayout_5;
-    QLabel *Quantity;
-    QLineEdit *lineEdit_ItemQuantity;
-    QPushButton *Save;
+    QGroupBox *inventoryGroupBox;
+    QWidget *gridLayoutWidget_6;
+    QGridLayout *inventoryGrid;
+    QLineEdit *inventoryQuantityLineEdit;
+    QLabel *inventoryQuantityLabel;
+    QLabel *ItemIDLabel;
+    QLineEdit *inventoryIDLineEdit;
+    QLineEdit *inventoryNameLineEdit;
+    QLabel *categoryInventoryLabel;
+    QLabel *inventoryPriceLabel;
+    QLineEdit *inventoryPriceLineEdit;
+    QLineEdit *inventoryCategoryLineEdit;
+    QLabel *inventoryNameLabel;
+    QPushButton *clearFieldsButtonInventory;
     QWidget *page_3;
     QTableWidget *tableWidget_2;
     QLabel *inventoryPageLabel_2;
@@ -141,6 +135,8 @@ public:
     QLabel *auditPageLabel;
     QPushButton *viewAuditButton;
     QPushButton *returnFromAuditButton;
+    QGroupBox *viewAuditGroupBox;
+    QLabel *viewAuditScreen;
     QWidget *settings_page;
     QLabel *settingsPageLabel;
     QWidget *help_page;
@@ -318,6 +314,7 @@ public:
         itemMenuLabel->setGeometry(QRect(350, 180, 181, 261));
         itemMenuLabel->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
+        itemMenuLabel->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(make_sale_page);
         account_Homepage = new QWidget();
         account_Homepage->setObjectName(QString::fromUtf8("account_Homepage"));
@@ -590,132 +587,114 @@ public:
         returnFromInventoryButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        AddItem = new QPushButton(Inventory_page);
-        AddItem->setObjectName(QString::fromUtf8("AddItem"));
-        AddItem->setGeometry(QRect(10, 70, 131, 55));
-        AddItem->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        addItemButtonInventory = new QPushButton(Inventory_page);
+        addItemButtonInventory->setObjectName(QString::fromUtf8("addItemButtonInventory"));
+        addItemButtonInventory->setGeometry(QRect(10, 70, 131, 55));
+        addItemButtonInventory->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        AddItem->setIconSize(QSize(20, 20));
-        Tableview = new QPushButton(Inventory_page);
-        Tableview->setObjectName(QString::fromUtf8("Tableview"));
-        Tableview->setGeometry(QRect(460, 70, 131, 55));
-        Tableview->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        addItemButtonInventory->setIconSize(QSize(20, 20));
+        tableViewButton = new QPushButton(Inventory_page);
+        tableViewButton->setObjectName(QString::fromUtf8("tableViewButton"));
+        tableViewButton->setGeometry(QRect(460, 70, 131, 55));
+        tableViewButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        Tableview->setIconSize(QSize(20, 20));
-        UpdateInventory = new QPushButton(Inventory_page);
-        UpdateInventory->setObjectName(QString::fromUtf8("UpdateInventory"));
-        UpdateInventory->setGeometry(QRect(310, 70, 131, 55));
-        UpdateInventory->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        tableViewButton->setIconSize(QSize(20, 20));
+        updateInventoryButton = new QPushButton(Inventory_page);
+        updateInventoryButton->setObjectName(QString::fromUtf8("updateInventoryButton"));
+        updateInventoryButton->setGeometry(QRect(310, 70, 131, 55));
+        updateInventoryButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        UpdateInventory->setIconSize(QSize(20, 20));
-        RemoveItem = new QPushButton(Inventory_page);
-        RemoveItem->setObjectName(QString::fromUtf8("RemoveItem"));
-        RemoveItem->setGeometry(QRect(160, 70, 131, 55));
-        RemoveItem->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        updateInventoryButton->setIconSize(QSize(20, 20));
+        removeItemButton = new QPushButton(Inventory_page);
+        removeItemButton->setObjectName(QString::fromUtf8("removeItemButton"));
+        removeItemButton->setGeometry(QRect(160, 70, 131, 55));
+        removeItemButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        RemoveItem->setIconSize(QSize(20, 20));
+        removeItemButton->setIconSize(QSize(20, 20));
         label = new QLabel(Inventory_page);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 150, 521, 16));
-        layoutWidget = new QWidget(Inventory_page);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 190, 351, 281));
-        verticalLayout_4 = new QVBoxLayout(layoutWidget);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        ItemID = new QLabel(layoutWidget);
-        ItemID->setObjectName(QString::fromUtf8("ItemID"));
+        label->setGeometry(QRect(20, 150, 711, 31));
+        inventoryGroupBox = new QGroupBox(Inventory_page);
+        inventoryGroupBox->setObjectName(QString::fromUtf8("inventoryGroupBox"));
+        inventoryGroupBox->setGeometry(QRect(50, 210, 431, 301));
+        inventoryGroupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
+        gridLayoutWidget_6 = new QWidget(inventoryGroupBox);
+        gridLayoutWidget_6->setObjectName(QString::fromUtf8("gridLayoutWidget_6"));
+        gridLayoutWidget_6->setGeometry(QRect(29, 29, 371, 241));
+        inventoryGrid = new QGridLayout(gridLayoutWidget_6);
+        inventoryGrid->setObjectName(QString::fromUtf8("inventoryGrid"));
+        inventoryGrid->setContentsMargins(0, 0, 0, 0);
+        inventoryQuantityLineEdit = new QLineEdit(gridLayoutWidget_6);
+        inventoryQuantityLineEdit->setObjectName(QString::fromUtf8("inventoryQuantityLineEdit"));
+        inventoryQuantityLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        horizontalLayout->addWidget(ItemID);
+        inventoryGrid->addWidget(inventoryQuantityLineEdit, 4, 1, 1, 1);
 
-        lineEdit_ItemID = new QLineEdit(layoutWidget);
-        lineEdit_ItemID->setObjectName(QString::fromUtf8("lineEdit_ItemID"));
-        lineEdit_ItemID->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 255, 255)"));
+        inventoryQuantityLabel = new QLabel(gridLayoutWidget_6);
+        inventoryQuantityLabel->setObjectName(QString::fromUtf8("inventoryQuantityLabel"));
+        inventoryQuantityLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
-        horizontalLayout->addWidget(lineEdit_ItemID);
+        inventoryGrid->addWidget(inventoryQuantityLabel, 4, 0, 1, 1);
 
+        ItemIDLabel = new QLabel(gridLayoutWidget_6);
+        ItemIDLabel->setObjectName(QString::fromUtf8("ItemIDLabel"));
+        ItemIDLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        inventoryGrid->addWidget(ItemIDLabel, 0, 0, 1, 1);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        Itemname = new QLabel(layoutWidget);
-        Itemname->setObjectName(QString::fromUtf8("Itemname"));
+        inventoryIDLineEdit = new QLineEdit(gridLayoutWidget_6);
+        inventoryIDLineEdit->setObjectName(QString::fromUtf8("inventoryIDLineEdit"));
+        inventoryIDLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        horizontalLayout_2->addWidget(Itemname);
+        inventoryGrid->addWidget(inventoryIDLineEdit, 0, 1, 1, 1);
 
-        lineEdit_ItemName = new QLineEdit(layoutWidget);
-        lineEdit_ItemName->setObjectName(QString::fromUtf8("lineEdit_ItemName"));
-        lineEdit_ItemName->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        inventoryNameLineEdit = new QLineEdit(gridLayoutWidget_6);
+        inventoryNameLineEdit->setObjectName(QString::fromUtf8("inventoryNameLineEdit"));
+        inventoryNameLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        horizontalLayout_2->addWidget(lineEdit_ItemName);
+        inventoryGrid->addWidget(inventoryNameLineEdit, 1, 1, 1, 1);
 
+        categoryInventoryLabel = new QLabel(gridLayoutWidget_6);
+        categoryInventoryLabel->setObjectName(QString::fromUtf8("categoryInventoryLabel"));
+        categoryInventoryLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
-        verticalLayout_2->addLayout(horizontalLayout_2);
+        inventoryGrid->addWidget(categoryInventoryLabel, 3, 0, 1, 1);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        Itemprice = new QLabel(layoutWidget);
-        Itemprice->setObjectName(QString::fromUtf8("Itemprice"));
+        inventoryPriceLabel = new QLabel(gridLayoutWidget_6);
+        inventoryPriceLabel->setObjectName(QString::fromUtf8("inventoryPriceLabel"));
+        inventoryPriceLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
-        horizontalLayout_3->addWidget(Itemprice);
+        inventoryGrid->addWidget(inventoryPriceLabel, 2, 0, 1, 1);
 
-        lineEdit_ItemPrice = new QLineEdit(layoutWidget);
-        lineEdit_ItemPrice->setObjectName(QString::fromUtf8("lineEdit_ItemPrice"));
-        lineEdit_ItemPrice->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        inventoryPriceLineEdit = new QLineEdit(gridLayoutWidget_6);
+        inventoryPriceLineEdit->setObjectName(QString::fromUtf8("inventoryPriceLineEdit"));
+        inventoryPriceLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        horizontalLayout_3->addWidget(lineEdit_ItemPrice);
+        inventoryGrid->addWidget(inventoryPriceLineEdit, 2, 1, 1, 1);
 
+        inventoryCategoryLineEdit = new QLineEdit(gridLayoutWidget_6);
+        inventoryCategoryLineEdit->setObjectName(QString::fromUtf8("inventoryCategoryLineEdit"));
+        inventoryCategoryLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        verticalLayout_2->addLayout(horizontalLayout_3);
+        inventoryGrid->addWidget(inventoryCategoryLineEdit, 3, 1, 1, 1);
 
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        Description = new QLabel(layoutWidget);
-        Description->setObjectName(QString::fromUtf8("Description"));
+        inventoryNameLabel = new QLabel(gridLayoutWidget_6);
+        inventoryNameLabel->setObjectName(QString::fromUtf8("inventoryNameLabel"));
+        inventoryNameLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
-        horizontalLayout_4->addWidget(Description);
+        inventoryGrid->addWidget(inventoryNameLabel, 1, 0, 1, 1);
 
-        lineEdit_ItemDescription = new QLineEdit(layoutWidget);
-        lineEdit_ItemDescription->setObjectName(QString::fromUtf8("lineEdit_ItemDescription"));
-        lineEdit_ItemDescription->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
+        clearFieldsButtonInventory = new QPushButton(gridLayoutWidget_6);
+        clearFieldsButtonInventory->setObjectName(QString::fromUtf8("clearFieldsButtonInventory"));
+        clearFieldsButtonInventory->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";\n"
+"color: rgb(63, 36, 79);"));
 
-        horizontalLayout_4->addWidget(lineEdit_ItemDescription);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_4);
-
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        Quantity = new QLabel(layoutWidget);
-        Quantity->setObjectName(QString::fromUtf8("Quantity"));
-
-        horizontalLayout_5->addWidget(Quantity);
-
-        lineEdit_ItemQuantity = new QLineEdit(layoutWidget);
-        lineEdit_ItemQuantity->setObjectName(QString::fromUtf8("lineEdit_ItemQuantity"));
-        lineEdit_ItemQuantity->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
-
-        horizontalLayout_5->addWidget(lineEdit_ItemQuantity);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_5);
-
-
-        verticalLayout_4->addLayout(verticalLayout_2);
-
-        Save = new QPushButton(layoutWidget);
-        Save->setObjectName(QString::fromUtf8("Save"));
-
-        verticalLayout_4->addWidget(Save);
+        inventoryGrid->addWidget(clearFieldsButtonInventory, 5, 0, 1, 2);
 
         stackedWidget->addWidget(Inventory_page);
         page_3 = new QWidget();
@@ -815,6 +794,16 @@ public:
         returnFromAuditButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
+        viewAuditGroupBox = new QGroupBox(audit_page);
+        viewAuditGroupBox->setObjectName(QString::fromUtf8("viewAuditGroupBox"));
+        viewAuditGroupBox->setGeometry(QRect(220, 130, 591, 331));
+        viewAuditGroupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
+        viewAuditScreen = new QLabel(viewAuditGroupBox);
+        viewAuditScreen->setObjectName(QString::fromUtf8("viewAuditScreen"));
+        viewAuditScreen->setGeometry(QRect(40, 40, 511, 251));
+        viewAuditScreen->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";"));
+        viewAuditScreen->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(audit_page);
         settings_page = new QWidget();
         settings_page->setObjectName(QString::fromUtf8("settings_page"));
@@ -977,7 +966,7 @@ public:
 
         retranslateUi(HomepageWindow);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(HomepageWindow);
@@ -1026,17 +1015,18 @@ public:
         deleteUserButton->setText(QCoreApplication::translate("HomepageWindow", "Delete User Account", nullptr));
         inventoryPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Inventory</span></p></body></html>", nullptr));
         returnFromInventoryButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
-        AddItem->setText(QCoreApplication::translate("HomepageWindow", "Add Item", nullptr));
-        Tableview->setText(QCoreApplication::translate("HomepageWindow", "Table View", nullptr));
-        UpdateInventory->setText(QCoreApplication::translate("HomepageWindow", "Update Inventory", nullptr));
-        RemoveItem->setText(QCoreApplication::translate("HomepageWindow", "Remove Item", nullptr));
+        addItemButtonInventory->setText(QCoreApplication::translate("HomepageWindow", "Add Item", nullptr));
+        tableViewButton->setText(QCoreApplication::translate("HomepageWindow", "Table View", nullptr));
+        updateInventoryButton->setText(QCoreApplication::translate("HomepageWindow", "Update Inventory", nullptr));
+        removeItemButton->setText(QCoreApplication::translate("HomepageWindow", "Remove Item", nullptr));
         label->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">ATTENTION:</span><span style=\" font-size:10pt; font-weight:600; font-style:italic; color:#ffffff;\">Only enter the Individual Item ID you want to make changes to. </span></p></body></html>", nullptr));
-        ItemID->setText(QCoreApplication::translate("HomepageWindow", "Item ID", nullptr));
-        Itemname->setText(QCoreApplication::translate("HomepageWindow", "Item Name", nullptr));
-        Itemprice->setText(QCoreApplication::translate("HomepageWindow", "Item Price", nullptr));
-        Description->setText(QCoreApplication::translate("HomepageWindow", "Description", nullptr));
-        Quantity->setText(QCoreApplication::translate("HomepageWindow", "Quantity", nullptr));
-        Save->setText(QCoreApplication::translate("HomepageWindow", "SAVE", nullptr));
+        inventoryGroupBox->setTitle(QString());
+        inventoryQuantityLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Quantity</span></p></body></html>", nullptr));
+        ItemIDLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Item ID</span></p></body></html>", nullptr));
+        categoryInventoryLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Category</span></p></body></html>", nullptr));
+        inventoryPriceLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Price</span></p></body></html>", nullptr));
+        inventoryNameLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Name</span></p></body></html>", nullptr));
+        clearFieldsButtonInventory->setText(QCoreApplication::translate("HomepageWindow", "Clear Fields", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget_2->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("HomepageWindow", "Item No.", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget_2->horizontalHeaderItem(1);
@@ -1076,6 +1066,8 @@ public:
         auditPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Audit</span></p></body></html>", nullptr));
         viewAuditButton->setText(QCoreApplication::translate("HomepageWindow", "View Audit", nullptr));
         returnFromAuditButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
+        viewAuditGroupBox->setTitle(QString());
+        viewAuditScreen->setText(QString());
         settingsPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Settings</span></p></body></html>", nullptr));
         helpPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Help</span></p></body></html>", nullptr));
         helpScreen->setText(QString());

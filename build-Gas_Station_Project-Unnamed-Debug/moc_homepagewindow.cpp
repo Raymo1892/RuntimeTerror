@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_HomepageWindow_t {
-    QByteArrayData data[35];
-    char stringdata0[914];
+    QByteArrayData data[41];
+    char stringdata0[1113];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -66,7 +66,13 @@ QT_MOC_LITERAL(30, 782, 31), // "on_removeUserHelpButton_clicked"
 QT_MOC_LITERAL(31, 814, 30), // "on_inventoryHelpButton_clicked"
 QT_MOC_LITERAL(32, 845, 26), // "on_auditHelpButton_clicked"
 QT_MOC_LITERAL(33, 872, 22), // "on_Tableview_2_clicked"
-QT_MOC_LITERAL(34, 895, 18) // "on_AddItem_clicked"
+QT_MOC_LITERAL(34, 895, 18), // "on_AddItem_clicked"
+QT_MOC_LITERAL(35, 914, 33), // "on_addItemButtonInventory_cli..."
+QT_MOC_LITERAL(36, 948, 27), // "on_removeItemButton_clicked"
+QT_MOC_LITERAL(37, 976, 32), // "on_updateInventoryButton_clicked"
+QT_MOC_LITERAL(38, 1009, 37), // "on_clearFieldsButtonInventory..."
+QT_MOC_LITERAL(39, 1047, 26), // "on_tableViewButton_clicked"
+QT_MOC_LITERAL(40, 1074, 38) // "on_returnFromInventoryButton_..."
 
     },
     "HomepageWindow\0on_homeButton_clicked\0"
@@ -96,7 +102,13 @@ QT_MOC_LITERAL(34, 895, 18) // "on_AddItem_clicked"
     "on_removeUserHelpButton_clicked\0"
     "on_inventoryHelpButton_clicked\0"
     "on_auditHelpButton_clicked\0"
-    "on_Tableview_2_clicked\0on_AddItem_clicked"
+    "on_Tableview_2_clicked\0on_AddItem_clicked\0"
+    "on_addItemButtonInventory_clicked\0"
+    "on_removeItemButton_clicked\0"
+    "on_updateInventoryButton_clicked\0"
+    "on_clearFieldsButtonInventory_clicked\0"
+    "on_tableViewButton_clicked\0"
+    "on_returnFromInventoryButton_2_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -106,7 +118,7 @@ static const uint qt_meta_data_HomepageWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      32,   14, // methods
+      38,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -114,38 +126,44 @@ static const uint qt_meta_data_HomepageWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  174,    2, 0x08 /* Private */,
-       3,    0,  175,    2, 0x08 /* Private */,
-       4,    0,  176,    2, 0x08 /* Private */,
-       5,    0,  177,    2, 0x08 /* Private */,
-       6,    0,  178,    2, 0x08 /* Private */,
-       7,    0,  179,    2, 0x08 /* Private */,
-       8,    0,  180,    2, 0x08 /* Private */,
-       9,    0,  181,    2, 0x08 /* Private */,
-      10,    0,  182,    2, 0x08 /* Private */,
-      11,    0,  183,    2, 0x08 /* Private */,
-      12,    0,  184,    2, 0x08 /* Private */,
-      13,    0,  185,    2, 0x08 /* Private */,
-      14,    0,  186,    2, 0x08 /* Private */,
-      15,    0,  187,    2, 0x08 /* Private */,
-      16,    0,  188,    2, 0x08 /* Private */,
-      17,    0,  189,    2, 0x08 /* Private */,
-      18,    0,  190,    2, 0x08 /* Private */,
-      19,    0,  191,    2, 0x08 /* Private */,
-      20,    0,  192,    2, 0x08 /* Private */,
-      21,    0,  193,    2, 0x08 /* Private */,
-      22,    0,  194,    2, 0x08 /* Private */,
-      23,    1,  195,    2, 0x08 /* Private */,
-      25,    0,  198,    2, 0x08 /* Private */,
-      26,    0,  199,    2, 0x08 /* Private */,
-      27,    0,  200,    2, 0x08 /* Private */,
-      28,    0,  201,    2, 0x08 /* Private */,
-      29,    0,  202,    2, 0x08 /* Private */,
-      30,    0,  203,    2, 0x08 /* Private */,
-      31,    0,  204,    2, 0x08 /* Private */,
-      32,    0,  205,    2, 0x08 /* Private */,
-      33,    0,  206,    2, 0x08 /* Private */,
-      34,    0,  207,    2, 0x08 /* Private */,
+       1,    0,  204,    2, 0x08 /* Private */,
+       3,    0,  205,    2, 0x08 /* Private */,
+       4,    0,  206,    2, 0x08 /* Private */,
+       5,    0,  207,    2, 0x08 /* Private */,
+       6,    0,  208,    2, 0x08 /* Private */,
+       7,    0,  209,    2, 0x08 /* Private */,
+       8,    0,  210,    2, 0x08 /* Private */,
+       9,    0,  211,    2, 0x08 /* Private */,
+      10,    0,  212,    2, 0x08 /* Private */,
+      11,    0,  213,    2, 0x08 /* Private */,
+      12,    0,  214,    2, 0x08 /* Private */,
+      13,    0,  215,    2, 0x08 /* Private */,
+      14,    0,  216,    2, 0x08 /* Private */,
+      15,    0,  217,    2, 0x08 /* Private */,
+      16,    0,  218,    2, 0x08 /* Private */,
+      17,    0,  219,    2, 0x08 /* Private */,
+      18,    0,  220,    2, 0x08 /* Private */,
+      19,    0,  221,    2, 0x08 /* Private */,
+      20,    0,  222,    2, 0x08 /* Private */,
+      21,    0,  223,    2, 0x08 /* Private */,
+      22,    0,  224,    2, 0x08 /* Private */,
+      23,    1,  225,    2, 0x08 /* Private */,
+      25,    0,  228,    2, 0x08 /* Private */,
+      26,    0,  229,    2, 0x08 /* Private */,
+      27,    0,  230,    2, 0x08 /* Private */,
+      28,    0,  231,    2, 0x08 /* Private */,
+      29,    0,  232,    2, 0x08 /* Private */,
+      30,    0,  233,    2, 0x08 /* Private */,
+      31,    0,  234,    2, 0x08 /* Private */,
+      32,    0,  235,    2, 0x08 /* Private */,
+      33,    0,  236,    2, 0x08 /* Private */,
+      34,    0,  237,    2, 0x08 /* Private */,
+      35,    0,  238,    2, 0x08 /* Private */,
+      36,    0,  239,    2, 0x08 /* Private */,
+      37,    0,  240,    2, 0x08 /* Private */,
+      38,    0,  241,    2, 0x08 /* Private */,
+      39,    0,  242,    2, 0x08 /* Private */,
+      40,    0,  243,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -170,6 +188,12 @@ static const uint qt_meta_data_HomepageWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   24,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -222,6 +246,12 @@ void HomepageWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 29: _t->on_auditHelpButton_clicked(); break;
         case 30: _t->on_Tableview_2_clicked(); break;
         case 31: _t->on_AddItem_clicked(); break;
+        case 32: _t->on_addItemButtonInventory_clicked(); break;
+        case 33: _t->on_removeItemButton_clicked(); break;
+        case 34: _t->on_updateInventoryButton_clicked(); break;
+        case 35: _t->on_clearFieldsButtonInventory_clicked(); break;
+        case 36: _t->on_tableViewButton_clicked(); break;
+        case 37: _t->on_returnFromInventoryButton_2_clicked(); break;
         default: ;
         }
     }
@@ -256,13 +286,13 @@ int HomepageWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 32)
+        if (_id < 38)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 32;
+        _id -= 38;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 32)
+        if (_id < 38)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 32;
+        _id -= 38;
     }
     return _id;
 }
