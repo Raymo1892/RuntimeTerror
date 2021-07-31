@@ -41,6 +41,7 @@ private:
     Ui::MainWindow *ui;
     RegistrationWindow *regisWindow;
     HomepageWindow *hWindow;
+    QString user;
 };
 
 //load stored accounts
