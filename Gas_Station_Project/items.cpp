@@ -7,14 +7,16 @@ Items::Items()
     double price = 0;
     bool stock = 0;
     QString category = " ";
+    int quantity = 0;
 }
-Items::Items(int tempID, QString tempName, double tempPrice, bool tempStock, QString tempCategory)
+Items::Items(int tempID, QString tempName, double tempPrice, bool tempStock, QString tempCategory, int tempQuantity)
 {
     id = tempID;
     name = tempName;
     price = tempPrice;
     stock = tempStock;
     category = tempCategory;
+    quantity = tempQuantity;
 }
 void Items::setID(int tempID)
 {
@@ -55,4 +57,12 @@ void Items::setCategory(QString tempCategory)
 QString Items::getCategory()
 {
     return category;
+}
+void Items::setQuantity(int tempQuantity)
+{
+    quantity = tempQuantity;
+}
+int Items::getQuantity()
+{
+    return quantity;
 }

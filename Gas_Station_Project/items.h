@@ -1,6 +1,6 @@
 #ifndef ITEMS_H
 #define ITEMS_H
-
+#include <QVector>
 #include <QString>
 
 
@@ -8,7 +8,7 @@ class Items
 {
 public:
     Items();
-    Items(int tempID, QString tempName, double tempPrice, bool tempStock, QString tempCategory);
+    Items(int tempID, QString tempName, double tempPrice, bool tempStock, QString tempCategory, int tempQuantity);
     void setID(int tempID);
     int getID();
     void setName(QString tempName);
@@ -19,6 +19,8 @@ public:
     bool getStock();
     void setCategory(QString tempCategory);
     QString getCategory();
+    void setQuantity(int tempQuantity);
+    int getQuantity();
 
 public:
     int id;
@@ -26,6 +28,7 @@ public:
     double price;
     bool stock;
     QString category;
+    int quantity;
 };
 
 #endif // ITEMS_H
