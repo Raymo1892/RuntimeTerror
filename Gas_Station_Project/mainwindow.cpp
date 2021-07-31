@@ -2,6 +2,10 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QPixmap>
+#include "accountsstorage.h"
+#include "homepagewindow.h"
+
+using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -31,6 +35,10 @@ void MainWindow::on_loginButton_clicked()
            mysql database;
            bool login_flag = false;
 
+           //load stored accounts
+           accounts.loadAccounts();
+
+            //uncomment this to use the database
             //Chcek if connection is open
             /*if(database.connectDB())
             {
@@ -71,8 +79,8 @@ void MainWindow::on_loginButton_clicked()
                  }
 
                 //display Homepage board after logging in with correct login.
-                /* Use modal approach to not kill the first window when creating new
-                Below used is not a modal where it does hide the first window*/
+                //Use modal approach to not kill the first window when creating new
+                //Below used is not a modal where it does hide the first window*/
 
             /*if(login_flag)
               {
@@ -88,7 +96,7 @@ void MainWindow::on_loginButton_clicked()
 
         //database.closeDB();
 
-           login_flag = true;
+          login_flag = true;
            if (login_flag)
            {
                hide();

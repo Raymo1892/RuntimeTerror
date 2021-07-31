@@ -1,5 +1,8 @@
 #include "homepagewindow.h"
+#include "mainwindow.h"
 #include "ui_homepagewindow.h"
+#include <accountsstorage.h>
+#include "accounts.h"
 #include "QMessageBox"
 #include <QStyleFactory>
 #include <QString>
@@ -21,6 +24,7 @@ Items unleaded(7, "Unleaded Gas (Gallons)", 2.79, true, "gas");
 Items premium(8, "Premium Gas (Gallons)", 3.09, true, "gas");
 Items diesel(9, "Diesel Fuel (Gallons)", 3.29, true, "gas");
 
+using namespace std;
 
 
 HomepageWindow::HomepageWindow(QWidget *parent) :
@@ -135,6 +139,10 @@ void HomepageWindow::on_returnAccountsButton2_clicked()
 
 void HomepageWindow::on_logOutButton_clicked()
 {
+    //program terminating, store the accounts
+    accounts.storeAccounts();
+    accounts.cleanup();
+
     QMessageBox::information(this, "Message", " Logging out....");
     close();
 }
@@ -224,16 +232,16 @@ void HomepageWindow::on_saveUserButton_clicked()
     int privilege = ui->addUserLineEditPrivilege->text().toInt();
     //sales defaults to zero because the new account has not made sales yet
 
-    //create new accounts object and populate it with the variables above
-    accounts *temp = new accounts(username, password, firstname, lastname, privilege, 0);
-    QMessageBox::information(this, "Coming Soon!", "The add user functionality is coming soon.\nCheck back later when Michael connects this to the database!");
+    //check if username exists
+    if (accounts.usernameExists((username)) == false)
+    {
+        //add user
+        accounts.addAccount(username, password, firstname, lastname, privilege);
+    }
+    else
+        QMessageBox::information(this, "Unable to add account", "An account with that username already exists.\n Please try a different username.");
 
-    //Store data in the database here
-
-    //delete this?
-    //QMessageBox::information(this, "Add User", "You entered: \n" + firstname + "\n" + lastname + "\n" + username + "\n" + password + "\n" + privilege + "\n");
-
-    delete(temp);
+    //else, tell user what's going in with a qmessagebox
 }
 
 

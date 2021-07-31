@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <registrationwindow.h>
-#include <homepagewindow.h>
+#include "homepagewindow.h"
+#include <accountsstorage.h>
 #include <QSql>
 #include <QSqlDatabase>
 #include <QDebug>
@@ -12,6 +13,8 @@
 #include <QVariant>
 
 #include <mysql.h>
+
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -39,4 +42,8 @@ private:
     RegistrationWindow *regisWindow;
     HomepageWindow *hWindow;
 };
+
+//load stored accounts
+extern accountsStorage accounts;
+
 #endif // MAINWINDOW_H

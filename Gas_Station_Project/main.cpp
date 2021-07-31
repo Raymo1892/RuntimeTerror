@@ -1,6 +1,11 @@
 #include "mainwindow.h"
+#include "homepagewindow.h"
+#include "accounts.h"
+#include "accountsstorage.h"
 #include <QStyleFactory>
 #include <QApplication>
+
+using namespace std;
 
 int main(int argc, char *argv[])
 {

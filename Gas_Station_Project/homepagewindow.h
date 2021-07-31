@@ -2,6 +2,13 @@
 #define HOMEPAGEWINDOW_H
 
 #include <QMainWindow>
+#include "accountsstorage.h"
+#include "accounts.h"
+
+using namespace std;
+
+//load stored accounts
+extern accountsStorage accounts;
 
 namespace Ui {
 class HomepageWindow;

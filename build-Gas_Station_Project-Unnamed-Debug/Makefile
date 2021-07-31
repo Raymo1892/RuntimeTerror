@@ -53,6 +53,7 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Gas_Station_Project/accounts.cpp \
+		../Gas_Station_Project/accountsstorage.cpp \
 		../Gas_Station_Project/homepagewindow.cpp \
 		../Gas_Station_Project/items.cpp \
 		../Gas_Station_Project/main.cpp \
@@ -63,6 +64,7 @@ SOURCES       = ../Gas_Station_Project/accounts.cpp \
 		moc_mainwindow.cpp \
 		moc_registrationwindow.cpp
 OBJECTS       = accounts.o \
+		accountsstorage.o \
 		homepagewindow.o \
 		items.o \
 		main.o \
@@ -253,6 +255,7 @@ DIST          = ../../../../Qt/5.15.2/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/spec_post.prf \
+		../Gas_Station_Project/.qmake.stash \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/toolchain.prf \
@@ -282,11 +285,13 @@ DIST          = ../../../../Qt/5.15.2/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/yacc.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/lex.prf \
 		../Gas_Station_Project/Gas_Station_Project.pro ../Gas_Station_Project/accounts.h \
+		../Gas_Station_Project/accountsstorage.h \
 		../Gas_Station_Project/homepagewindow.h \
 		../Gas_Station_Project/items.h \
 		../Gas_Station_Project/mainwindow.h \
 		../Gas_Station_Project/mysql.h \
 		../Gas_Station_Project/registrationwindow.h ../Gas_Station_Project/accounts.cpp \
+		../Gas_Station_Project/accountsstorage.cpp \
 		../Gas_Station_Project/homepagewindow.cpp \
 		../Gas_Station_Project/items.cpp \
 		../Gas_Station_Project/main.cpp \
@@ -495,6 +500,7 @@ Makefile: ../Gas_Station_Project/Gas_Station_Project.pro ../../../../Qt/5.15.2/c
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/5.15.2/clang_64/mkspecs/features/toolchain.prf \
@@ -710,6 +716,7 @@ Makefile: ../Gas_Station_Project/Gas_Station_Project.pro ../../../../Qt/5.15.2/c
 ../../../../Qt/5.15.2/clang_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.15.2/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/5.15.2/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.15.2/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.15.2/clang_64/mkspecs/features/mac/sdk.prf:
 ../../../../Qt/5.15.2/clang_64/mkspecs/features/toolchain.prf:
@@ -775,8 +782,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../Gas_Station_Project/resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/5.15.2/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Gas_Station_Project/accounts.h ../Gas_Station_Project/homepagewindow.h ../Gas_Station_Project/items.h ../Gas_Station_Project/mainwindow.h ../Gas_Station_Project/mysql.h ../Gas_Station_Project/registrationwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Gas_Station_Project/accounts.cpp ../Gas_Station_Project/homepagewindow.cpp ../Gas_Station_Project/items.cpp ../Gas_Station_Project/main.cpp ../Gas_Station_Project/mainwindow.cpp ../Gas_Station_Project/mysql.cpp ../Gas_Station_Project/registrationwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Gas_Station_Project/accounts.h ../Gas_Station_Project/accountsstorage.h ../Gas_Station_Project/homepagewindow.h ../Gas_Station_Project/items.h ../Gas_Station_Project/mainwindow.h ../Gas_Station_Project/mysql.h ../Gas_Station_Project/registrationwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Gas_Station_Project/accounts.cpp ../Gas_Station_Project/accountsstorage.cpp ../Gas_Station_Project/homepagewindow.cpp ../Gas_Station_Project/items.cpp ../Gas_Station_Project/main.cpp ../Gas_Station_Project/mainwindow.cpp ../Gas_Station_Project/mysql.cpp ../Gas_Station_Project/registrationwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Gas_Station_Project/homepagewindow.ui ../Gas_Station_Project/mainwindow.ui ../Gas_Station_Project/registrationwindow.ui $(DISTDIR)/
 
 
@@ -787,6 +794,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r Gas_Station_Project.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -912,6 +920,10 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 accounts.o: ../Gas_Station_Project/accounts.cpp ../Gas_Station_Project/accounts.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accounts.o ../Gas_Station_Project/accounts.cpp
+
+accountsstorage.o: ../Gas_Station_Project/accountsstorage.cpp ../Gas_Station_Project/accountsstorage.h \
+		../Gas_Station_Project/accounts.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accountsstorage.o ../Gas_Station_Project/accountsstorage.cpp
 
 homepagewindow.o: ../Gas_Station_Project/homepagewindow.cpp ../Gas_Station_Project/homepagewindow.h \
 		../../../../Qt/5.15.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \

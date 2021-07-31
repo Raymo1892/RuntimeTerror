@@ -1,4 +1,7 @@
 #include "accounts.h"
+#include <iterator>
+
+using namespace std;
 
 accounts::accounts()
 {

@@ -1,6 +1,8 @@
 #ifndef ACCOUNTS_H
 #define ACCOUNTS_H
 #include <string>
+#include <vector>
+#include <fstream>
 
 using namespace std;
 

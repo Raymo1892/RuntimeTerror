@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     accounts.cpp \
+    accountsstorage.cpp \
     homepagewindow.cpp \
     items.cpp \
     main.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 
 HEADERS += \
     accounts.h \
+    accountsstorage.h \
     homepagewindow.h \
     items.h \
     mainwindow.h \
