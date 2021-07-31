@@ -57,7 +57,6 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
             }
             else
             {
-                QMessageBox::information(this, "Query", qry.lastQuery());
                 while(qry.next())
                 {
                       idFromDB = qry.value(0).toInt();
@@ -132,11 +131,11 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
                             item9.setStock(inStockFromDB);
                             item9.setCategory(categoryFromDB);
                             break;
+                }
+
             }
 
         }
-
-    }
         else
         {
             QMessageBox::information(this, "Not Connected", "Database is not Connected");
@@ -306,30 +305,77 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 
     //Store data in the database here
     QMessageBox::information(this, "Change Password", "You entered: \n" + username + "\n" + password + "\n");
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        qry.prepare("UPDATE USERS SET password = :password WHERE username = :username");
+        //binding variable with values column
+        qry.bindValue(":username", username);
+        qry.bindValue(":password", password);
+        if(!qry.exec()){
+            QMessageBox::warning(this, "Failed", "Update Failed to Execute ");
+        }
+        else
+        {
+            QMessageBox::information(this, "Change Password", "You entered: \n" + username + "\n" + password + "\n");
+        }
+
+    }
+    else
+    {
+        QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+    db.closeDB();
 
 }
 
 //to add a user
 void HomepageWindow::on_saveUserButton_clicked()
 {
-    string firstname = ui->addUserLineEditFirstName->text().toStdString();
-    string lastname = ui->addUserLineEditLastName->text().toStdString();
-    string username = ui->addUserLineEditUsername->text().toStdString();
-    string password = ui->addUserLineEditPassword->text().toStdString();
-    int privilege = ui->addUserLineEditPrivilege->text().toInt();
-    //sales defaults to zero because the new account has not made sales yet
-    /*
-    //check if username exists
-    if (accounts.usernameExists((username)) == false)
-    {
-        //add user
-        accounts.addAccount(username, password, firstname, lastname, privilege);
-    }
-    else*/
-        QMessageBox::information(this, "Unable to add account", "An account with that username already exists.\n Please try a different username.");
 
-    //else, tell user what's going in with a qmessagebox
+    if(db.connectDB())
+    {
+        //storing text field values into the variable
+        QString username = ui->addUserLineEditUsername->text();;
+        QString password = ui->addUserLineEditPassword->text();
+        QString firstName = ui->addUserLineEditFirstName->text();
+        QString lastName = ui->addUserLineEditLastName->text();
+        QString privilege = ui->addUserLineEditPrivilege->text();
+
+
+        //Write query to database
+        QSqlQuery qry;
+        qry.prepare("INSERT INTO USERS (username, password, firstname, lastname, privilege, sales)"
+                    "VAlUES (:username, :password, :firstname, :lastname, :privilege, :sales)");
+        //binding variable with values column
+        qry.bindValue(":username", username);
+        qry.bindValue(":password", password);
+        qry.bindValue(":firstname", firstName);
+        qry.bindValue(":lastname", lastName);
+        qry.bindValue(":privilege", privilege.toInt());
+        qry.bindValue(":sales", 0);
+
+        if(!qry.exec())
+        {
+            QMessageBox::information(this, "Not Connected", "Data Insertion failed");
+
+        }
+        else
+        {
+            QMessageBox::information(this, "Inserted", "Data Inserted Successfully");
+
+        }
+    }
+    else
+    {
+        QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+
+    //hide();
+    db.closeDB();
 }
+
+
 
 
 void HomepageWindow::on_deleteUserButton_clicked()
@@ -338,7 +384,29 @@ void HomepageWindow::on_deleteUserButton_clicked()
     QString password = ui->removeUserPassLineEdit->text();
 
     //Store data in the database here
-    QMessageBox::information(this, "Delete User", "You entered: \n" + username + "\n" + password + "\n");
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        qry.prepare("DELETE FROM USERS WHERE username = :username AND password = :password");
+        //binding variable with values column
+        qry.bindValue(":username", username);
+        qry.bindValue(":password", password);
+        if(!qry.exec()){
+            QMessageBox::warning(this, "Failed", "Update Failed to Execute ");
+        }
+        else
+        {
+            QMessageBox::information(this, "Delete User", "You entered: \n" + username + "\n" + password + "\n");
+        }
+
+    }
+    else
+    {
+        QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+    db.closeDB();
+
+
 }
 
 
