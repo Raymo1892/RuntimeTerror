@@ -44,7 +44,7 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
     {
         QSqlQuery qry;
         //Read from database
-        for(idNumber = 1; idNumber < 10; idNumber++){
+        for(idNumber = 1; idNumber < 100; idNumber++){
             qry.prepare(QString("SELECT * FROM INVENTORY WHERE itemid = :idNumber"));
             //qry.prepare(QString("SELECT * FROM USERS WHERE username = :username AND password = :password"));
             //binding variable with values column
@@ -65,74 +65,15 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
                       inStockFromDB = qry.value(3).toBool();
                       categoryFromDB = qry.value(4).toString();
                 }
+                Items *newitem = new Items;
+                newitem->setID(idFromDB);
+                newitem->setName(nameFromDB);
+                newitem->setPrice(priceFromDB / 100);
+                newitem->setStock(inStockFromDB);
+                newitem->setCategory(categoryFromDB);
+                itemsVector.push_back(*newitem);
 
-            }
-            switch(idNumber){
-                        case 1:
-                            item1.setID(idFromDB);
-                            item1.setName(nameFromDB);
-                            item1.setPrice(priceFromDB / 100);
-                            item1.setStock(inStockFromDB);
-                            item1.setCategory(categoryFromDB);
-                            break;
-                        case 2:
-                            item2.setID(idFromDB);
-                            item2.setName(nameFromDB);
-                            item2.setPrice(priceFromDB / 100);
-                            item2.setStock(inStockFromDB);
-                            item2.setCategory(categoryFromDB);
-                            break;
-                        case 3:
-                            item3.setID(idFromDB);
-                            item3.setName(nameFromDB);
-                            item3.setPrice(priceFromDB / 100);
-                            item3.setStock(inStockFromDB);
-                            item3.setCategory(categoryFromDB);
-                            break;
-                        case 4:
-                            item4.setID(idFromDB);
-                            item4.setName(nameFromDB);
-                            item4.setPrice(priceFromDB / 100);
-                            item4.setStock(inStockFromDB);
-                            item4.setCategory(categoryFromDB);
-                            break;
-                        case 5:
-                            item5.setID(idFromDB);
-                            item5.setName(nameFromDB);
-                            item5.setPrice(priceFromDB / 100);
-                            item5.setStock(inStockFromDB);
-                            item5.setCategory(categoryFromDB);
-                            break;
-                        case 6:
-                            item6.setID(idFromDB);
-                            item6.setName(nameFromDB);
-                            item6.setPrice(priceFromDB / 100);
-                            item6.setStock(inStockFromDB);
-                            item6.setCategory(categoryFromDB);
-                            break;
-                        case 7:
-                            item7.setID(idFromDB);
-                            item7.setName(nameFromDB);
-                            item7.setPrice(priceFromDB / 100);
-                            item7.setStock(inStockFromDB);
-                            item7.setCategory(categoryFromDB);
-                            break;
-                        case 8:
-                            item8.setID(idFromDB);
-                            item8.setName(nameFromDB);
-                            item8.setPrice(priceFromDB / 100);
-                            item8.setStock(inStockFromDB);
-                            item8.setCategory(categoryFromDB);
-                            break;
-                        case 9:
-                            item9.setID(idFromDB);
-                            item9.setName(nameFromDB);
-                            item9.setPrice(priceFromDB / 100);
-                            item9.setStock(inStockFromDB);
-                            item9.setCategory(categoryFromDB);
-                            break;
                 }
-
             }
 
         }
@@ -144,15 +85,7 @@ HomepageWindow::HomepageWindow(QWidget *parent) :
 
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(0);
-    itemsVector.push_back(item1);
-    itemsVector.push_back(item2);
-    itemsVector.push_back(item3);
-    itemsVector.push_back(item4);
-    itemsVector.push_back(item5);
-    itemsVector.push_back(item6);
-    itemsVector.push_back(item7);
-    itemsVector.push_back(item8);
-    itemsVector.push_back(item9);
+
 }
 
 HomepageWindow::~HomepageWindow()
@@ -530,7 +463,7 @@ void HomepageWindow::on_addItemButtonInventory_clicked()
     {
         if(itemsVector[i].id == itemID.toInt())
         {
-           QMessageBox::information(this, "Add Item", "Item already found in database, please try again.");
+           QMessageBox::information(this, "Add Item", "ItemID already found in database, please try again.");
            itemMatchFound = true;
            break;
         }
@@ -539,7 +472,40 @@ void HomepageWindow::on_addItemButtonInventory_clicked()
     if(itemMatchFound != true)
     {
         Items tempObj(itemID.toInt(), itemName, price.toDouble(), true, category, quantity.toInt());
-        itemsVector.push_back(tempObj);
+        itemsVector.push_back(tempObj);if(db.connectDB())
+        {
+            //Write query to database
+            QSqlQuery qry;
+            qry.prepare("INSERT INTO INVENTORY VAlUES (:itemid, :itemname, :price, :instock, :quantity, :category)");
+            //binding variable with values column
+            qry.bindValue(":itemid", tempObj.getID());
+            qry.bindValue(":itemname", tempObj.getName());
+            qry.bindValue(":price", tempObj.getPrice()*100);
+            if(tempObj.getQuantity() > 0)
+                qry.bindValue(":instock", true);
+            else
+                qry.bindValue(":instock", false);
+            qry.bindValue(":quantity", tempObj.getQuantity());
+            qry.bindValue(":category", tempObj.getCategory());
+
+            if(!qry.exec())
+            {
+                QMessageBox::information(this, "Error", "Item Not Added");
+
+            }
+            else
+            {
+                QMessageBox::information(this, "Inserted", "Item added to Inventory");
+
+            }
+        }
+        else
+        {
+            QMessageBox::information(this, "Not Connected", "Database is not Connected");
+        }
+
+        //hide();
+        db.closeDB();
         QMessageBox::information(this, "Add Item", "Item successfully added.");
     }
 }
@@ -548,10 +514,6 @@ void HomepageWindow::on_addItemButtonInventory_clicked()
 void HomepageWindow::on_removeItemButton_clicked()
 {
     QString itemID = ui->inventoryIDLineEdit->text();
-    QString itemName = ui->inventoryNameLineEdit->text();
-    QString price = ui->inventoryPriceLineEdit->text();
-    QString category = ui->inventoryCategoryLineEdit->text();
-    QString quantity = ui->inventoryQuantityLineEdit->text();
 
     bool itemMatchFound = false;
 
@@ -563,6 +525,26 @@ void HomepageWindow::on_removeItemButton_clicked()
            itemMatchFound = true;
            itemsVector.remove(i);
            QMessageBox::information(this, "Remove Item", "Item successfully deleted.");
+           if(db.connectDB())
+           {
+               QSqlQuery qry;
+               qry.prepare("DELETE FROM INVENTORY WHERE itemid = :itemid");
+               //binding variable with values column
+               qry.bindValue(":itemid", itemID);
+               if(!qry.exec()){
+                   QMessageBox::warning(this, "Failed", "Delete Failed to Execute ");
+               }
+               else
+               {
+                   QMessageBox::information(this, "Deleted", "Item removed from Inventory");
+               }
+
+           }
+           else
+           {
+               QMessageBox::information(this, "Not Connected", "Database is not Connected");
+           }
+           db.closeDB();
            break;
         }
     }
@@ -604,6 +586,32 @@ void HomepageWindow::on_updateInventoryButton_clicked()
             itemsVector[i].category = category;
             itemsVector[i].quantity = quantity.toInt();
             QMessageBox::information(this, "Update Item", "Item successfully updated.");
+            if(db.connectDB())
+            {
+                QSqlQuery qry;
+                qry.prepare("UPDATE INVENTORY SET itemname = :itemname, price = :price, instock = :instock, quantity = :quantity, category = :category WHERE itemid = :itemid");
+                //binding variable with values column
+                qry.bindValue(":itemid", itemsVector[i].id);
+                qry.bindValue(":itemname", itemsVector[i].name);
+                qry.bindValue(":price", itemsVector[i].price*100);
+                qry.bindValue(":quantity", itemsVector[i].quantity);
+                qry.bindValue(":category", itemsVector[i].category);
+                if(itemsVector[i].quantity > 0) qry.bindValue(":instock", true);
+                else qry.bindValue(":instock", false);
+                if(!qry.exec()){
+                    QMessageBox::warning(this, "Failed", "Update Failed to Execute ");
+                }
+                else
+                {
+                    QMessageBox::information(this, "Update", "Inventory updated");
+                }
+
+            }
+            else
+            {
+                QMessageBox::information(this, "Not Connected", "Database is not Connected");
+            }
+            db.closeDB();
             break;
         }
     }

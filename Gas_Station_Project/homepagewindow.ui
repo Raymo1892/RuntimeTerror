@@ -159,7 +159,7 @@ background-color: rgba(255, 255, 255, 0);
 color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="make_sale_page">
      <widget class="QLabel" name="makeSaleLabel">
@@ -1164,14 +1164,14 @@ color: rgb(63, 36, 79);</string>
       </row>
       <row>
        <property name="text">
+        <string>10</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
         <string>11</string>
        </property>
       </row>
-      <column>
-       <property name="text">
-        <string>Item No.</string>
-       </property>
-      </column>
       <column>
        <property name="text">
         <string>Item Name</string>
@@ -1192,6 +1192,11 @@ color: rgb(63, 36, 79);</string>
         <string>Quantity</string>
        </property>
       </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string/>
+       </property>
+      </item>
      </widget>
      <widget class="QLabel" name="inventoryPageLabel_2">
       <property name="geometry">
