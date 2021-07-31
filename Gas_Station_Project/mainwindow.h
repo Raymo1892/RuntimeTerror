@@ -28,6 +28,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private slots:
 
 
@@ -41,10 +42,10 @@ private:
     Ui::MainWindow *ui;
     RegistrationWindow *regisWindow;
     HomepageWindow *hWindow;
-    QString user;
+    QString returnUsername;
+
 };
 
-//load stored accounts
-extern accountsStorage accounts;
+
 
 #endif // MAINWINDOW_H

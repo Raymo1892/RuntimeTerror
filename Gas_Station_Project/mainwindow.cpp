@@ -35,11 +35,8 @@ void MainWindow::on_loginButton_clicked()
            mysql database;
            bool login_flag = false;
 
-           //load stored accounts
-           //accounts.loadAccounts();
 
-            //uncomment this to use the database
-            //Chcek if connection is open
+            //Check if connection is open
             if(database.connectDB())
             {
                 //QMessageBox::information(this, "Connection", "Database connected successfully");
@@ -70,7 +67,7 @@ void MainWindow::on_loginButton_clicked()
                         {
                             QMessageBox::information(this, "Login", "Successful Login.");
                                 login_flag = true;
-                                user = usernameFromDB;
+
                         }
                      }
                  }
@@ -114,4 +111,6 @@ void MainWindow::on_newUserButton_clicked()
     regisWindow = new RegistrationWindow(this); // creating registration window object
     regisWindow->show(); // this shows the window
 }
+
+
 

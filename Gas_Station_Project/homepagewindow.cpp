@@ -1,15 +1,13 @@
 #include "homepagewindow.h"
 #include "mainwindow.h"
 #include "ui_homepagewindow.h"
-#include <accountsstorage.h>
-#include "accounts.h"
 #include "QMessageBox"
 #include <QStyleFactory>
 #include <QString>
 #include <items.h>
-#include <accounts.h>
 #include <QVector>
 #include <mysql.h>
+
 
 QString cartString;
 QString totalString;
@@ -18,7 +16,6 @@ mysql db;
 QVector<Items> cart;
 QVector<int> quantityLeft;
 Items *addToCart;
-//Items *inventoryList;
 using namespace std;
 
 
@@ -643,11 +640,16 @@ void HomepageWindow::on_returnFromInventoryButton_2_clicked()
 
 void HomepageWindow::on_submitSaleButton_clicked()
 {
+    int totalSale = 0;
+    int itemssold = 0;
+    //QString itemno = ":itemid";
     if(db.connectDB())
     {
         QSqlQuery qry;
         for(int i = 0; i < cart.size(); i++)
         {
+            totalSale += (cart[i].getPrice()*100 * cart[i].getQuantity());
+            itemssold += cart[i].getQuantity();
             qry.prepare("SELECT * FROM INVENTORY WHERE itemid = :itemid");
             qry.bindValue(":itemid", cart[i].getID());
             if(!qry.exec()){
@@ -678,8 +680,30 @@ void HomepageWindow::on_submitSaleButton_clicked()
                 QMessageBox::information(this, "Success", QString::number(quantityLeft[i]) + " " + cart[i].getName() + " remaining");
 
             }
+        }
+        qry.prepare("INSERT INTO SALES (totalprice, itemssold, itemid1, itemq1, itemid2, itemq2, itemid3, itemq3,"
+                    " itemid4, itemq4, itemid5, itemq5, itemid6, itemq6, itemid7, itemq7, itemid8, itemq8,"
+                    " itemid9, itemq9, itemid10, itemq10, salesperson)"
+                    "VALUES(:totalprice, :itemssold, :itemid1, :itemq1, :itemid2, :itemq2, :itemid3, :itemq3,"
+                    " :itemid4, :itemq4, :itemid5, :itemq5, :itemid6, :itemq6, :itemid7, :itemq7, :itemid8, :itemq8,"
+                    " :itemid9, :itemq9, :itemid10, :itemq10, :salesperson)");
+        qry.bindValue(":totalprice", totalSale);
+        qry.bindValue(":itemssold", itemssold);
+        for(int i = 1; i <= cart.size(); i++)
+        {
+            QString itemno = ":itemid";
+            QString itemq = ":itemq";
+            qry.bindValue(itemno.append(QString::number(i)), cart[i-1].getID());
+            qry.bindValue(itemq.append(QString::number(i)), cart[i-1].getQuantity());
 
         }
+        qry.bindValue(":salesperson", "admin");
+        if(!qry.exec()){
+            QMessageBox::warning(this, "Error", "Sale not recorded");
+        }
+
+
+
     }
     else
     {
