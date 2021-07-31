@@ -300,6 +300,8 @@ void HomepageWindow::on_addToCartButton_clicked()
     QString itemID = ui->makeSaleItemIDLineEdit->text();
     QString quantity = ui->makeSaleQuantityLineEdit->text();
     addToCart = new Items;
+    int stock = 0;
+    addToCart->setQuantity(quantity.toInt());
 
     if(db.connectDB())
     {
@@ -316,31 +318,39 @@ void HomepageWindow::on_addToCartButton_clicked()
         }
         else
         {
-
-            while(qry.next() && qry.value(3).toBool())
+            while(qry.next())
             {
-                //creating item to add to cart
-                addToCart->setID(qry.value(0).toInt());
-                addToCart->setName(qry.value(1).toString());
-                addToCart->setPrice(qry.value(2).toDouble() / 100);
                 addToCart->setStock(qry.value(3).toBool());
-                addToCart->setQuantity(quantity.toInt());
-                addToCart->setCategory(qry.value(5).toString());
+                stock = qry.value(4).toInt();
+                if(qry.value(3).toBool() && qry.value(4).toInt() >= quantity.toInt())
+                {
+                    //creating item to add to cart
+                    addToCart->setID(qry.value(0).toInt());
+                    addToCart->setName(qry.value(1).toString());
+                    addToCart->setPrice(qry.value(2).toDouble() / 100);
+                    addToCart->setCategory(qry.value(5).toString());
 
-                //printing item information to cart display
-                double itemTotal = quantity.toDouble() * addToCart->getPrice();
-                ui->cartDisplay->setText(ui->cartDisplay->text() + "\n" + quantity + "x " + addToCart->getName() + " - " + QString::number(itemTotal));
-                cartTotal += itemTotal;
+                    //add item to cart
+                    cart.push_back(*addToCart);
 
-                totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
-                ui->totalBoxDisplay->setText("$" + totalString);
+                    //printing item information to cart display
+                    double itemTotal = quantity.toDouble() * addToCart->getPrice();
+                    ui->cartDisplay->setText(ui->cartDisplay->text() + "\n" + quantity + "x " + addToCart->getName() + " - $" + QString::number(itemTotal));
+                    cartTotal += itemTotal;
+
+                    totalString = QString::number(cartTotal); // this converts the cartTotal variable into a string to be displayed
+                    ui->totalBoxDisplay->setText("$" + totalString);
+                }
+                if(!(addToCart->getStock()))
+                {
+                    QMessageBox::information(this, "Cannot add to cart", "Item not in stock");
+                    break;
+                }
+                if(quantity.toInt() > stock)
+                {
+                    QMessageBox::information(this, "Cannot add to cart", "Insufficient quantity in stock");
+                }
             }
-            if(!(addToCart->getStock()))
-            {
-                QMessageBox::information(this, "Cannot add to cart", "Item not in stock");
-            }
-            cart.push_back(*addToCart);
-
         }
     }
     else

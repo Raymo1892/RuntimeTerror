@@ -30,8 +30,6 @@ public:
     QLineEdit *lineEdit_LastName;
     QLineEdit *lineEdit_UserName;
     QLineEdit *lineEdit_Password;
-    QLineEdit *lineEdit_Email;
-    QLabel *emailLabel;
     QLabel *lastNameLabel;
     QLabel *firstNameLabel;
     QPushButton *registerPushButton;
@@ -84,16 +82,6 @@ public:
         lineEdit_Password->setGeometry(QRect(180, 320, 201, 41));
         lineEdit_Password->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         lineEdit_Password->setEchoMode(QLineEdit::Password);
-        lineEdit_Email = new QLineEdit(groupBox);
-        lineEdit_Email->setObjectName(QString::fromUtf8("lineEdit_Email"));
-        lineEdit_Email->setGeometry(QRect(180, 380, 201, 41));
-        lineEdit_Email->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-        emailLabel = new QLabel(groupBox);
-        emailLabel->setObjectName(QString::fromUtf8("emailLabel"));
-        emailLabel->setGeometry(QRect(30, 380, 111, 41));
-        emailLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";\n"
-"background-color: rgb(63, 36, 79);\n"
-"color: rgb(0, 255, 255);"));
         lastNameLabel = new QLabel(groupBox);
         lastNameLabel->setObjectName(QString::fromUtf8("lastNameLabel"));
         lastNameLabel->setGeometry(QRect(30, 209, 121, 31));
@@ -108,7 +96,7 @@ public:
 "color: rgb(0, 255, 255);"));
         registerPushButton = new QPushButton(groupBox);
         registerPushButton->setObjectName(QString::fromUtf8("registerPushButton"));
-        registerPushButton->setGeometry(QRect(180, 460, 201, 51));
+        registerPushButton->setGeometry(QRect(180, 390, 201, 51));
         registerPushButton->setAutoFillBackground(false);
         registerPushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
@@ -116,7 +104,7 @@ public:
         registerPushButton->setIconSize(QSize(20, 20));
         cancelButton = new QPushButton(groupBox);
         cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
-        cancelButton->setGeometry(QRect(240, 530, 80, 25));
+        cancelButton->setGeometry(QRect(240, 470, 80, 25));
         cancelButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
@@ -133,7 +121,6 @@ public:
         registrationLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:24pt; font-weight:400;\">Registration</span></p></body></html>", nullptr));
         usernameLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Username</span></p></body></html>", nullptr));
         passwordLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Password</span></p></body></html>", nullptr));
-        emailLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Access (0 - 1)</span></p></body></html>", nullptr));
         lastNameLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Last Name</span></p></body></html>", nullptr));
         firstNameLabel->setText(QCoreApplication::translate("RegistrationWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">First Name</span></p></body></html>", nullptr));
         registerPushButton->setText(QCoreApplication::translate("RegistrationWindow", "Register", nullptr));
