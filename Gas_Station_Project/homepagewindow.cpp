@@ -15,12 +15,6 @@ QString cartString;
 QString totalString;
 double cartTotal = 0.0;
 mysql db;
-//int idFromDB;
-//QString nameFromDB;
-//double priceFromDB;
-//bool inStockFromDB;
-//QString categoryFromDB;
-//int idNumber;
 
 using namespace std;
 
