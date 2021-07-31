@@ -27,7 +27,6 @@ void RegistrationWindow::clear_text_field()
     ui ->lineEdit_Password ->clear();
     ui ->lineEdit_FirstName ->clear();
     ui ->lineEdit_LastName ->clear();
-    ui ->lineEdit_Email ->clear();
 }
 
 void RegistrationWindow::on_registerPushButton_clicked()
@@ -44,7 +43,6 @@ void RegistrationWindow::on_registerPushButton_clicked()
         QString passWord = ui ->lineEdit_Password ->text();
         QString firstName = ui ->lineEdit_FirstName ->text();
         QString lastName = ui ->lineEdit_LastName ->text();
-        QString privilege = ui ->lineEdit_Email ->text();
 
         //Write query to database
         QSqlQuery qry;
@@ -55,7 +53,7 @@ void RegistrationWindow::on_registerPushButton_clicked()
         qry.bindValue(":password", passWord);
         qry.bindValue(":firstname", firstName);
         qry.bindValue(":lastname", lastName);
-        qry.bindValue(":privilege", privilege.toInt());
+        qry.bindValue(":privilege", 0);
         qry.bindValue(":sales", 0);
 
         if(qry.exec())
