@@ -45,33 +45,41 @@ void MainWindow::on_loginButton_clicked()
                 //Show the homepage window only if DB is connected
                 QString username = ui->lineEdit_UserName ->text();
                 QString password = ui->lineEdit_Password ->text();
-
-                QSqlQuery query;
-                query.prepare(QString("SELECT * FROM USERS WHERE username = :username AND password = :password"));
-
-                query.bindValue(":username", username);
-                query.bindValue(":password", password);
-
-                if(!query.exec())
+                if(username == "" || password == "")
                 {
-                    QMessageBox::warning(this, "Failed", "Query Failed to Execute");
+                   QMessageBox::information(this, "Required Field Empty", "One or More field are empty Try Again");
                 }
-                 else
+                else
                 {
-                    while(query.next())
+                    QSqlQuery query;
+                    query.prepare(QString("SELECT * FROM USERS WHERE username = :username AND password = :password"));
+
+                    query.bindValue(":username", username);
+                    query.bindValue(":password", password);
+
+                    if(!query.exec())
                     {
-                        QString usernameFromDB = query.value(0).toString();
-                        QString passwordFromDB = query.value(1).toString();
-
-                        if(usernameFromDB == username && passwordFromDB == password)
+                        QMessageBox::warning(this, "Failed", "Query Failed to Execute");
+                    }
+                     else
+                    {
+                        while(query.next())
                         {
-                            QMessageBox::information(this, "Login", "Successful Login.");
-                                login_flag = true;
+                            QString usernameFromDB = query.value(0).toString();
+                            QString passwordFromDB = query.value(1).toString();
 
-                        }
+                            if(usernameFromDB == username && passwordFromDB == password)
+                            {
+                                QMessageBox::information(this, "Login", "Successful Login.");
+                                    login_flag = true;
+
+                            }
+                         }
                      }
-                 }
-              }else
+                }
+
+              }
+            else
                 {
                      QMessageBox::information(this, "Connection", "Database Failed to Connected");
                  }
