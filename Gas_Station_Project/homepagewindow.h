@@ -80,7 +80,7 @@ private slots:
 
     void on_auditHelpButton_clicked();
 
-    void on_Tableview_2_clicked();
+    void on_editModeButton_clicked();
 
     void on_AddItem_clicked();
 
@@ -92,7 +92,7 @@ private slots:
 
     void on_clearFieldsButtonInventory_clicked();
 
-    void on_tableViewButton_clicked();
+    void on_inventoryListViewButton_clicked();
 
     void on_returnFromInventoryButton_2_clicked();
 

@@ -342,11 +342,14 @@ void HomepageWindow::on_deleteUserButton_clicked()
 void HomepageWindow::on_Tableview_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+
+    //ui->stackedWidget->setCurrentIndex(0);
 }
 
-void HomepageWindow::on_Tableview_2_clicked()
+void HomepageWindow::on_editModeButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
+
 }
 
 
@@ -466,7 +469,16 @@ void HomepageWindow::on_removeUserHelpButton_clicked()
 void HomepageWindow::on_inventoryHelpButton_clicked()
 {
     ui->helpScreen->setWordWrap(true);
-    ui->helpScreen->setText("1. Inventory -- Work in Progress!\n");
+    ui->helpScreen->setText("1. Enter item ID in item ID box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "2. Enter item name into name box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "3. Enter price into price box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "4. Enter category into category box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "5. Enter quantity into quantity box\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "6. Select Add Item / Remove Item / Update Item\n");
+    ui->helpScreen->setText(ui->helpScreen->text() + "7. Alternatively, select Table View (No info required)\n");
+
+
+
 
 }
 
@@ -613,9 +625,46 @@ void HomepageWindow::on_clearFieldsButtonInventory_clicked()
 }
 
 
-void HomepageWindow::on_tableViewButton_clicked()
+void HomepageWindow::on_inventoryListViewButton_clicked()
 {
+    ui->viewInventoryScreen->clear();
     ui->stackedWidget->setCurrentIndex(6);
+    // Update the inventory list for the make sale page
+    QString itemid;
+    QString itemname;
+    double itemprice;
+    QString itemquantity;
+
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        //Read from database
+        qry.prepare(QString("SELECT * FROM INVENTORY"));
+        if(!qry.exec())
+        {
+            QMessageBox::warning(this, "Failed", "Query Failed to Execute ");
+        }
+        else
+        {
+            while(qry.next())
+            {
+                itemid = qry.value(0).toString();
+                itemname = qry.value(1).toString();
+                itemprice = qry.value(2).toDouble()/100;
+                itemquantity = qry.value(4).toString();
+                ui->viewInventoryScreen->setText(ui->viewInventoryScreen->text() + itemid + ". ");
+
+                ui->viewInventoryScreen->setText(ui->viewInventoryScreen->text() + itemname + " ($" + QString::number(itemprice) + ")" );
+                ui->viewInventoryScreen->setText(ui->viewInventoryScreen->text() + " -- Quantity Remaining: " + itemquantity + "\n");
+
+            }
+        }
+    }
+    else
+    {
+        QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+    db.closeDB();
 }
 
 
