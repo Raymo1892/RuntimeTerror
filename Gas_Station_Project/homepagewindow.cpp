@@ -222,7 +222,35 @@ void HomepageWindow::on_clearCartButton_clicked()
 
 void HomepageWindow::on_viewAuditButton_clicked()
 {
-    ui->viewAuditScreen->setText("Insert Audit information here...");
+    ui->viewAuditScreen->setText("Most Recent Sales\n");
+    int increment = 0;
+    if(db.connectDB())
+    {
+        QSqlQuery qry;
+        //Read from database
+        qry.prepare(QString("SELECT * FROM SALES ORDER BY salesid DESC"));
+        if(!qry.exec())
+        {
+            QMessageBox::warning(this, "Failed", "Query Failed to Execute ");
+        }
+        else
+        {
+            while(qry.next() && increment < 10)
+            {
+                ui->viewAuditScreen->setText(ui->viewAuditScreen->text() + qry.value(0).toString() + ". "+ "$");
+                ui->viewAuditScreen->setText(ui->viewAuditScreen->text() + QString::number(qry.value(1).toDouble()/100) + " - " );
+                ui->viewAuditScreen->setText(ui->viewAuditScreen->text() + qry.value(2).toString() + " items sold by " + qry.value(23).toString() + "\n" );
+                increment++;
+
+            }
+        }
+    }
+    else
+    {
+        QMessageBox::information(this, "Not Connected", "Database is not Connected");
+    }
+    db.closeDB();
+
 
 }
 
@@ -529,10 +557,6 @@ void HomepageWindow::on_addItemButtonInventory_clicked()
             else
             {
                 QMessageBox::information(this, "Add Item", "Item added to Inventory");
-                // This is the line that I added to dynamically update the menu
-                // just need to make it work with the items that are already in the database
-                ui->itemMenuLabel->setText(ui->itemMenuLabel->text() + "\n" + itemID + "." + " " + itemName + " (" + price + ")");
-
             }
         }
         else
@@ -678,7 +702,6 @@ void HomepageWindow::on_submitSaleButton_clicked()
 {
     int totalSale = 0;
     int itemssold = 0;
-    //QString itemno = ":itemid";
     if(db.connectDB())
     {
         QSqlQuery qry;
@@ -713,7 +736,7 @@ void HomepageWindow::on_submitSaleButton_clicked()
             }
             else
             {
-                QMessageBox::information(this, "Success", QString::number(quantityLeft[i]) + " " + cart[i].getName() + " remaining");
+                // QMessageBox::information(this, "Success", QString::number(quantityLeft[i]) + " " + cart[i].getName() + " remaining");
 
             }
         }

@@ -15,13 +15,11 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -106,7 +104,7 @@ public:
     QLabel *inventoryPageLabel;
     QPushButton *returnFromInventoryButton;
     QPushButton *addItemButtonInventory;
-    QPushButton *tableViewButton;
+    QPushButton *inventoryListViewButton;
     QPushButton *updateInventoryButton;
     QPushButton *removeItemButton;
     QLabel *label;
@@ -125,13 +123,13 @@ public:
     QLabel *inventoryNameLabel;
     QPushButton *clearFieldsButtonInventory;
     QWidget *page_3;
-    QTableWidget *tableWidget_2;
     QLabel *inventoryPageLabel_2;
     QPushButton *AddItem_2;
-    QPushButton *Tableview_2;
+    QPushButton *editModeButton;
     QPushButton *RemoveItem_2;
     QPushButton *returnFromInventoryButton_2;
     QPushButton *UpdateInventory_2;
+    QLabel *viewInventoryScreen;
     QWidget *audit_page;
     QLabel *auditPageLabel;
     QPushButton *viewAuditButton;
@@ -158,9 +156,9 @@ public:
     QPushButton *accountButton;
     QPushButton *inventoryButton;
     QPushButton *auditButton;
-    QPushButton *settingButton;
     QPushButton *helpButton;
-    QPushButton *logOutButton;
+    QPushButton *logoutButton;
+    QPushButton *ExitButton;
 
     void setupUi(QMainWindow *HomepageWindow)
     {
@@ -601,13 +599,13 @@ public:
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
         addItemButtonInventory->setIconSize(QSize(20, 20));
-        tableViewButton = new QPushButton(Inventory_page);
-        tableViewButton->setObjectName(QString::fromUtf8("tableViewButton"));
-        tableViewButton->setGeometry(QRect(460, 70, 131, 55));
-        tableViewButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        inventoryListViewButton = new QPushButton(Inventory_page);
+        inventoryListViewButton->setObjectName(QString::fromUtf8("inventoryListViewButton"));
+        inventoryListViewButton->setGeometry(QRect(460, 70, 131, 55));
+        inventoryListViewButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        tableViewButton->setIconSize(QSize(20, 20));
+        inventoryListViewButton->setIconSize(QSize(20, 20));
         updateInventoryButton = new QPushButton(Inventory_page);
         updateInventoryButton->setObjectName(QString::fromUtf8("updateInventoryButton"));
         updateInventoryButton->setGeometry(QRect(310, 70, 131, 55));
@@ -706,46 +704,6 @@ public:
         stackedWidget->addWidget(Inventory_page);
         page_3 = new QWidget();
         page_3->setObjectName(QString::fromUtf8("page_3"));
-        tableWidget_2 = new QTableWidget(page_3);
-        if (tableWidget_2->columnCount() < 4)
-            tableWidget_2->setColumnCount(4);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(3, __qtablewidgetitem3);
-        if (tableWidget_2->rowCount() < 11)
-            tableWidget_2->setRowCount(11);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(0, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(1, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(2, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(3, __qtablewidgetitem7);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(4, __qtablewidgetitem8);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(5, __qtablewidgetitem9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(6, __qtablewidgetitem10);
-        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(7, __qtablewidgetitem11);
-        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(8, __qtablewidgetitem12);
-        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(9, __qtablewidgetitem13);
-        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(10, __qtablewidgetitem14);
-        QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
-        tableWidget_2->setItem(0, 0, __qtablewidgetitem15);
-        tableWidget_2->setObjectName(QString::fromUtf8("tableWidget_2"));
-        tableWidget_2->setGeometry(QRect(50, 170, 531, 331));
-        tableWidget_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255)"));
         inventoryPageLabel_2 = new QLabel(page_3);
         inventoryPageLabel_2->setObjectName(QString::fromUtf8("inventoryPageLabel_2"));
         inventoryPageLabel_2->setGeometry(QRect(10, 0, 181, 50));
@@ -757,13 +715,13 @@ public:
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
         AddItem_2->setIconSize(QSize(20, 20));
-        Tableview_2 = new QPushButton(page_3);
-        Tableview_2->setObjectName(QString::fromUtf8("Tableview_2"));
-        Tableview_2->setGeometry(QRect(460, 70, 131, 55));
-        Tableview_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        editModeButton = new QPushButton(page_3);
+        editModeButton->setObjectName(QString::fromUtf8("editModeButton"));
+        editModeButton->setGeometry(QRect(460, 70, 131, 55));
+        editModeButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        Tableview_2->setIconSize(QSize(20, 20));
+        editModeButton->setIconSize(QSize(20, 20));
         RemoveItem_2 = new QPushButton(page_3);
         RemoveItem_2->setObjectName(QString::fromUtf8("RemoveItem_2"));
         RemoveItem_2->setGeometry(QRect(160, 70, 131, 55));
@@ -784,6 +742,12 @@ public:
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
         UpdateInventory_2->setIconSize(QSize(20, 20));
+        viewInventoryScreen = new QLabel(page_3);
+        viewInventoryScreen->setObjectName(QString::fromUtf8("viewInventoryScreen"));
+        viewInventoryScreen->setGeometry(QRect(110, 150, 381, 381));
+        viewInventoryScreen->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";"));
+        viewInventoryScreen->setAlignment(Qt::AlignCenter);
         stackedWidget->addWidget(page_3);
         audit_page = new QWidget();
         audit_page->setObjectName(QString::fromUtf8("audit_page"));
@@ -946,14 +910,6 @@ public:
 
         verticalLayout->addWidget(auditButton);
 
-        settingButton = new QPushButton(left_frame);
-        settingButton->setObjectName(QString::fromUtf8("settingButton"));
-        settingButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79)"));
-
-        verticalLayout->addWidget(settingButton);
-
         helpButton = new QPushButton(left_frame);
         helpButton->setObjectName(QString::fromUtf8("helpButton"));
         helpButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
@@ -962,20 +918,28 @@ public:
 
         verticalLayout->addWidget(helpButton);
 
-        logOutButton = new QPushButton(left_frame);
-        logOutButton->setObjectName(QString::fromUtf8("logOutButton"));
-        logOutButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+        logoutButton = new QPushButton(left_frame);
+        logoutButton->setObjectName(QString::fromUtf8("logoutButton"));
+        logoutButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";\n"
 "color: rgb(63, 36, 79)"));
-        logOutButton->setIconSize(QSize(20, 20));
 
-        verticalLayout->addWidget(logOutButton);
+        verticalLayout->addWidget(logoutButton);
+
+        ExitButton = new QPushButton(left_frame);
+        ExitButton->setObjectName(QString::fromUtf8("ExitButton"));
+        ExitButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";\n"
+"color: rgb(63, 36, 79)"));
+        ExitButton->setIconSize(QSize(20, 20));
+
+        verticalLayout->addWidget(ExitButton);
 
         HomepageWindow->setCentralWidget(centralwidget);
 
         retranslateUi(HomepageWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(HomepageWindow);
@@ -1026,7 +990,7 @@ public:
         inventoryPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Inventory</span></p></body></html>", nullptr));
         returnFromInventoryButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
         addItemButtonInventory->setText(QCoreApplication::translate("HomepageWindow", "Add Item", nullptr));
-        tableViewButton->setText(QCoreApplication::translate("HomepageWindow", "Table View", nullptr));
+        inventoryListViewButton->setText(QCoreApplication::translate("HomepageWindow", "Inventory List View", nullptr));
         updateInventoryButton->setText(QCoreApplication::translate("HomepageWindow", "Update Inventory", nullptr));
         removeItemButton->setText(QCoreApplication::translate("HomepageWindow", "Remove Item", nullptr));
         label->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">ATTENTION:</span><span style=\" font-size:10pt; font-weight:600; font-style:italic; color:#ffffff;\">Only enter the Individual Item ID you want to make changes to. </span></p></body></html>", nullptr));
@@ -1037,47 +1001,13 @@ public:
         inventoryPriceLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Price</span></p></body></html>", nullptr));
         inventoryNameLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Name</span></p></body></html>", nullptr));
         clearFieldsButtonInventory->setText(QCoreApplication::translate("HomepageWindow", "Clear Fields", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget_2->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("HomepageWindow", "Item Name", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget_2->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("HomepageWindow", "Item Price", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget_2->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("HomepageWindow", "Description", nullptr));
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget_2->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("HomepageWindow", "Quantity", nullptr));
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget_2->verticalHeaderItem(0);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("HomepageWindow", "1", nullptr));
-        QTableWidgetItem *___qtablewidgetitem5 = tableWidget_2->verticalHeaderItem(1);
-        ___qtablewidgetitem5->setText(QCoreApplication::translate("HomepageWindow", "2", nullptr));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget_2->verticalHeaderItem(2);
-        ___qtablewidgetitem6->setText(QCoreApplication::translate("HomepageWindow", "3", nullptr));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget_2->verticalHeaderItem(3);
-        ___qtablewidgetitem7->setText(QCoreApplication::translate("HomepageWindow", "4", nullptr));
-        QTableWidgetItem *___qtablewidgetitem8 = tableWidget_2->verticalHeaderItem(4);
-        ___qtablewidgetitem8->setText(QCoreApplication::translate("HomepageWindow", "5", nullptr));
-        QTableWidgetItem *___qtablewidgetitem9 = tableWidget_2->verticalHeaderItem(5);
-        ___qtablewidgetitem9->setText(QCoreApplication::translate("HomepageWindow", "6", nullptr));
-        QTableWidgetItem *___qtablewidgetitem10 = tableWidget_2->verticalHeaderItem(6);
-        ___qtablewidgetitem10->setText(QCoreApplication::translate("HomepageWindow", "7", nullptr));
-        QTableWidgetItem *___qtablewidgetitem11 = tableWidget_2->verticalHeaderItem(7);
-        ___qtablewidgetitem11->setText(QCoreApplication::translate("HomepageWindow", "8", nullptr));
-        QTableWidgetItem *___qtablewidgetitem12 = tableWidget_2->verticalHeaderItem(8);
-        ___qtablewidgetitem12->setText(QCoreApplication::translate("HomepageWindow", "9", nullptr));
-        QTableWidgetItem *___qtablewidgetitem13 = tableWidget_2->verticalHeaderItem(9);
-        ___qtablewidgetitem13->setText(QCoreApplication::translate("HomepageWindow", "10", nullptr));
-        QTableWidgetItem *___qtablewidgetitem14 = tableWidget_2->verticalHeaderItem(10);
-        ___qtablewidgetitem14->setText(QCoreApplication::translate("HomepageWindow", "11", nullptr));
-
-        const bool __sortingEnabled = tableWidget_2->isSortingEnabled();
-        tableWidget_2->setSortingEnabled(false);
-        tableWidget_2->setSortingEnabled(__sortingEnabled);
-
         inventoryPageLabel_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Inventory</span></p></body></html>", nullptr));
         AddItem_2->setText(QCoreApplication::translate("HomepageWindow", "Add Item", nullptr));
-        Tableview_2->setText(QCoreApplication::translate("HomepageWindow", "Inventory View", nullptr));
+        editModeButton->setText(QCoreApplication::translate("HomepageWindow", "Edit Mode", nullptr));
         RemoveItem_2->setText(QCoreApplication::translate("HomepageWindow", "Remove Item", nullptr));
         returnFromInventoryButton_2->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
         UpdateInventory_2->setText(QCoreApplication::translate("HomepageWindow", "Update Inventory", nullptr));
+        viewInventoryScreen->setText(QString());
         auditPageLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Audit</span></p></body></html>", nullptr));
         viewAuditButton->setText(QCoreApplication::translate("HomepageWindow", "View Audit", nullptr));
         returnFromAuditButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Home", nullptr));
@@ -1097,9 +1027,9 @@ public:
         accountButton->setText(QCoreApplication::translate("HomepageWindow", "Accounts", nullptr));
         inventoryButton->setText(QCoreApplication::translate("HomepageWindow", " Inventory", nullptr));
         auditButton->setText(QCoreApplication::translate("HomepageWindow", "Daily Audit", nullptr));
-        settingButton->setText(QCoreApplication::translate("HomepageWindow", "Settings", nullptr));
         helpButton->setText(QCoreApplication::translate("HomepageWindow", "Help", nullptr));
-        logOutButton->setText(QCoreApplication::translate("HomepageWindow", "Log Out", nullptr));
+        logoutButton->setText(QCoreApplication::translate("HomepageWindow", "Logout", nullptr));
+        ExitButton->setText(QCoreApplication::translate("HomepageWindow", "Exit Application", nullptr));
     } // retranslateUi
 
 };
