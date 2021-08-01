@@ -1,0 +1,53 @@
+create table USERS
+(username char(20),
+password char(20) not null,
+firstname char(20) not null,
+lastname char(30) not null,
+privilege int,
+sales double,
+primary key(username),
+check(sales >= 0),
+check(privilege>=0)
+)
+
+create table SALES(
+salesid int auto_increment,
+totalprice double,
+itemssold int not null,
+itemid1 int,
+itemq1 int,
+itemid2 int,
+itemq2 int,
+itemid3 int,
+itemq3 int,
+itemid4 int,
+itemq4 int,
+itemid5 int,
+itemq5 int,
+itemid6 int,
+itemq6 int,
+itemid7 int,
+itemq7 int,
+itemid8 int,
+itemq8 int,
+itemid9 int,
+itemq9 int,
+itemid10 int,
+itemq10 int,
+salesperson char(20) not null references users(login),
+primary key(salesid),
+check (totalprice >= 0),
+check (itemssold >= 0)
+)
+
+create table INVENTORY(
+itemid int,
+itemname char(25) not null,
+price int,
+instock bool not null,
+quantity int not null,
+category char(10) not null,
+primary key (itemid),
+check (price >= 0),
+check (quantity >= 0)
+)
