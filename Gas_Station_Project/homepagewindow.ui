@@ -1677,18 +1677,6 @@ color: rgb(63, 36, 79)</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="settingButton">
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79)</string>
-       </property>
-       <property name="text">
-        <string>Settings</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="helpButton">
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0, 255, 255);
@@ -1701,14 +1689,26 @@ color: rgb(63, 36, 79)</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="logOutButton">
+      <widget class="QPushButton" name="logoutButton">
        <property name="styleSheet">
         <string notr="true">background-color: rgb(0, 255, 255);
 font: 87 8pt &quot;Segoe UI Black&quot;;
 color: rgb(63, 36, 79)</string>
        </property>
        <property name="text">
-        <string>Log Out</string>
+        <string>Logout</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ExitButton">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79)</string>
+       </property>
+       <property name="text">
+        <string>Exit Application</string>
        </property>
        <property name="iconSize">
         <size>

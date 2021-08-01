@@ -157,12 +157,7 @@ void HomepageWindow::on_auditButton_clicked()
 }
 
 
-void HomepageWindow::on_settingButton_clicked()
-{
-    QMessageBox::information(this, "Message", " Work in Progress!!");
-    changeCurrentIndex(8);
 
-}
 
 void HomepageWindow::on_helpButton_clicked()
 {
@@ -189,15 +184,7 @@ void HomepageWindow::on_returnAccountsButton2_clicked()
 
 }
 
-void HomepageWindow::on_logOutButton_clicked()
-{
-    /*//program terminating, store the accounts
-    accounts.storeAccounts();
-    accounts.cleanup();*/
 
-    QMessageBox::information(this, "Message", " Logging out....");
-    close();
-}
 
 void HomepageWindow::on_returnFromInventoryButton_clicked()
 {
@@ -721,4 +708,16 @@ void HomepageWindow::on_submitSaleButton_clicked()
 }
 
 
+
+//Function to close the application
+void HomepageWindow::on_ExitButton_clicked()
+{
+    close();
+}
+
+
+void HomepageWindow::on_logoutButton_clicked()
+{
+    QMessageBox::information(this, "Logging Out", "Working on the feature");
+}
 

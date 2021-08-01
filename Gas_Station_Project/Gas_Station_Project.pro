@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     mysql.cpp \
+    recoverpassword.cpp \
     registrationwindow.cpp
 
 HEADERS += \
@@ -25,11 +26,13 @@ HEADERS += \
     items.h \
     mainwindow.h \
     mysql.h \
+    recoverpassword.h \
     registrationwindow.h
 
 FORMS += \
     homepagewindow.ui \
     mainwindow.ui \
+    recoverpassword.ui \
     registrationwindow.ui
 
 # Default rules for deployment.

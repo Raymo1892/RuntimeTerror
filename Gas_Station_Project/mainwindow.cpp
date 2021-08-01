@@ -4,6 +4,7 @@
 #include <QPixmap>
 #include "accountsstorage.h"
 #include "homepagewindow.h"
+#include "recoverpassword.h"
 
 using namespace std;
 
@@ -107,7 +108,8 @@ void MainWindow::on_loginButton_clicked()
 // When the "forgot password" button is clicked from the home page
 void MainWindow::on_forgotPasswordButton_clicked()
 {
-    QMessageBox::information(this, "Forgot Password ?", " Please wait for resetting password!!");
+
+
 }
 
 

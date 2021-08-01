@@ -28,13 +28,9 @@ private slots:
 
     void on_accountButton_clicked();
 
-    void on_logOutButton_clicked();
-
     void on_inventoryButton_clicked();
 
     void on_auditButton_clicked();
-
-    void on_settingButton_clicked();
 
     void on_returnFromInventoryButton_clicked();
 
@@ -101,6 +97,10 @@ private slots:
     void on_returnFromInventoryButton_2_clicked();
 
     void on_submitSaleButton_clicked();
+
+    void on_ExitButton_clicked();
+
+    void on_logoutButton_clicked();
 
 private:
     Ui::HomepageWindow *ui;

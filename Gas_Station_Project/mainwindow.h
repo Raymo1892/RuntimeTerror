@@ -5,6 +5,7 @@
 #include <registrationwindow.h>
 #include "homepagewindow.h"
 #include <accountsstorage.h>
+#include <recoverpassword.h>
 #include <QSql>
 #include <QSqlDatabase>
 #include <QDebug>
@@ -42,6 +43,9 @@ private:
     Ui::MainWindow *ui;
     RegistrationWindow *regisWindow;
     HomepageWindow *hWindow;
+
+    recoverPassword *recoverPassword;
+
     QString returnUsername;
 
 };
