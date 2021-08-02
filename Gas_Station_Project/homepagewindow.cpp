@@ -261,24 +261,56 @@ void HomepageWindow::on_pushButton_ChangeEmployeePassword_clicked()
 {
     QString username = ui->changePass_Username_LineEdit->text();
     QString password = ui->changePass_Password_LineEdit->text();
+    QString answer = ui->answer->text();
 
     //Store data in the database here
-    QMessageBox::information(this, "Change Password", "You entered: \n" + username + "\n" + password + "\n");
     if(db.connectDB())
     {
-        QSqlQuery qry;
-        qry.prepare("UPDATE USERS SET password = :password WHERE username = :username");
-        //binding variable with values column
-        qry.bindValue(":username", username);
-        qry.bindValue(":password", password);
-        if(!qry.exec()){
-            QMessageBox::warning(this, "Failed", "Update Failed to Execute ");
+        QSqlQuery qry1, qry2;
+        qry2.prepare(QString("SELECT * FROM USERS WHERE username = :username AND passwordRecover = :passwordRecover"));
+        qry2.bindValue(":username", username);
+        qry2.bindValue(":passwordRecover", answer);
+        if(!qry2.exec())
+        {
+            QMessageBox::warning(this, "Query Failed", "Query Failed to Execute ");
         }
         else
         {
-            QMessageBox::information(this, "Change Password", "You entered: \n" + username + "\n" + password + "\n");
-        }
+            while(qry2.next())
+            {
+                QString usernameFromDB = qry2.value(0).toString();
+                QString answerFromDB = qry2.value(6).toString();
 
+                if(usernameFromDB == username && answerFromDB == answer)
+                {
+                    QMessageBox::information(this, "Security Answer", "Security Answer Match.");
+                    //Updating password
+                    qry1.prepare("UPDATE USERS SET password = :password WHERE username = :username");
+                    //binding variable with values column
+                    qry1.bindValue(":username", username);
+                    qry1.bindValue(":password", password);
+                    if(!qry1.exec())
+                    {
+                        QMessageBox::warning(this, "Failed", "Update Failed to Execute ");
+                    }
+                    else
+                    {
+                        QMessageBox::information(this, "Change Password", "Password Updated");
+                        //Clear field after enter the data
+                        ui->answer->clear();
+                        ui->changePass_Username_LineEdit->clear();
+                        ui->changePass_Password_LineEdit->clear();
+
+                    }
+
+                }
+                else
+                {
+                    QMessageBox::information(this, "Security Answer", "Security Answer Do Not Match Try Again.");
+                }
+             }
+
+        }
     }
     else
     {
@@ -357,7 +389,7 @@ void HomepageWindow::on_deleteUserButton_clicked()
         }
         else
         {
-            QMessageBox::information(this, "Delete User", "You entered: \n" + username + "\n" + password + "\n");
+            QMessageBox::information(this, "Delete User", "Deletion Successful");
         }
 
     }
