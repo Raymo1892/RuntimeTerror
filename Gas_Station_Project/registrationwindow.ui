@@ -19,7 +19,7 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>210</x>
      <y>0</y>
      <width>811</width>
      <height>721</height>
@@ -233,7 +233,7 @@ color: rgb(63, 36, 79)</string>
      <rect>
       <x>460</x>
       <y>130</y>
-      <width>241</width>
+      <width>311</width>
       <height>41</height>
      </rect>
     </property>
@@ -270,7 +270,7 @@ color: rgb(0, 255, 255);</string>
      <rect>
       <x>460</x>
       <y>90</y>
-      <width>161</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>

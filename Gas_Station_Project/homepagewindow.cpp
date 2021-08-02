@@ -550,7 +550,7 @@ void HomepageWindow::on_inventoryHelpButton_clicked()
 void HomepageWindow::on_auditHelpButton_clicked()
 {
     ui->helpScreen->setWordWrap(true);
-    ui->helpScreen->setText("1. Audit -- Work in Progress!\n");
+    ui->helpScreen->setText("1. Press view audit button to see the 10 most recent sales!\n");
 
 }
 

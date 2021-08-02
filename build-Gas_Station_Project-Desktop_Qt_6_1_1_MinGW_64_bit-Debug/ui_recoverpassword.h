@@ -28,11 +28,11 @@ public:
     QLabel *label_3;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QLineEdit *lineEdit_UserName;
-    QLineEdit *lineEdit_UserName_2;
-    QLineEdit *lineEdit_UserName_3;
-    QLineEdit *lineEdit_UserName_4;
-    QWidget *widget;
+    QLineEdit *username;
+    QLineEdit *password;
+    QLineEdit *reentepassword;
+    QLineEdit *answer;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label_4;
     QLabel *label_6;
@@ -70,62 +70,64 @@ public:
         pushButton_2->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";\n"
 "background-color: rgb(0, 255, 255);\n"
 "color: rgb(63, 36, 79)"));
-        lineEdit_UserName = new QLineEdit(frame);
-        lineEdit_UserName->setObjectName(QString::fromUtf8("lineEdit_UserName"));
-        lineEdit_UserName->setGeometry(QRect(310, 140, 261, 41));
-        lineEdit_UserName->setMinimumSize(QSize(201, 41));
-        lineEdit_UserName->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+        username = new QLineEdit(frame);
+        username->setObjectName(QString::fromUtf8("username"));
+        username->setGeometry(QRect(310, 140, 261, 41));
+        username->setMinimumSize(QSize(201, 41));
+        username->setStyleSheet(QString::fromUtf8("background-color:white;\n"
 "boarder:blue;\n"
 "color:black"));
-        lineEdit_UserName_2 = new QLineEdit(frame);
-        lineEdit_UserName_2->setObjectName(QString::fromUtf8("lineEdit_UserName_2"));
-        lineEdit_UserName_2->setGeometry(QRect(310, 220, 261, 41));
-        lineEdit_UserName_2->setMinimumSize(QSize(201, 41));
-        lineEdit_UserName_2->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+        password = new QLineEdit(frame);
+        password->setObjectName(QString::fromUtf8("password"));
+        password->setGeometry(QRect(310, 220, 261, 41));
+        password->setMinimumSize(QSize(201, 41));
+        password->setStyleSheet(QString::fromUtf8("background-color:white;\n"
 "boarder:blue;\n"
 "color:black"));
-        lineEdit_UserName_3 = new QLineEdit(frame);
-        lineEdit_UserName_3->setObjectName(QString::fromUtf8("lineEdit_UserName_3"));
-        lineEdit_UserName_3->setGeometry(QRect(310, 290, 261, 41));
-        lineEdit_UserName_3->setMinimumSize(QSize(201, 41));
-        lineEdit_UserName_3->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+        password->setEchoMode(QLineEdit::Password);
+        reentepassword = new QLineEdit(frame);
+        reentepassword->setObjectName(QString::fromUtf8("reentepassword"));
+        reentepassword->setGeometry(QRect(310, 290, 261, 41));
+        reentepassword->setMinimumSize(QSize(201, 41));
+        reentepassword->setStyleSheet(QString::fromUtf8("background-color:white;\n"
 "boarder:blue;\n"
 "color:black"));
-        lineEdit_UserName_4 = new QLineEdit(frame);
-        lineEdit_UserName_4->setObjectName(QString::fromUtf8("lineEdit_UserName_4"));
-        lineEdit_UserName_4->setGeometry(QRect(310, 370, 261, 41));
-        lineEdit_UserName_4->setMinimumSize(QSize(201, 41));
-        lineEdit_UserName_4->setStyleSheet(QString::fromUtf8("background-color:white;\n"
+        reentepassword->setEchoMode(QLineEdit::Password);
+        answer = new QLineEdit(frame);
+        answer->setObjectName(QString::fromUtf8("answer"));
+        answer->setGeometry(QRect(310, 370, 261, 41));
+        answer->setMinimumSize(QSize(201, 41));
+        answer->setStyleSheet(QString::fromUtf8("background-color:white;\n"
 "boarder:blue;\n"
 "color:black"));
-        widget = new QWidget(frame);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(50, 140, 230, 281));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(frame);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(50, 140, 230, 281));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setStyleSheet(QString::fromUtf8("color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
 
         verticalLayout->addWidget(label_4);
 
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setStyleSheet(QString::fromUtf8("color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
 
         verticalLayout->addWidget(label_6);
 
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setStyleSheet(QString::fromUtf8("color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";"));
 
         verticalLayout->addWidget(label_5);
 
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setStyleSheet(QString::fromUtf8("color: rgb(0, 255, 255);\n"
 "font: 87 8pt \"Segoe UI Black\";"));

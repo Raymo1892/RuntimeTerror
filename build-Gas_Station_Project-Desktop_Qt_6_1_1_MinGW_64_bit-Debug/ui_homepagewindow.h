@@ -71,24 +71,30 @@ public:
     QLabel *usernameLabel_3;
     QPushButton *pushButton_ChangeEmployeePassword;
     QPushButton *returnAccountsButton;
+    QLabel *usernameLabel_4;
+    QLabel *usernameLabel_5;
+    QLineEdit *answer;
     QLabel *changePasswordLabel;
     QWidget *addUserPage;
     QLabel *addUserLabel_2;
     QGroupBox *addUserGroupBox;
     QWidget *gridLayoutWidget_2;
     QGridLayout *addUserGridLayout;
-    QLabel *addUserLabelName;
-    QLineEdit *addUserLineEditFirstName;
-    QLabel *addUserLabelPassword;
-    QPushButton *saveUserButton;
-    QLabel *addUserLabelUsername;
-    QPushButton *returnAccountsButton1;
     QLineEdit *addUserLineEditLastName;
+    QPushButton *returnAccountsButton1;
+    QLabel *addUserLabelName;
+    QLabel *addUserLabelUsername;
+    QPushButton *saveUserButton;
+    QLineEdit *addUserLineEditPassword;
     QLineEdit *addUserLineEditUsername;
     QLabel *lastNameLabel;
-    QLineEdit *addUserLineEditPassword;
+    QLabel *addUserLabelPassword;
     QLineEdit *addUserLineEditPrivilege;
+    QLineEdit *addUserLineEditFirstName;
     QLabel *privilegeLabel;
+    QLabel *addUserLabelName_2;
+    QLabel *addUserLabelName_3;
+    QLineEdit *securityanswer;
     QWidget *deleteUserPage;
     QLabel *RemoveUserLabel_2;
     QGroupBox *removeUserGroupBox;
@@ -360,7 +366,7 @@ public:
         changePassGroupBox = new QGroupBox(changeUserPasswordPage);
         changePassGroupBox->setObjectName(QString::fromUtf8("changePassGroupBox"));
         changePassGroupBox->setEnabled(true);
-        changePassGroupBox->setGeometry(QRect(330, 120, 431, 271));
+        changePassGroupBox->setGeometry(QRect(130, 90, 881, 331));
         changePassGroupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
         gridLayoutWidget_3 = new QWidget(changePassGroupBox);
         gridLayoutWidget_3->setObjectName(QString::fromUtf8("gridLayoutWidget_3"));
@@ -376,6 +382,7 @@ public:
         sizePolicy.setHeightForWidth(changePass_Password_LineEdit->sizePolicy().hasHeightForWidth());
         changePass_Password_LineEdit->setSizePolicy(sizePolicy);
         changePass_Password_LineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        changePass_Password_LineEdit->setEchoMode(QLineEdit::Password);
 
         accountsGridLayout_3->addWidget(changePass_Password_LineEdit, 1, 1, 1, 1);
 
@@ -423,6 +430,25 @@ public:
 
         accountsGridLayout_3->addWidget(returnAccountsButton, 3, 1, 1, 1);
 
+        usernameLabel_4 = new QLabel(changePassGroupBox);
+        usernameLabel_4->setObjectName(QString::fromUtf8("usernameLabel_4"));
+        usernameLabel_4->setGeometry(QRect(540, 50, 121, 21));
+        sizePolicy1.setHeightForWidth(usernameLabel_4->sizePolicy().hasHeightForWidth());
+        usernameLabel_4->setSizePolicy(sizePolicy1);
+        usernameLabel_4->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+        usernameLabel_5 = new QLabel(changePassGroupBox);
+        usernameLabel_5->setObjectName(QString::fromUtf8("usernameLabel_5"));
+        usernameLabel_5->setGeometry(QRect(540, 90, 181, 16));
+        sizePolicy1.setHeightForWidth(usernameLabel_5->sizePolicy().hasHeightForWidth());
+        usernameLabel_5->setSizePolicy(sizePolicy1);
+        usernameLabel_5->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+        answer = new QLineEdit(changePassGroupBox);
+        answer->setObjectName(QString::fromUtf8("answer"));
+        answer->setGeometry(QRect(540, 120, 141, 31));
+        sizePolicy.setHeightForWidth(answer->sizePolicy().hasHeightForWidth());
+        answer->setSizePolicy(sizePolicy);
+        answer->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        answer->setEchoMode(QLineEdit::Password);
         changePasswordLabel = new QLabel(changeUserPasswordPage);
         changePasswordLabel->setObjectName(QString::fromUtf8("changePasswordLabel"));
         changePasswordLabel->setGeometry(QRect(0, 0, 371, 50));
@@ -436,45 +462,19 @@ public:
         addUserLabel_2->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
         addUserGroupBox = new QGroupBox(addUserPage);
         addUserGroupBox->setObjectName(QString::fromUtf8("addUserGroupBox"));
-        addUserGroupBox->setGeometry(QRect(330, 120, 431, 271));
+        addUserGroupBox->setGeometry(QRect(160, 70, 671, 351));
         addUserGroupBox->setStyleSheet(QString::fromUtf8("background-color:rgb(63, 36, 79);"));
         gridLayoutWidget_2 = new QWidget(addUserGroupBox);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(39, 29, 361, 216));
+        gridLayoutWidget_2->setGeometry(QRect(39, 29, 215, 194));
         addUserGridLayout = new QGridLayout(gridLayoutWidget_2);
         addUserGridLayout->setObjectName(QString::fromUtf8("addUserGridLayout"));
         addUserGridLayout->setContentsMargins(0, 0, 0, 0);
-        addUserLabelName = new QLabel(gridLayoutWidget_2);
-        addUserLabelName->setObjectName(QString::fromUtf8("addUserLabelName"));
-        addUserLabelName->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+        addUserLineEditLastName = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditLastName->setObjectName(QString::fromUtf8("addUserLineEditLastName"));
+        addUserLineEditLastName->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
 
-        addUserGridLayout->addWidget(addUserLabelName, 0, 0, 1, 1);
-
-        addUserLineEditFirstName = new QLineEdit(gridLayoutWidget_2);
-        addUserLineEditFirstName->setObjectName(QString::fromUtf8("addUserLineEditFirstName"));
-        addUserLineEditFirstName->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
-
-        addUserGridLayout->addWidget(addUserLineEditFirstName, 0, 1, 1, 1);
-
-        addUserLabelPassword = new QLabel(gridLayoutWidget_2);
-        addUserLabelPassword->setObjectName(QString::fromUtf8("addUserLabelPassword"));
-        addUserLabelPassword->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-
-        addUserGridLayout->addWidget(addUserLabelPassword, 3, 0, 1, 1);
-
-        saveUserButton = new QPushButton(gridLayoutWidget_2);
-        saveUserButton->setObjectName(QString::fromUtf8("saveUserButton"));
-        saveUserButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
-"font: 87 8pt \"Segoe UI Black\";\n"
-"color: rgb(63, 36, 79);"));
-
-        addUserGridLayout->addWidget(saveUserButton, 5, 1, 1, 1);
-
-        addUserLabelUsername = new QLabel(gridLayoutWidget_2);
-        addUserLabelUsername->setObjectName(QString::fromUtf8("addUserLabelUsername"));
-        addUserLabelUsername->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
-
-        addUserGridLayout->addWidget(addUserLabelUsername, 2, 0, 1, 1);
+        addUserGridLayout->addWidget(addUserLineEditLastName, 1, 1, 1, 1);
 
         returnAccountsButton1 = new QPushButton(gridLayoutWidget_2);
         returnAccountsButton1->setObjectName(QString::fromUtf8("returnAccountsButton1"));
@@ -484,11 +484,32 @@ public:
 
         addUserGridLayout->addWidget(returnAccountsButton1, 6, 1, 1, 1);
 
-        addUserLineEditLastName = new QLineEdit(gridLayoutWidget_2);
-        addUserLineEditLastName->setObjectName(QString::fromUtf8("addUserLineEditLastName"));
-        addUserLineEditLastName->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        addUserLabelName = new QLabel(gridLayoutWidget_2);
+        addUserLabelName->setObjectName(QString::fromUtf8("addUserLabelName"));
+        addUserLabelName->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
-        addUserGridLayout->addWidget(addUserLineEditLastName, 1, 1, 1, 1);
+        addUserGridLayout->addWidget(addUserLabelName, 0, 0, 1, 1);
+
+        addUserLabelUsername = new QLabel(gridLayoutWidget_2);
+        addUserLabelUsername->setObjectName(QString::fromUtf8("addUserLabelUsername"));
+        addUserLabelUsername->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+
+        addUserGridLayout->addWidget(addUserLabelUsername, 2, 0, 1, 1);
+
+        saveUserButton = new QPushButton(gridLayoutWidget_2);
+        saveUserButton->setObjectName(QString::fromUtf8("saveUserButton"));
+        saveUserButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 255, 255);\n"
+"font: 87 8pt \"Segoe UI Black\";\n"
+"color: rgb(63, 36, 79);"));
+
+        addUserGridLayout->addWidget(saveUserButton, 5, 1, 1, 1);
+
+        addUserLineEditPassword = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditPassword->setObjectName(QString::fromUtf8("addUserLineEditPassword"));
+        addUserLineEditPassword->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        addUserLineEditPassword->setEchoMode(QLineEdit::Password);
+
+        addUserGridLayout->addWidget(addUserLineEditPassword, 3, 1, 1, 1);
 
         addUserLineEditUsername = new QLineEdit(gridLayoutWidget_2);
         addUserLineEditUsername->setObjectName(QString::fromUtf8("addUserLineEditUsername"));
@@ -502,11 +523,11 @@ public:
 
         addUserGridLayout->addWidget(lastNameLabel, 1, 0, 1, 1);
 
-        addUserLineEditPassword = new QLineEdit(gridLayoutWidget_2);
-        addUserLineEditPassword->setObjectName(QString::fromUtf8("addUserLineEditPassword"));
-        addUserLineEditPassword->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        addUserLabelPassword = new QLabel(gridLayoutWidget_2);
+        addUserLabelPassword->setObjectName(QString::fromUtf8("addUserLabelPassword"));
+        addUserLabelPassword->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
-        addUserGridLayout->addWidget(addUserLineEditPassword, 3, 1, 1, 1);
+        addUserGridLayout->addWidget(addUserLabelPassword, 3, 0, 1, 1);
 
         addUserLineEditPrivilege = new QLineEdit(gridLayoutWidget_2);
         addUserLineEditPrivilege->setObjectName(QString::fromUtf8("addUserLineEditPrivilege"));
@@ -514,12 +535,31 @@ public:
 
         addUserGridLayout->addWidget(addUserLineEditPrivilege, 4, 1, 1, 1);
 
+        addUserLineEditFirstName = new QLineEdit(gridLayoutWidget_2);
+        addUserLineEditFirstName->setObjectName(QString::fromUtf8("addUserLineEditFirstName"));
+        addUserLineEditFirstName->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+
+        addUserGridLayout->addWidget(addUserLineEditFirstName, 0, 1, 1, 1);
+
         privilegeLabel = new QLabel(gridLayoutWidget_2);
         privilegeLabel->setObjectName(QString::fromUtf8("privilegeLabel"));
         privilegeLabel->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
 
         addUserGridLayout->addWidget(privilegeLabel, 4, 0, 1, 1);
 
+        addUserLabelName_2 = new QLabel(addUserGroupBox);
+        addUserLabelName_2->setObjectName(QString::fromUtf8("addUserLabelName_2"));
+        addUserLabelName_2->setGeometry(QRect(400, 30, 131, 22));
+        addUserLabelName_2->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+        addUserLabelName_3 = new QLabel(addUserGroupBox);
+        addUserLabelName_3->setObjectName(QString::fromUtf8("addUserLabelName_3"));
+        addUserLabelName_3->setGeometry(QRect(400, 60, 161, 22));
+        addUserLabelName_3->setStyleSheet(QString::fromUtf8("font: 87 8pt \"Segoe UI Black\";"));
+        securityanswer = new QLineEdit(addUserGroupBox);
+        securityanswer->setObjectName(QString::fromUtf8("securityanswer"));
+        securityanswer->setGeometry(QRect(400, 100, 148, 22));
+        securityanswer->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        securityanswer->setEchoMode(QLineEdit::Password);
         stackedWidget->addWidget(addUserPage);
         deleteUserPage = new QWidget();
         deleteUserPage->setObjectName(QString::fromUtf8("deleteUserPage"));
@@ -540,6 +580,7 @@ public:
         removeUserPassLineEdit = new QLineEdit(gridLayoutWidget);
         removeUserPassLineEdit->setObjectName(QString::fromUtf8("removeUserPassLineEdit"));
         removeUserPassLineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        removeUserPassLineEdit->setEchoMode(QLineEdit::Password);
 
         removeUserGridLayout->addWidget(removeUserPassLineEdit, 1, 1, 1, 1);
 
@@ -939,7 +980,7 @@ public:
 
         retranslateUi(HomepageWindow);
 
-        stackedWidget->setCurrentIndex(6);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(HomepageWindow);
@@ -971,16 +1012,20 @@ public:
         usernameLabel_3->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Username: </span></p></body></html>", nullptr));
         pushButton_ChangeEmployeePassword->setText(QCoreApplication::translate("HomepageWindow", "Change Employee Password", nullptr));
         returnAccountsButton->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
+        usernameLabel_4->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Security Question</span></p></body></html>", nullptr));
+        usernameLabel_5->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">What is your first Pet name?</span></p></body></html>", nullptr));
         changePasswordLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Change User Password</span></p></body></html>", nullptr));
         addUserLabel_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Add User</span></p></body></html>", nullptr));
         addUserGroupBox->setTitle(QString());
-        addUserLabelName->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">First Name</span></p></body></html>", nullptr));
-        addUserLabelPassword->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Password</span></p></body></html>", nullptr));
-        saveUserButton->setText(QCoreApplication::translate("HomepageWindow", "Save User", nullptr));
-        addUserLabelUsername->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Username</span></p></body></html>", nullptr));
         returnAccountsButton1->setText(QCoreApplication::translate("HomepageWindow", "Return to Accounts Home", nullptr));
+        addUserLabelName->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">First Name</span></p></body></html>", nullptr));
+        addUserLabelUsername->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Username</span></p></body></html>", nullptr));
+        saveUserButton->setText(QCoreApplication::translate("HomepageWindow", "Save User", nullptr));
         lastNameLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Last Name</span></p></body></html>", nullptr));
+        addUserLabelPassword->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Password</span></p></body></html>", nullptr));
         privilegeLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Privilege</span></p></body></html>", nullptr));
+        addUserLabelName_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Security Question</span></p></body></html>", nullptr));
+        addUserLabelName_3->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">What is your first pet name?</span></p></body></html>", nullptr));
         RemoveUserLabel_2->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#00ffff;\">Remove User</span></p></body></html>", nullptr));
         removeUserGroupBox->setTitle(QString());
         removeUserPassLabel->setText(QCoreApplication::translate("HomepageWindow", "<html><head/><body><p><span style=\" color:#00ffff;\">Password</span></p></body></html>", nullptr));
