@@ -159,7 +159,7 @@ background-color: rgba(255, 255, 255, 0);
 color: rgb(0, 0, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="make_sale_page">
      <widget class="QLabel" name="makeSaleLabel">
@@ -491,6 +491,9 @@ color: rgb(63, 36, 79);</string>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
           </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
          </widget>
         </item>
         <item row="1" column="0">
@@ -605,10 +608,10 @@ color: rgb(63, 36, 79);</string>
      <widget class="QGroupBox" name="addUserGroupBox">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>120</y>
-        <width>431</width>
-        <height>271</height>
+        <x>160</x>
+        <y>70</y>
+        <width>671</width>
+        <height>351</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -622,57 +625,15 @@ color: rgb(63, 36, 79);</string>
         <rect>
          <x>39</x>
          <y>29</y>
-         <width>361</width>
-         <height>216</height>
+         <width>215</width>
+         <height>194</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="addUserGridLayout">
-        <item row="0" column="0">
-         <widget class="QLabel" name="addUserLabelName">
-          <property name="styleSheet">
-           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;First Name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="addUserLineEditFirstName">
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="addUserLineEditLastName">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="addUserLabelPassword">
-          <property name="styleSheet">
-           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="QPushButton" name="saveUserButton">
-          <property name="styleSheet">
-           <string notr="true">background-color: rgb(0, 255, 255);
-font: 87 8pt &quot;Segoe UI Black&quot;;
-color: rgb(63, 36, 79);</string>
-          </property>
-          <property name="text">
-           <string>Save User</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="addUserLabelUsername">
-          <property name="styleSheet">
-           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
-          </property>
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Username&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -688,10 +649,45 @@ color: rgb(63, 36, 79);</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="addUserLineEditLastName">
+        <item row="0" column="0">
+         <widget class="QLabel" name="addUserLabelName">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;First Name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="addUserLabelUsername">
+          <property name="styleSheet">
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Username&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QPushButton" name="saveUserButton">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(0, 255, 255);
+font: 87 8pt &quot;Segoe UI Black&quot;;
+color: rgb(63, 36, 79);</string>
+          </property>
+          <property name="text">
+           <string>Save User</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="addUserLineEditPassword">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
           </property>
          </widget>
         </item>
@@ -712,15 +708,25 @@ color: rgb(63, 36, 79);</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="addUserLineEditPassword">
+        <item row="3" column="0">
+         <widget class="QLabel" name="addUserLabelPassword">
           <property name="styleSheet">
-           <string notr="true">background-color: rgb(255, 255, 255);</string>
+           <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Password&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
         <item row="4" column="1">
          <widget class="QLineEdit" name="addUserLineEditPrivilege">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="addUserLineEditFirstName">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
           </property>
@@ -737,6 +743,54 @@ color: rgb(63, 36, 79);</string>
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QLabel" name="addUserLabelName_2">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>30</y>
+         <width>131</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;Security Question&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="addUserLabelName_3">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>60</y>
+         <width>161</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#00ffff;&quot;&gt;What is your first pet name?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="securityanswer">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>100</y>
+         <width>148</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
       </widget>
      </widget>
     </widget>
@@ -786,6 +840,9 @@ color: rgb(63, 36, 79);</string>
          <widget class="QLineEdit" name="removeUserPassLineEdit">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
           </property>
          </widget>
         </item>

@@ -27,6 +27,7 @@ void RegistrationWindow::clear_text_field()
     ui ->lineEdit_Password ->clear();
     ui ->lineEdit_FirstName ->clear();
     ui ->lineEdit_LastName ->clear();
+    ui->answer->clear();
 }
 
 void RegistrationWindow::on_registerPushButton_clicked()
@@ -43,7 +44,8 @@ void RegistrationWindow::on_registerPushButton_clicked()
         QString passWord = ui ->lineEdit_Password ->text();
         QString firstName = ui ->lineEdit_FirstName ->text();
         QString lastName = ui ->lineEdit_LastName ->text();
-        if(userName == "" || passWord == "" || firstName == "" || lastName == "")
+        QString answer = ui->answer->text();
+        if(userName == "" || passWord == "" || firstName == "" || lastName == "" || answer == "")
         {
            QMessageBox::information(this, "Required Field Empty", "One or More field are empty Try Again");
         }
@@ -51,8 +53,8 @@ void RegistrationWindow::on_registerPushButton_clicked()
         {
             //Write query to database
             QSqlQuery qry;
-            qry.prepare("INSERT INTO USERS (username, password, firstname, lastname, privilege, sales)"
-                        "VAlUES (:username, :password, :firstname, :lastname, :privilege, :sales)");
+            qry.prepare("INSERT INTO USERS (username, password, firstname, lastname, privilege, sales, passwordRecover)"
+                        "VAlUES (:username, :password, :firstname, :lastname, :privilege, :sales, :passwordRecover)");
             //binding variable with values column
             qry.bindValue(":username", userName);
             qry.bindValue(":password", passWord);
@@ -60,6 +62,7 @@ void RegistrationWindow::on_registerPushButton_clicked()
             qry.bindValue(":lastname", lastName);
             qry.bindValue(":privilege", 0);
             qry.bindValue(":sales", 0);
+            qry.bindValue(":passwordRecover", answer);
 
             if(qry.exec())
             {

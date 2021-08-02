@@ -108,6 +108,8 @@ void MainWindow::on_loginButton_clicked()
 // When the "forgot password" button is clicked from the home page
 void MainWindow::on_forgotPasswordButton_clicked()
 {
+    rp = new recoverPassword(this);
+    rp->show();
 
 
 }

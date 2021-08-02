@@ -19,9 +19,9 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>90</x>
      <y>0</y>
-     <width>541</width>
+     <width>811</width>
      <height>721</height>
     </rect>
    </property>
@@ -187,7 +187,7 @@ color: rgb(0, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>390</y>
+      <y>410</y>
       <width>201</width>
       <height>51</height>
      </rect>
@@ -214,7 +214,7 @@ color: rgb(63, 36, 79)</string>
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>470</y>
+      <y>490</y>
       <width>80</width>
       <height>25</height>
      </rect>
@@ -226,6 +226,61 @@ color: rgb(63, 36, 79)</string>
     </property>
     <property name="text">
      <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="passwordLabel_2">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>130</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+background-color: rgb(63, 36, 79);
+color: rgb(0, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;What is your first pet name?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="answer">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>190</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>201</width>
+      <height>41</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="passwordLabel_3">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>90</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 87 8pt &quot;Segoe UI Black&quot;;
+background-color: rgb(63, 36, 79);
+color: rgb(0, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Security Question&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>

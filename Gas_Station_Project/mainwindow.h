@@ -41,10 +41,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    recoverPassword *rp;
     RegistrationWindow *regisWindow;
     HomepageWindow *hWindow;
 
-    recoverPassword *recoverPassword;
+
 
     QString returnUsername;
 

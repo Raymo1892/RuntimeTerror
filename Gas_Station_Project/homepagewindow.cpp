@@ -7,6 +7,8 @@
 #include <items.h>
 #include <QVector>
 #include <mysql.h>
+#include <QMessageBox>
+#include <QPixmap>
 
 
 QString cartString;
@@ -298,12 +300,13 @@ void HomepageWindow::on_saveUserButton_clicked()
         QString firstName = ui->addUserLineEditFirstName->text();
         QString lastName = ui->addUserLineEditLastName->text();
         QString privilege = ui->addUserLineEditPrivilege->text();
+        QString answer = ui->securityanswer->text();
 
 
         //Write query to database
         QSqlQuery qry;
-        qry.prepare("INSERT INTO USERS (username, password, firstname, lastname, privilege, sales)"
-                    "VAlUES (:username, :password, :firstname, :lastname, :privilege, :sales)");
+        qry.prepare("INSERT INTO USERS (username, password, firstname, lastname, privilege, sales, passwordRecover)"
+                    "VAlUES (:username, :password, :firstname, :lastname, :privilege, :sales, :passwordRecover)");
         //binding variable with values column
         qry.bindValue(":username", username);
         qry.bindValue(":password", password);
@@ -311,6 +314,7 @@ void HomepageWindow::on_saveUserButton_clicked()
         qry.bindValue(":lastname", lastName);
         qry.bindValue(":privilege", privilege.toInt());
         qry.bindValue(":sales", 0);
+        qry.bindValue((":passwordRecover"), answer);
 
         if(!qry.exec())
         {
@@ -791,5 +795,6 @@ void HomepageWindow::on_ExitButton_clicked()
 void HomepageWindow::on_logoutButton_clicked()
 {
     QMessageBox::information(this, "Logging Out", "Working on the feature");
+
 }
 

@@ -15,6 +15,11 @@ public:
     explicit recoverPassword(QWidget *parent = nullptr);
     ~recoverPassword();
 
+private slots:
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
+
 private:
     Ui::recoverPassword *ui;
 };
